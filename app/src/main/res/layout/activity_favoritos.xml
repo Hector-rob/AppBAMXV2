@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="favoritosVM" type="com.application.app.modules.favoritos.data.viewmodel.FavoritosVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearFavoritos"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_1pxv"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_A700">
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnmask"
+            android:layout_height="0dp" android:layout_weight="1.0"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <FrameLayout android:id="@+id/frameSystembar"
+                android:layout_height="@dimen/_29pxv"
+                android:layout_width="match_parent" style="@style/groupStylegray_900_14">
+                <ImageView android:id="@+id/imageMask"
+                    android:layout_gravity="end"
+                    android:layout_height="@dimen/_12pxh"
+                    android:layout_marginBottom="@dimen/_8pxv"
+                    android:layout_marginEnd="@dimen/_9pxh"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_8pxv"
+                    android:layout_width="@dimen/_52pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_mask_black_900"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_mask_black_900"/>
+            </FrameLayout>
+            <FrameLayout android:id="@+id/frameStackbamxlogotwo"
+                android:layout_height="@dimen/_70pxv" android:layout_width="match_parent">
+                <ImageView android:id="@+id/imageBamxlogoTwo"
+                    android:layout_gravity="bottom|end"
+                    android:layout_height="@dimen/_64pxh"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="@dimen/_62pxh"
+                    android:scaleType="fitXY"
+                    imageRes="@{@drawable/img_bamxlogo2_24}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_24"/>
+                <FrameLayout android:id="@+id/frameStackbamxlogotwoOne"
+                    android:layout_gravity="start"
+                    android:layout_height="@dimen/_70pxv" android:layout_width="match_parent">
+                    <FrameLayout android:id="@+id/frameStackarrowleft"
+                        android:layout_gravity="top|start"
+                        android:layout_height="@dimen/_56pxv"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:layout_width="match_parent" style="@style/groupStylebluegray_801">
+                        <ImageView android:id="@+id/imageArrowleft"
+                            android:layout_gravity="start"
+                            android:layout_height="@dimen/_22pxh"
+                            android:layout_marginBottom="@dimen/_16pxv"
+                            android:layout_marginEnd="@dimen/_24pxh"
+                            android:layout_marginStart="@dimen/_24pxh"
+                            android:layout_marginTop="@dimen/_16pxv"
+                            android:layout_width="@dimen/_26pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_arrowleft_white_a700"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_white_a700"/>
+                    </FrameLayout>
+                    <ImageView android:id="@+id/imageBamxlogoTwoOne"
+                        android:layout_gravity="bottom|end"
+                        android:layout_height="@dimen/_64pxh"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_width="@dimen/_62pxh"
+                        android:scaleType="fitXY"
+                        imageRes="@{@drawable/img_bamxlogo2_25}"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_25"/>
+                </FrameLayout>
+            </FrameLayout>
+            <TextView android:ellipsize="end" android:id="@+id/txtH5"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_137pxh"
+                android:layout_marginStart="@dimen/_137pxh"
+                android:layout_marginTop="@dimen/_23pxv"
+                android:layout_width="wrap_content"
+                android:letterSpacing="0.01"
+                android:lineSpacingExtra="@dimen/_1pxh"
+                android:singleLine="true"
+                android:text="@{favoritosVM.favoritosModel.txtH5}"
+                style="@style/txt_1" tools:text="@string/lbl_favoritos2"/>
+            <LinearLayout android:gravity="center_horizontal"
+                android:id="@+id/linearColumnrecetacounter"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginStart="@dimen/_9pxh"
+                android:layout_marginTop="@dimen/_25pxv"
+                android:layout_width="wrap_content"
+                android:orientation="vertical" style="@style/groupStyle_1">
+                <EditText
+                    android:background="@drawable/rectangle_bg_white_a700"
+                    android:drawableEnd="@drawable/img_favorite"
+                    android:drawablePadding="@dimen/_30pxh"
+                    android:ellipsize="end"
+                    android:hint="@string/lbl_receta_1"
+                    android:id="@+id/etRecetaCounter"
+                    android:inputType="text"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_139pxv"
+                    android:layout_width="match_parent"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:paddingBottom="@dimen/_16pxv"
+                    android:paddingEnd="@dimen/_14pxh"
+                    android:paddingStart="@dimen/_12pxh"
+                    android:paddingTop="@dimen/_15pxv"
+                    android:singleLine="true"
+                    android:text="@={favoritosVM.favoritosModel.etRecetaCounterValue}"
+                    android:textColorHint="@color/black_900_dd"
+                    style="@style/etSolid" tools:ignore="Autofill"/>
+            </LinearLayout>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/frameBottombar"
+            android:layout_height="wrap_content" android:layout_width="match_parent">
+            <LinearLayout android:id="@+id/linearFourupAOnP"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="horizontal" style="@style/groupStylebluegray_802">
+                <LinearLayout android:id="@+id/linear1Tab"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1pxv"
+                    android:layout_weight="1" android:layout_width="0dp"
+                    android:orientation="vertical" style="@style/groupStylebluegray_800">
+                    <ImageView android:id="@+id/imageHome"
+                        android:layout_gravity="center"
+                        android:layout_height="@dimen/_19pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_width="@dimen/_27pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_home"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_home"/>
+                    <TextView android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/txtCaption"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_11pxv"
+                        android:layout_marginEnd="@dimen/_2pxh"
+                        android:layout_marginStart="@dimen/_2pxh"
+                        android:layout_marginTop="@dimen/_2pxv"
+                        android:layout_width="match_parent"
+                        android:letterSpacing="0.02"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="@{favoritosVM.favoritosModel.txtCaption}"
+                        style="@style/txtRobotoregular12" tools:text="@string/lbl_men"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linear2Tab"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1pxv"
+                    android:layout_weight="1" android:layout_width="0dp"
+                    android:orientation="vertical" style="@style/groupStylebluegray_800">
+                    <ImageView android:id="@+id/imageSearch"
+                        android:layout_gravity="center"
+                        android:layout_height="@dimen/_17pxh"
+                        android:layout_marginTop="@dimen/_11pxv"
+                        android:layout_width="@dimen/_17pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_search"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_search"/>
+                    <TextView android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/txtCaptionOne"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_11pxv"
+                        android:layout_marginEnd="@dimen/_2pxh"
+                        android:layout_marginStart="@dimen/_2pxh"
+                        android:layout_marginTop="@dimen/_3pxv"
+                        android:layout_width="match_parent"
+                        android:letterSpacing="0.02"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="@{favoritosVM.favoritosModel.txtCaptionOne}"
+                        style="@style/txtRobotoregular12_1" tools:text="@string/lbl_filtrar"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linear3Tab"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1pxv"
+                    android:layout_weight="1" android:layout_width="0dp"
+                    android:orientation="vertical" style="@style/groupStylebluegray_800">
+                    <ImageView android:id="@+id/imageFavorite"
+                        android:layout_gravity="center"
+                        android:layout_height="@dimen/_20pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_width="@dimen/_23pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_favorite_20x23"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_favorite_20x23"/>
+                    <TextView android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/txtCaptionTwo"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:layout_marginEnd="@dimen/_2pxh"
+                        android:layout_marginStart="@dimen/_2pxh"
+                        android:layout_marginTop="@dimen/_3pxv"
+                        android:layout_width="match_parent"
+                        android:letterSpacing="0.02"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="@{favoritosVM.favoritosModel.txtCaptionTwo}"
+                        style="@style/txtRobotoregular12_1" tools:text="@string/lbl_favoritos"/>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

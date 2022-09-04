@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="menPrincipalVM" type="com.application.app.modules.menprincipal.data.viewmodel.MenPrincipalVM"/>
+    </data>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearMenprincipal"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylebluegray_800">
+        <FrameLayout android:gravity="start"
+            android:id="@+id/frameSystembar"
+            android:layout_height="@dimen/_29pxv"
+            android:layout_width="match_parent" style="@style/groupStylegray_900_14">
+            <ImageView android:id="@+id/imageMask"
+                android:layout_gravity="end"
+                android:layout_height="@dimen/_12pxh"
+                android:layout_marginBottom="@dimen/_8pxv"
+                android:layout_marginEnd="@dimen/_9pxh"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_8pxv"
+                android:layout_width="@dimen/_52pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_mask_black_900"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_mask_black_900"/>
+        </FrameLayout>
+        <FrameLayout android:id="@+id/frameStackbamxlogoone"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_362pxv"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_38pxh"
+            android:layout_marginStart="@dimen/_38pxh"
+            android:layout_marginTop="@dimen/_120pxv" android:layout_width="@dimen/_334pxh">
+            <ImageView android:id="@+id/imageBamxlogoOne"
+                android:layout_gravity="top|start"
+                android:layout_height="@dimen/_186pxv"
+                android:layout_marginBottom="@dimen/_10pxv"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                cornerRadius="@{@dimen/_30pxh}"
+                imageRes="@{@drawable/img_bamxlogo2}"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2"/>
+            <LinearLayout android:id="@+id/linearColumnrecetas"
+                android:layout_gravity="bottom|center"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_15pxh"
+                android:layout_marginStart="@dimen/_15pxh"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:ellipsize="end" android:gravity="center"
+                    android:id="@+id/btnRecetas"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:letterSpacing="0.06"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:paddingBottom="@dimen/_12pxv"
+                    android:paddingEnd="@dimen/_30pxh"
+                    android:paddingStart="@dimen/_30pxh"
+                    android:paddingTop="@dimen/_12pxv"
+                    android:singleLine="true"
+                    android:text="@string/lbl_recetas"
+                    android:textAllCaps="true"
+                    style="@style/btnSolidRounded" tools:text="@string/lbl_recetas"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:ellipsize="end" android:gravity="center"
+                    android:id="@+id/btnDonaciones"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_31pxv"
+                    android:layout_width="match_parent"
+                    android:letterSpacing="0.06"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:paddingBottom="@dimen/_13pxv"
+                    android:paddingEnd="@dimen/_30pxh"
+                    android:paddingStart="@dimen/_30pxh"
+                    android:paddingTop="@dimen/_13pxv"
+                    android:singleLine="true"
+                    android:text="@string/lbl_donaciones"
+                    android:textAllCaps="true"
+                    style="@style/btnSolidRounded" tools:text="@string/lbl_donaciones"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:ellipsize="end" android:gravity="center"
+                    android:id="@+id/btnquHacemos"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_31pxv"
+                    android:layout_width="match_parent"
+                    android:letterSpacing="0.06"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:paddingBottom="@dimen/_12pxv"
+                    android:paddingEnd="@dimen/_30pxh"
+                    android:paddingStart="@dimen/_30pxh"
+                    android:paddingTop="@dimen/_12pxv"
+                    android:singleLine="true"
+                    android:text="@string/lbl_qu_hacemos"
+                    android:textAllCaps="true"
+                    style="@style/btnSolidRounded" tools:text="@string/lbl_qu_hacemos"/>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

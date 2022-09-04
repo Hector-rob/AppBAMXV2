@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="cargandoVM" type="com.application.app.modules.cargando.data.viewmodel.CargandoVM"/>
+    </data>
+    <FrameLayout android:id="@+id/frameCargando"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylewhite_A700">
+        <ImageView android:id="@+id/imageRefresh"
+            android:layout_gravity="center"
+            android:layout_height="@dimen/_50pxh"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_40pxh"
+            android:layout_marginStart="@dimen/_40pxh"
+            android:layout_marginTop="@dimen/_40pxv"
+            android:layout_width="@dimen/_50pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_refresh"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_refresh"/>
+    </FrameLayout>
+</layout>

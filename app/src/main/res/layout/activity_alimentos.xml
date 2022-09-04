@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="alimentosVM" type="com.application.app.modules.alimentos.data.viewmodel.AlimentosVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearAlimentos"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_A700">
+        <LinearLayout android:gravity="center_horizontal"
+            android:id="@+id/linearColumnmask"
+            android:layout_height="0dp" android:layout_weight="1.0"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <FrameLayout android:gravity="start"
+                android:id="@+id/frameSystembar"
+                android:layout_height="@dimen/_29pxv"
+                android:layout_width="match_parent" style="@style/groupStylegray_900_14">
+                <ImageView android:id="@+id/imageMask"
+                    android:layout_gravity="end"
+                    android:layout_height="@dimen/_12pxh"
+                    android:layout_marginBottom="@dimen/_8pxv"
+                    android:layout_marginEnd="@dimen/_9pxh"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_8pxv"
+                    android:layout_width="@dimen/_52pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_mask_black_900"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_mask_black_900"/>
+            </FrameLayout>
+            <FrameLayout android:gravity="start"
+                android:id="@+id/frameStackbamxlogotwo"
+                android:layout_height="@dimen/_70pxv" android:layout_width="match_parent">
+                <ImageView android:id="@+id/imageBamxlogoTwo"
+                    android:layout_gravity="bottom|end"
+                    android:layout_height="@dimen/_64pxh"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="@dimen/_62pxh"
+                    android:scaleType="fitXY"
+                    imageRes="@{@drawable/img_bamxlogo2_2}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_2"/>
+                <FrameLayout android:id="@+id/frameStackbamxlogotwoOne"
+                    android:layout_gravity="start"
+                    android:layout_height="@dimen/_70pxv" android:layout_width="match_parent">
+                    <FrameLayout android:id="@+id/frameStackarrowleft"
+                        android:layout_gravity="top|start"
+                        android:layout_height="@dimen/_56pxv"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:layout_width="match_parent" style="@style/groupStylebluegray_801">
+                        <ImageView android:id="@+id/imageArrowleft"
+                            android:layout_gravity="start"
+                            android:layout_height="@dimen/_22pxh"
+                            android:layout_marginBottom="@dimen/_16pxv"
+                            android:layout_marginEnd="@dimen/_24pxh"
+                            android:layout_marginStart="@dimen/_24pxh"
+                            android:layout_marginTop="@dimen/_16pxv"
+                            android:layout_width="@dimen/_26pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_arrowleft_white_a700"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_white_a700"/>
+                    </FrameLayout>
+                    <ImageView android:id="@+id/imageBamxlogoTwoOne"
+                        android:layout_gravity="bottom|end"
+                        android:layout_height="@dimen/_64pxh"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_width="@dimen/_62pxh"
+                        android:scaleType="fitXY"
+                        imageRes="@{@drawable/img_bamxlogo2_3}"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_3"/>
+                </FrameLayout>
+            </FrameLayout>
+            <TextView android:ellipsize="end" android:id="@+id/txtH5"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_26pxh"
+                android:layout_marginStart="@dimen/_26pxh"
+                android:layout_marginTop="@dimen/_23pxv"
+                android:layout_width="wrap_content"
+                android:letterSpacing="0.01"
+                android:lineSpacingExtra="@dimen/_1pxh"
+                android:singleLine="true"
+                android:text="@{alimentosVM.alimentosModel.txtH5}"
+                style="@style/txt_1" tools:text="@string/lbl_alimentos"/>
+            <LinearLayout android:gravity="center_horizontal"
+                android:id="@+id/linearColumnlabel"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_26pxh"
+                android:layout_marginStart="@dimen/_26pxh"
+                android:layout_marginTop="@dimen/_36pxv"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <LinearLayout android:id="@+id/linearRowlabel"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <LinearLayout android:gravity="center_horizontal"
+                        android:id="@+id/linear3ContainedB"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:orientation="vertical" style="@style/groupStylegreen_301cornerRadius">
+                        <TextView android:gravity="center_horizontal"
+                            android:id="@+id/txtLabel"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/_41pxv"
+                            android:layout_marginEnd="@dimen/_47pxh"
+                            android:layout_marginStart="@dimen/_47pxh"
+                            android:layout_marginTop="@dimen/_41pxv"
+                            android:layout_width="match_parent"
+                            android:letterSpacing="0.06"
+                            android:lineSpacingExtra="@dimen/_2pxh"
+                            android:text="@{alimentosVM.alimentosModel.txtLabel}"
+                            android:textAllCaps="true"
+                            style="@style/txtRobotoromanbold14" tools:text="@string/lbl_canasta_b_sica"/>
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_horizontal"
+                        android:id="@+id/linear3ContainedB1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_21pxh"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:orientation="vertical" style="@style/groupStylegreen_301cornerRadius">
+                        <TextView android:gravity="center_horizontal"
+                            android:id="@+id/txtLabelOne"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/_41pxv"
+                            android:layout_marginEnd="@dimen/_48pxh"
+                            android:layout_marginStart="@dimen/_48pxh"
+                            android:layout_marginTop="@dimen/_44pxv"
+                            android:layout_width="match_parent"
+                            android:letterSpacing="0.06"
+                            android:lineSpacingExtra="@dimen/_2pxh"
+                            android:text="@{alimentosVM.alimentosModel.txtLabelOne}"
+                            android:textAllCaps="true"
+                            style="@style/txtRobotoromanbold14" tools:text="@string/lbl_fruta_y_verdura"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearRowlabelTwo"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_31pxv"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <LinearLayout android:gravity="center_horizontal"
+                        android:id="@+id/linear3ContainedB2"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:orientation="vertical" style="@style/groupStylegreen_301cornerRadius">
+                        <TextView android:gravity="center_horizontal"
+                            android:id="@+id/txtLabelTwo"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/_41pxv"
+                            android:layout_marginEnd="@dimen/_31pxh"
+                            android:layout_marginStart="@dimen/_31pxh"
+                            android:layout_marginTop="@dimen/_41pxv"
+                            android:layout_width="match_parent"
+                            android:letterSpacing="0.06"
+                            android:lineSpacingExtra="@dimen/_2pxh"
+                            android:text="@{alimentosVM.alimentosModel.txtLabelTwo}"
+                            android:textAllCaps="true"
+                            style="@style/txtRobotoromanbold14" tools:text="@string/msg_embutidos_y_l_c"/>
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_horizontal"
+                        android:id="@+id/linear3ContainedB3"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1pxv"
+                        android:layout_marginStart="@dimen/_21pxh"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:orientation="vertical" style="@style/groupStylegreen_301cornerRadius">
+                        <TextView android:ellipsize="end"
+                            android:gravity="center_horizontal"
+                            android:id="@+id/txtLabelThree"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/_49pxv"
+                            android:layout_marginEnd="@dimen/_38pxh"
+                            android:layout_marginStart="@dimen/_38pxh"
+                            android:layout_marginTop="@dimen/_49pxv"
+                            android:layout_width="match_parent"
+                            android:letterSpacing="0.06"
+                            android:lineSpacingExtra="@dimen/_1pxh"
+                            android:singleLine="true"
+                            android:text="@{alimentosVM.alimentosModel.txtLabelThree}"
+                            android:textAllCaps="true"
+                            style="@style/txtRobotoromanbold14" tools:text="@string/lbl_abarrotes"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:ellipsize="end" android:gravity="center"
+                android:id="@+id/btnOtro"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_26pxh"
+                android:layout_marginStart="@dimen/_26pxh"
+                android:layout_marginTop="@dimen/_34pxv"
+                android:layout_width="match_parent"
+                android:letterSpacing="0.06"
+                android:lineSpacingExtra="@dimen/_1pxh"
+                android:paddingBottom="@dimen/_19pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_19pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_otro"
+                android:textAllCaps="true"
+                style="@style/btnSolidRounded_2" tools:text="@string/lbl_otro"/>
+        </LinearLayout>
+        <FrameLayout android:gravity="center_horizontal"
+            android:id="@+id/frameBottombar"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_1pxh" android:layout_width="match_parent">
+            <LinearLayout android:id="@+id/linear2FourupAO"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="horizontal" style="@style/groupStylebluegray_802">
+                <LinearLayout android:id="@+id/linear1Tab"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_width="0dp"
+                    android:orientation="vertical" style="@style/groupStylebluegray_800">
+                    <ImageView android:id="@+id/imageHome"
+                        android:layout_gravity="center"
+                        android:layout_height="@dimen/_21pxh"
+                        android:layout_marginTop="@dimen/_8pxv"
+                        android:layout_width="@dimen/_30pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_home"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_home"/>
+                    <TextView android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/txtCaption"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_11pxv"
+                        android:layout_marginEnd="@dimen/_2pxh"
+                        android:layout_marginStart="@dimen/_2pxh"
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_width="match_parent"
+                        android:letterSpacing="0.02"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="@{alimentosVM.alimentosModel.txtCaption}"
+                        style="@style/txtRobotoregular12" tools:text="@string/lbl_men"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearColumnvolume"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_width="0dp"
+                    android:orientation="vertical" style="@style/groupStylebluegray_800">
+                    <LinearLayout android:id="@+id/linear3Tab"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/_1pxv"
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical" style="@style/groupStylebluegray_800">
+                        <ImageView android:id="@+id/imageVolume"
+                            android:layout_gravity="center"
+                            android:layout_height="@dimen/_20pxh"
+                            android:layout_marginTop="@dimen/_9pxv"
+                            android:layout_width="@dimen/_20pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_volume"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_volume"/>
+                        <TextView android:ellipsize="end"
+                            android:gravity="center_horizontal"
+                            android:id="@+id/txtCaptionOne"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_8pxv"
+                            android:layout_marginEnd="@dimen/_2pxh"
+                            android:layout_marginStart="@dimen/_2pxh"
+                            android:layout_marginTop="@dimen/_3pxv"
+                            android:layout_width="match_parent"
+                            android:letterSpacing="0.02"
+                            android:lineSpacingExtra="@dimen/_1pxh"
+                            android:singleLine="true"
+                            android:text="@{alimentosVM.alimentosModel.txtCaptionOne}"
+                            style="@style/txtRobotoregular12_1" tools:text="@string/lbl_information"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</layout>
