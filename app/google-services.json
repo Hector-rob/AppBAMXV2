@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "732126956738",
+    "project_id": "appbamx2",
+    "storage_bucket": "appbamx2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732126956738:android:fdf3cfb3cefff2aa717f5b",
+        "android_client_info": {
+          "package_name": "com.application.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732126956738-fs13c5ju7o70oq0lmrvj09tn82lq12p3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPZj9aeLxLqOf6H6dlWAFKPKvYIhp8NmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732126956738-fs13c5ju7o70oq0lmrvj09tn82lq12p3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

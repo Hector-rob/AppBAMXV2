@@ -1,55 +1,88 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest package="com.application.app" xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <application android:allowBackup="false"
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.application.app" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".appcomponents.di.MyApp"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name" android:largeHeap="true"
-        android:name="com.application.app.appcomponents.di.MyApp"
+        android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true" android:theme="@style/Theme.MyApp" android:usesCleartextTraffic="true">
-        <activity android:exported="true"
-            android:name="com.application.app.modules.iniciozero.ui.IniciozeroActivity" android:screenOrientation="portrait">
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApp"
+        android:usesCleartextTraffic="true" >
+
+        <activity
+            android:name=".modules.voluntariado.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.application.app.modules.recetas.ui.RecetasActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.recetas.ui.RecetasActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.higieneylimpieza.ui.HigieneYLimpiezaActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.iniciozero.ui.IniciozeroActivity"
+            android:exported="true" />
         <activity
-            android:name="com.application.app.modules.buscador.ui.BuscadorActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.higieneylimpieza.ui.HigieneYLimpiezaActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.qhacemos.ui.QhacemosActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.buscador.ui.BuscadorActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.voluntariado.ui.VoluntariadoActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.qhacemos.ui.QhacemosActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.inicio.ui.InicioActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.voluntariado.ui.VoluntariadoActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.menprincipal.ui.MenPrincipalActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.inicio.ui.InicioActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.donaciones.ui.DonacionesActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.menprincipal.ui.MenPrincipalActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.formulariootroalimento.ui.FormularioOtroAlimentoActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.donaciones.ui.DonacionesActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.alimentos.ui.AlimentosActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.formulariootroalimento.ui.FormularioOtroAlimentoActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.alimentos.ui.AlimentosActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.inicioone.ui.IniciooneActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.mensajedonacin.ui.MensajeDonaciNActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.cargando.ui.CargandoActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.inicioone.ui.IniciooneActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.formulariodonacin.ui.FormularioDonaciNActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.cargando.ui.CargandoActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.favoritos.ui.FavoritosActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.formulariodonacin.ui.FormularioDonaciNActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.resumenalimentos.ui.ResumenAlimentosActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.favoritos.ui.FavoritosActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.seleccinalimentos.ui.SelecciNAlimentosActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.resumenalimentos.ui.ResumenAlimentosActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.application.app.modules.dinero.ui.DineroActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.seleccinalimentos.ui.SelecciNAlimentosActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modules.dinero.ui.DineroActivity"
+            android:screenOrientation="portrait" />
     </application>
+
 </manifest>
