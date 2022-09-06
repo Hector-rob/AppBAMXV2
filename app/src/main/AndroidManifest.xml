@@ -17,7 +17,7 @@
         android:usesCleartextTraffic="true" >
 
         <activity
-            android:name=".modules.voluntariado.MainActivity"
+            android:name=".modules.higieneylimpieza.ui.HigieneYLimpiezaActivity"
             android:exported="true"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -33,7 +33,7 @@
             android:name=".modules.iniciozero.ui.IniciozeroActivity"
             android:exported="true" />
         <activity
-            android:name=".modules.higieneylimpieza.ui.HigieneYLimpiezaActivity"
+            android:name=".modules.voluntariado.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".modules.buscador.ui.BuscadorActivity"

@@ -114,16 +114,19 @@
                     android:layout_marginEnd="@dimen/_13pxh"
                     android:layout_marginStart="@dimen/_13pxh"
                     android:layout_width="match_parent" android:orientation="horizontal">
-                    <TextView android:ellipsize="end"
+
+                    <TextView
                         android:id="@+id/txtLabelOne"
+                        style="@style/txtRobotoregular16_1"
+                        android:layout_width="104dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.21"
-                        android:layout_width="0dp"
+                        android:ellipsize="end"
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="@{higieneYLimpiezaVM.higieneYLimpiezaModel.txtLabelOne}"
-                        style="@style/txtRobotoregular16_1" tools:text="@string/lbl_tama_o"/>
+                        android:text="@string/msg_tipo_de_product"
+                        tools:text="Categoría *" />
                     <View android:background="@color/black_900_1e"
                         android:id="@+id/lineUpperSurface"
                         android:layout_height="@dimen/_1pxv"
@@ -132,6 +135,15 @@
                         android:layout_marginTop="@dimen/_7pxv"
                         android:layout_weight="0.79" android:layout_width="0dp"/>
                 </LinearLayout>
+
+                <EditText
+                    android:id="@+id/higieneCategoriaText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
             </FrameLayout>
             <FrameLayout android:id="@+id/frameAInactiveEna1"
                 android:layout_gravity="center_horizontal"
@@ -139,6 +151,16 @@
                 android:layout_marginEnd="@dimen/_22pxh"
                 android:layout_marginStart="@dimen/_22pxh"
                 android:layout_marginTop="@dimen/_21pxv" android:layout_width="@dimen/_363pxh">
+
+                <EditText
+                    android:id="@+id/higieneCantidadText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
                 <ImageView android:id="@+id/imageLabelTwo"
                     android:layout_gravity="bottom|start"
                     android:layout_height="@dimen/_49pxv"
@@ -179,6 +201,16 @@
                 android:layout_marginEnd="@dimen/_22pxh"
                 android:layout_marginStart="@dimen/_22pxh"
                 android:layout_marginTop="@dimen/_21pxv" android:layout_width="@dimen/_363pxh">
+
+                <EditText
+                    android:id="@+id/higieneDescripciónText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
                 <ImageView android:id="@+id/imageLabelFour"
                     android:layout_gravity="bottom|start"
                     android:layout_height="@dimen/_49pxv"
@@ -194,16 +226,19 @@
                     android:layout_marginEnd="@dimen/_13pxh"
                     android:layout_marginStart="@dimen/_13pxh"
                     android:layout_width="match_parent" android:orientation="horizontal">
-                    <TextView android:ellipsize="end"
+
+                    <TextView
                         android:id="@+id/txtLabelFive"
+                        style="@style/txtRobotoregular16_1"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.29"
-                        android:layout_width="0dp"
+                        android:ellipsize="end"
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="@{higieneYLimpiezaVM.higieneYLimpiezaModel.txtLabelFive}"
-                        style="@style/txtRobotoregular16_1" tools:text="@string/lbl_comentarios"/>
+                        android:text="@string/lbl_comentarios"
+                        tools:text="Descripción *" />
                     <View android:background="@color/black_900_1e"
                         android:id="@+id/lineUpperSurfaceTwo"
                         android:layout_height="@dimen/_1pxv"
@@ -213,25 +248,29 @@
                         android:layout_weight="0.71" android:layout_width="0dp"/>
                 </LinearLayout>
             </FrameLayout>
+
             <androidx.appcompat.widget.AppCompatButton
-                android:ellipsize="end" android:gravity="center"
                 android:id="@+id/btnEnviar"
-                android:layout_gravity="center_horizontal"
+                style="@style/btnSolidRounded_2"
+                android:layout_width="@dimen/_305pxh"
                 android:layout_height="@dimen/_43pxv"
-                android:layout_marginEnd="@dimen/_22pxh"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/_22pxh"
                 android:layout_marginTop="@dimen/_50pxv"
-                android:layout_width="@dimen/_305pxh"
+                android:layout_marginEnd="@dimen/_22pxh"
+                android:ellipsize="end"
+                android:gravity="center"
                 android:letterSpacing="0.06"
                 android:lineSpacingExtra="@dimen/_1pxh"
-                android:paddingBottom="@dimen/_14pxv"
-                android:paddingEnd="@dimen/_30pxh"
+                android:onClick="registerHigieneDonation"
                 android:paddingStart="@dimen/_30pxh"
                 android:paddingTop="@dimen/_14pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingBottom="@dimen/_14pxv"
                 android:singleLine="true"
                 android:text="@string/lbl_enviar"
                 android:textAllCaps="true"
-                style="@style/btnSolidRounded_2" tools:text="@string/lbl_enviar"/>
+                tools:text="@string/lbl_enviar" />
         </LinearLayout>
         <FrameLayout android:gravity="center_horizontal"
             android:id="@+id/frameBottombar"
