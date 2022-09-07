@@ -16,8 +16,9 @@
         android:theme="@style/Theme.MyApp"
         android:usesCleartextTraffic="true" >
 
+
         <activity
-            android:name=".modules.higieneylimpieza.ui.HigieneYLimpiezaActivity"
+            android:name=".modules.iniciozero.ui.IniciozeroActivity"
             android:exported="true"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -32,9 +33,7 @@
         <activity
             android:name=".modules.recetas.ui.RecetasActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".modules.iniciozero.ui.IniciozeroActivity"
-            android:exported="true" />
+
         <activity
             android:name=".modules.voluntariado.MainActivity"
             android:screenOrientation="portrait" />
@@ -44,6 +43,10 @@
         <activity
             android:name=".modules.qhacemos.ui.QhacemosActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".modules.higieneylimpieza.ui.HigieneYLimpiezaActivity"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".modules.voluntariado.ui.VoluntariadoActivity"
             android:screenOrientation="portrait" />
