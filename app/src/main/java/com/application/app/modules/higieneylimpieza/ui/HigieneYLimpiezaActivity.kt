@@ -5,8 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.viewModels
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
@@ -15,6 +14,7 @@ import com.application.app.modules.higieneylimpieza.`data`.model.SpinnerListBoxM
 import com.application.app.modules.higieneylimpieza.`data`.viewmodel.HigieneYLimpiezaVM
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity
+import com.application.app.modules.voluntariado.MainActivity
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -25,11 +25,12 @@ class HigieneYLimpiezaActivity :
     BaseActivity<ActivityHigieneYLimpiezaBinding>(R.layout.activity_higiene_y_limpieza) {
   private val viewModel: HigieneYLimpiezaVM by viewModels<HigieneYLimpiezaVM>()
 
-  //lateinit var categoria: EditText
+  lateinit var categoriaT: String
   //lateinit var productos: EditText
   //lateinit var descripcion: EditText
 
   override fun onInitialized(): Unit {
+    /*
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     viewModel.spinnerListBoxMainList.value = mutableListOf(
     SpinnerListBoxMainModel("Limpieza"),
@@ -43,23 +44,69 @@ class HigieneYLimpiezaActivity :
     mutableListOf())
     binding.spinnerListBoxMain.adapter = spinnerListBoxMainAdapter
     binding.higieneYLimpiezaVM = viewModel
+     */
+
+    var titulo = findViewById<TextView>(R.id.txtH5)
+    titulo.text = "HIGIENE Y LIMPIEZA"
+
+
+    val spinner: Spinner = findViewById(R.id.spinnerListBoxMain)
+    val categorias = resources.getStringArray(R.array.categorias)
+
+    if (spinner != null) {
+      val adapter = ArrayAdapter(
+        this,
+        android.R.layout.simple_spinner_dropdown_item, categorias
+      )
+      spinner.adapter = adapter
 
 
 
+      spinner.onItemSelectedListener = object :
+        AdapterView.OnItemSelectedListener {
+        override fun onItemSelected( parent: AdapterView<*>,  view: View, position: Int, id: Long) {
+          Toast.makeText(
+            this@HigieneYLimpiezaActivity,
+            getString(R.string.item) + " " +
+                    "" + categorias[position], Toast.LENGTH_SHORT
+          ).show()
 
+
+          //obtener selección de spinner
+          categoriaT = categorias[position]
+
+        }
+
+        override fun onNothingSelected(p0: AdapterView<*>?) {
+          TODO("Not yet implemented")
+        }
+
+      }
+    }
   }
 
+
   fun registerHigieneDonation(){
+
     var categoria = findViewById<EditText>(R.id.higieneCategoriaText).text.toString()
     var productos = findViewById<EditText>(R.id.higieneCantidadText).text.toString()
     var descripcion = findViewById<EditText>(R.id.higieneDescripciónText).text.toString()
     val donacion = hashMapOf(
+      //"categoria" to categoriaT,
       "categoria" to categoria,
       "productos" to productos,
       "descripcion" to descripcion,
     )
     val collection : CollectionReference =
       Firebase.firestore.collection("higieneDonors")
+
+
+
+    // Intent para mandar al formulario general
+    //val intent = Intent(this, MainActivity::class.java)
+    //intent.putExtra( "donadorHigiene", donacion)
+
+
 
     val taskAdd = collection.add(donacion)
     taskAdd.addOnSuccessListener { documentReference ->
@@ -86,6 +133,8 @@ class HigieneYLimpiezaActivity :
     }
     binding.btnEnviar.setOnClickListener {
 
+
+      //Cambiar esto si se va mandar a formulario general
       registerHigieneDonation()
 
       val destIntent = MensajeDonaciNActivity.getIntent(this, null)
