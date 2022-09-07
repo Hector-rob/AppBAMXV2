@@ -9,6 +9,7 @@
         <TextView android:ellipsize="end" android:id="@+id/txtTitle"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:singleLine="true" android:textSize="@dimen/_14pxh"/>
+            android:singleLine="true" android:textSize="@dimen/_14pxh"
+            android:textColor="@color/black"/>
     </LinearLayout>
 </layout>
