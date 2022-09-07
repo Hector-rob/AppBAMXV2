@@ -35,21 +35,12 @@ talentos.</string>
     <string name="lbl_fruta_y_verdura2">FRUTA Y VERDURA</string>
     <string name="lbl_durazno_1_kg">Durazno: 1 kg</string>
     <string name="msg_tipo_de_product">Tipo de producto</string>
-    <string name="Categoria">Categoría *</string>
-    <string name="Productos">Productos *</string>
-    <string name="Descripcion">Descripción </string>
-    <string name="item">Artículo seleccionado</string>
-    <string-array name="categorias">
-        <item>Limpieza</item>
-        <item>Detergente</item>
-        <item>Uso personal</item>
-    </string-array>
     <string name="lbl_resumen">Resumen</string>
     <string name="lbl_1_000_00">$1,000.00</string>
     <string name="msg_1_3_de_lo_que_s">1/3 de lo que se produce en México se
-desperdicia, esto equivale a 38 
+desperdicia, esto equivale a 38
 toneladas por minuto.
-Alimento con el cual se podría nutrir a 
+Alimento con el cual se podría nutrir a
 las 28.6 millones de personas que
 viven en carencia de alimentos.</string>
     <string name="msg_gracias_por_tu">¡Gracias por tu
@@ -77,6 +68,7 @@ donar?</string>
     <string name="lbl_producto">Producto</string>
     <string name="lbl_0">0</string>
     <string name="lbl_nombre_s2">Nombre(s)</string>
+    <string name="lbl_nombre_s">Nombre(s) *</string>
     <string name="lbl_enviar">enviar</string>
     <string name="msg_el_banco_de_ali">El Banco de Alimentos de México se
 contactará contigo.</string>
@@ -89,7 +81,8 @@ contactará contigo.</string>
     <string name="lbl_favoritos">Favoritos</string>
     <string name="lbl_chocomilk">Chocomilk</string>
     <string name="msg_higiene_limpi">hIGIENE &amp; LIMPIEZA</string>
-    <string name="lbl_nombre_s">Nombre(s) *</string>
+    <string name="lbl_frutasYVerduras">Frutas y Verduras</string>
+    <string name="lbl_no_perecederos">No perecederos</string>
     <string name="msg_apellido_matern2">Apellido materno</string>
     <string name="lbl_peras">PERAS</string>
     <string name="lbl_donar">dONAR</string>
@@ -103,6 +96,11 @@ grande del mundo</string>
     <string name="lbl_500_00">$500.00</string>
     <string name="msg_colonia_de_resi">Colonia de residencia</string>
     <string name="lbl_200_00">$200.00</string>
-    <string name="lbl_fruta_y_verdura">Fruta y
+    <string name="lbl_fruta_y_verdura">Fruta
 verdura</string>
+    <string name="lbl_ApellidoP">Apellido Paterno * </string>
+    <string name="lbl_ApellidoM">Apellido Materno * </string>
+    <string name="lbl_correo">Correo </string>
+    <string name="lbl_num">Número telefónico</string>
+    <string name="lbl_estado">Estado de residencia *</string>
 </resources>

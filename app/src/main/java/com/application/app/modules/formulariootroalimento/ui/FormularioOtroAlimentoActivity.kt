@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import androidx.activity.viewModels
+import com.application.app.FormularioComun
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.databinding.ActivityFormularioOtroAlimentoBinding
@@ -20,21 +22,12 @@ class FormularioOtroAlimentoActivity :
     BaseActivity<ActivityFormularioOtroAlimentoBinding>(R.layout.activity_formulario_otro_alimento)
     {
   private val viewModel: FormularioOtroAlimentoVM by viewModels<FormularioOtroAlimentoVM>()
+      private lateinit var fruitAndVeggies : String
+      private lateinit var nonPerishable : String
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
-    val listlabelAdapter = ListlabelAdapter(viewModel.listlabelList.value?:mutableListOf())
-    binding.recyclerListlabel.adapter = listlabelAdapter
-    listlabelAdapter.setOnItemClickListener(
-    object : ListlabelAdapter.OnItemClickListener {
-      override fun onItemClick(view:View, position:Int, item : Listlabel1RowModel) {
-        onClickRecyclerListlabel(view, position, item)
-      }
-    }
-    )
-    viewModel.listlabelList.observe(this) {
-      listlabelAdapter.updateData(it)
-    }
+
     binding.formularioOtroAlimentoVM = viewModel
   }
 
@@ -44,8 +37,12 @@ class FormularioOtroAlimentoActivity :
       startActivity(destIntent)
     }
     binding.btnDonar.setOnClickListener {
-      val destIntent = MensajeDonaciNActivity.getIntent(this, null)
-      startActivity(destIntent)
+      val foodDonations = hashMapOf(
+        "frutasYVegetales" to binding.frutasVerdurasInput.text.toString(),
+        "noPerecederos" to binding.noPerecederosInput.text.toString())
+      val intent = Intent(this, FormularioComun::class.java)
+      intent.putExtra("foodDonations",foodDonations)
+      startActivity(intent)
     }
     binding.imageArrowleft.setOnClickListener {
       val destIntent = MenPrincipalActivity.getIntent(this, null)
@@ -53,15 +50,6 @@ class FormularioOtroAlimentoActivity :
     }
     binding.imageArrowleft.setOnClickListener {
       finish()
-    }
-  }
-
-  fun onClickRecyclerListlabel(
-    view: View,
-    position: Int,
-    item: Listlabel1RowModel
-  ): Unit {
-    when(view.id) {
     }
   }
 
