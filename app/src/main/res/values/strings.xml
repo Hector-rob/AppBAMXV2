@@ -68,6 +68,7 @@ donar?</string>
 <string name="lbl_producto">Producto</string>
 <string name="lbl_0">0</string>
 <string name="lbl_nombre_s2">Nombre(s)</string>
+<string name="lbl_nombre_s">Nombre(s)</string>
 <string name="lbl_enviar">enviar</string>
 <string name="msg_el_banco_de_ali">El Banco de Alimentos de México se
 contactará contigo.</string>
@@ -80,7 +81,8 @@ contactará contigo.</string>
 <string name="lbl_favoritos">Favoritos</string>
 <string name="lbl_chocomilk">Chocomilk</string>
 <string name="msg_higiene_limpi">hIGIENE &amp; LIMPIEZA</string>
-<string name="lbl_nombre_s">Nombre(s) *</string>
+<string name="lbl_frutasYVerduras">Frutas y Verduras</string>
+<string name="lbl_no_perecederos">No perecederos</string>
 <string name="msg_apellido_matern2">Apellido materno</string>
 <string name="lbl_peras">PERAS</string>
 <string name="lbl_donar">dONAR</string>
