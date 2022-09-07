@@ -41,7 +41,7 @@ class FormularioOtroAlimentoActivity :
         "frutasYVegetales" to binding.frutasVerdurasInput.text.toString(),
         "noPerecederos" to binding.noPerecederosInput.text.toString())
       val intent = Intent(this, FormularioComun::class.java)
-      intent.putExtra("foodDonations",foodDonations)
+      intent.putExtra("donation",foodDonations)
       startActivity(intent)
     }
     binding.imageArrowleft.setOnClickListener {

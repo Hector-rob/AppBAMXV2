@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.activity.viewModels
+import com.application.app.FormularioComun
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.databinding.ActivityHigieneYLimpiezaBinding
@@ -86,39 +87,6 @@ class HigieneYLimpiezaActivity :
   }
 
 
-  fun registerHigieneDonation(){
-
-    var categoria = findViewById<EditText>(R.id.higieneCategoriaText).text.toString()
-    var productos = findViewById<EditText>(R.id.higieneCantidadText).text.toString()
-    var descripcion = findViewById<EditText>(R.id.higieneDescripciónText).text.toString()
-    val donacion = hashMapOf(
-      //"categoria" to categoriaT,
-      "categoria" to categoria,
-      "productos" to productos,
-      "descripcion" to descripcion,
-    )
-    val collection : CollectionReference =
-      Firebase.firestore.collection("higieneDonors")
-
-
-
-    // Intent para mandar al formulario general
-    //val intent = Intent(this, MainActivity::class.java)
-    //intent.putExtra( "donadorHigiene", donacion)
-
-
-
-    val taskAdd = collection.add(donacion)
-    taskAdd.addOnSuccessListener { documentReference ->
-      Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
-    }.addOnFailureListener{error ->
-      Toast.makeText(this, "Error al guardar datos", Toast.LENGTH_SHORT).show()
-
-      Log.e("Firestore","error: $error")
-
-    }
-  }
-
   override fun setUpClicks(): Unit {
     binding.imageArrowleft.setOnClickListener {
       val destIntent = MenPrincipalActivity.getIntent(this, null)
@@ -135,10 +103,33 @@ class HigieneYLimpiezaActivity :
 
 
       //Cambiar esto si se va mandar a formulario general
-      registerHigieneDonation()
+      //var categoria = findViewById<EditText>(R.id.higieneCategoriaText).text.toString()
+      var productos = findViewById<EditText>(R.id.higieneCantidadText).text.toString()
+      var descripcion = findViewById<EditText>(R.id.higieneDescripciónText).text.toString()
+      val donacion = hashMapOf(
+        "categoria" to categoriaT,
+        //"categoria" to categoria,
+        "productos" to productos,
+        "descripcion" to descripcion,
+      )
+      val collection : CollectionReference =
+        Firebase.firestore.collection("donors")
 
-      val destIntent = MensajeDonaciNActivity.getIntent(this, null)
-      startActivity(destIntent)
+      val taskAdd = collection.add(donacion)
+      taskAdd.addOnSuccessListener { documentReference ->
+        Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
+      }.addOnFailureListener{error ->
+        Toast.makeText(this, "Error al guardar datos", Toast.LENGTH_SHORT).show()
+
+        Log.e("Firestore","error: $error")
+
+      }
+
+
+      // Intent para mandar al formulario general
+      val intent = Intent(this, FormularioComun::class.java)
+      intent.putExtra( "donation", donacion)
+      startActivity(intent)
     }
   }
 

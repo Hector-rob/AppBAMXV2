@@ -98,10 +98,10 @@
                 android:clickable="true"
                 android:entries="@array/categorias"
                 android:gravity="center_horizontal"
-                android:popupBackground="@color/black"
+                android:popupBackground="@color/white"
                 tools:listitem="@layout/spinner_item" />
 
-            <FrameLayout android:id="@+id/frameAInactiveEna"
+           <!--/* <FrameLayout android:id="@+id/frameAInactiveEna"
                 android:layout_gravity="center_horizontal"
                 android:layout_height="@dimen/_56pxv"
                 android:layout_marginEnd="@dimen/_22pxh"
@@ -133,7 +133,7 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="@string/Categoria"
+                        android:text="Categoría *"
                         tools:text="Categoría *" />
                     <View android:background="@color/black_900_1e"
                         android:id="@+id/lineUpperSurface"
@@ -152,7 +152,8 @@
                     android:inputType="textPersonName"
                     android:textColor="#000000"
                     android:textSize="16sp" />
-            </FrameLayout>
+            */</FrameLayout>
+            -->
             <FrameLayout android:id="@+id/frameAInactiveEna1"
                 android:layout_gravity="center_horizontal"
                 android:layout_height="@dimen/_56pxv"
@@ -195,7 +196,7 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="@string/Productos"
+                        android:text="Cantidad *"
                         tools:text="@string/lbl_cantidad" />
 
                     <View android:background="@color/black_900_1e"
@@ -249,7 +250,7 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="@string/Descripcion"
+                        android:text="Descripcion *"
                         tools:text="Descripción *" />
                     <View android:background="@color/black_900_1e"
                         android:id="@+id/lineUpperSurfaceTwo"
@@ -274,7 +275,6 @@
                 android:gravity="center"
                 android:letterSpacing="0.06"
                 android:lineSpacingExtra="@dimen/_1pxh"
-                android:onClick="registerHigieneDonation"
                 android:paddingStart="@dimen/_30pxh"
                 android:paddingTop="@dimen/_14pxv"
                 android:paddingEnd="@dimen/_30pxh"

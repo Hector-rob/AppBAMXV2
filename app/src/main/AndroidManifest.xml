@@ -27,6 +27,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".FormularioComun"
+            android:exported="false" />
+        <activity
             android:name=".modules.recetas.ui.RecetasActivity"
             android:screenOrientation="portrait" />
         <activity

@@ -98,9 +98,15 @@ grande del mundo</string>
     <string name="lbl_200_00">$200.00</string>
     <string name="lbl_fruta_y_verdura">Fruta
 verdura</string>
+    <string-array name="categorias">
+        <item>Limpieza</item>
+        <item>Detergente</item>
+        <item>Uso personal</item>
+    </string-array>
     <string name="lbl_ApellidoP">Apellido Paterno * </string>
     <string name="lbl_ApellidoM">Apellido Materno * </string>
     <string name="lbl_correo">Correo </string>
     <string name="lbl_num">Número telefónico</string>
     <string name="lbl_estado">Estado de residencia *</string>
+    <string name="item">Artículo seleccionado</string>
 </resources>
