@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormularioComun">
+
+    <LinearLayout
+        android:id="@+id/linearHigieneylimpi"
+        style="@style/groupStylewhite_A700"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="start"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearColumnmask1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/frameSystembar1"
+                style="@style/groupStylegray_900_14"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_29pxv"
+                android:gravity="start">
+
+                <ImageView
+                    android:id="@+id/imageMask1"
+                    android:layout_width="@dimen/_52pxh"
+                    android:layout_height="@dimen/_12pxh"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_8pxv"
+                    android:layout_marginEnd="@dimen/_9pxh"
+                    android:layout_marginBottom="@dimen/_8pxv"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_mask_black_900"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_mask_black_900" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameStackbamxlogotwo2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_70pxv"
+                android:gravity="start">
+
+                <ImageView
+                    android:id="@+id/imageBamxlogoTwo2"
+                    android:layout_width="@dimen/_62pxh"
+                    android:layout_height="@dimen/_64pxh"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:scaleType="fitXY"
+                    tools:ignore="ContentDescription" />
+
+                <FrameLayout
+                    android:id="@+id/frameStackbamxlogotwoOne2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70pxv"
+                    android:layout_gravity="start">
+
+                    <FrameLayout
+                        android:id="@+id/frameStackarrowleft"
+                        style="@style/groupStylebluegray_801"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_56pxv"
+                        android:layout_gravity="top|start"
+                        android:layout_marginBottom="@dimen/_10pxv">
+
+                        <ImageView
+                            android:id="@+id/imageArrowleft"
+                            android:layout_width="@dimen/_26pxh"
+                            android:layout_height="@dimen/_22pxh"
+                            android:layout_gravity="start"
+                            android:layout_marginStart="@dimen/_24pxh"
+                            android:layout_marginTop="@dimen/_16pxv"
+                            android:layout_marginEnd="@dimen/_24pxh"
+                            android:layout_marginBottom="@dimen/_16pxv"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_arrowleft_white_a700"
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/img_arrowleft_white_a700" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/imageBamxlogoTwoOne3"
+                        imageRes="@{@drawable/img_bamxlogo2_13}"
+                        android:layout_width="@dimen/_62pxh"
+                        android:layout_height="@dimen/_64pxh"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:scaleType="fitXY"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_bamxlogo2_13" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtH5"
+                style="@style/txt_1"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:layout_marginStart="@dimen/_22pxh"
+                android:layout_marginTop="@dimen/_23pxv"
+                android:layout_marginEnd="@dimen/_22pxh"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.01"
+                android:lineSpacingExtra="@dimen/_1pxh"
+                android:singleLine="true"
+                android:text="Ingrese sus datos"
+                tools:text="Ingrese sus datos" />
+
+            <FrameLayout
+                android:gravity="center_horizontal"
+                android:id="@+id/nombreFormularioComunFrame"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_5pxv"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/nombreFormularioComunInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageView android:id="@+id/imageLabelFourFC"
+                    android:layout_gravity="bottom|start"
+                    android:layout_height="@dimen/_49pxv"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_label"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_label"/>
+                <LinearLayout android:id="@+id/linearLabelFC"
+                    android:layout_gravity="top|center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_13pxh"
+                    android:layout_marginStart="@dimen/_13pxh"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtLabelnombreFC"
+                        android:layout_width="2px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.29"
+                        android:ellipsize="end"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="Nombre(s)*" />
+
+                    <View
+                        android:id="@+id/lineUpperSurfaceFC"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_1pxv"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_marginBottom="@dimen/_6pxv"
+                        android:layout_weight="0.71"
+                        android:background="@color/black_900_1e" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:gravity="center_horizontal"
+                android:id="@+id/APFormularioComunFrame"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_5pxv"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/APFormularioComunInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageView android:id="@+id/imageLabelFourFC1"
+                    android:layout_gravity="bottom|start"
+                    android:layout_height="@dimen/_49pxv"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_label"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_label"/>
+                <LinearLayout android:id="@+id/linearLabelFC1"
+                    android:layout_gravity="top|center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_13pxh"
+                    android:layout_marginStart="@dimen/_13pxh"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtLabelAPFC1"
+                        android:layout_width="34dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.29"
+                        android:ellipsize="end"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="Apellido Paterno *" />
+
+                    <View
+                        android:id="@+id/lineUpperSurfaceFC1"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_1pxv"
+                        android:layout_marginStart="@dimen/_3pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_marginBottom="@dimen/_6pxv"
+                        android:layout_weight="0.71"
+                        android:background="@color/black_900_1e" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:gravity="center_horizontal"
+                android:id="@+id/AMFormularioComunFrame"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_5pxv"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/AMFormularioComunInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageView android:id="@+id/imageLabelFourFC2"
+                    android:layout_gravity="bottom|start"
+                    android:layout_height="@dimen/_49pxv"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_label"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_label"/>
+                <LinearLayout android:id="@+id/linearLabelFC2"
+                    android:layout_gravity="top|center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_13pxh"
+                    android:layout_marginStart="@dimen/_13pxh"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtLabelAMFC1"
+                        android:layout_width="34dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.29"
+                        android:ellipsize="end"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="Apellido Materno *" />
+
+                    <View
+                        android:id="@+id/lineUpperSurfaceFC2"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_1pxv"
+                        android:layout_marginStart="@dimen/_3pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_marginBottom="@dimen/_6pxv"
+                        android:layout_weight="0.71"
+                        android:background="@color/black_900_1e" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:gravity="center_horizontal"
+                android:id="@+id/CorreoFormularioComunFrame"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_5pxv"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/CorreoFormularioComunInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageView android:id="@+id/imageLabelFourFC3"
+                    android:layout_gravity="bottom|start"
+                    android:layout_height="@dimen/_49pxv"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_label"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_label"/>
+                <LinearLayout android:id="@+id/linearLabelFC3"
+                    android:layout_gravity="top|center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_13pxh"
+                    android:layout_marginStart="@dimen/_13pxh"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtLabelCorreoFC1"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.29"
+                        android:ellipsize="end"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="Correo electrónico *" />
+
+                    <View
+                        android:id="@+id/lineUpperSurfaceFC3"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_1pxv"
+                        android:layout_marginStart="@dimen/_1pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_marginBottom="@dimen/_6pxv"
+                        android:layout_weight="0.71"
+                        android:background="@color/black_900_1e" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:gravity="center_horizontal"
+                android:id="@+id/NumeroFormularioComunFrame"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_5pxv"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/NumeroFormularioComunInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:inputType="phone"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageView android:id="@+id/imageLabelFourFC4"
+                    android:layout_gravity="bottom|start"
+                    android:layout_height="@dimen/_49pxv"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_label"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_label"/>
+                <LinearLayout android:id="@+id/linearLabelFC4"
+                    android:layout_gravity="top|center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_13pxh"
+                    android:layout_marginStart="@dimen/_13pxh"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtLabelNumeroFC1"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.29"
+                        android:ellipsize="end"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="Número telefónico *" />
+
+                    <View
+                        android:id="@+id/lineUpperSurfaceFC4"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_1pxv"
+                        android:layout_marginStart="@dimen/_3pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_marginBottom="@dimen/_6pxv"
+                        android:layout_weight="0.71"
+                        android:background="@color/black_900_1e" />
+                </LinearLayout>
+            </FrameLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEnviar"
+                style="@style/btnSolidRounded_2"
+                android:layout_width="@dimen/_305pxh"
+                android:layout_height="@dimen/_43pxv"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_22pxh"
+                android:layout_marginTop="@dimen/_50pxv"
+                android:layout_marginEnd="@dimen/_22pxh"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:letterSpacing="0.06"
+                android:lineSpacingExtra="@dimen/_1pxh"
+                android:onClick="subirDatos"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_14pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingBottom="@dimen/_14pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_enviar"
+                android:textAllCaps="true"
+                tools:text="@string/lbl_enviar" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="phone" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frameBottombar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_1pxh"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:id="@+id/linear2FourupAO"
+                style="@style/groupStylebluegray_802"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/linear1Tab"
+                    style="@style/groupStylebluegray_800"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageHome"
+                        android:layout_width="@dimen/_30pxh"
+                        android:layout_height="@dimen/_21pxh"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_8pxv"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_home"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_home" />
+
+                    <TextView
+                        android:id="@+id/txtCaption"
+                        style="@style/txtRobotoregular12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_2pxh"
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_marginEnd="@dimen/_2pxh"
+                        android:layout_marginBottom="@dimen/_11pxv"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.02"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="Menu"
+                        tools:text="@string/lbl_men" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearColumnvolume"
+                    style="@style/groupStylebluegray_800"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/linear3Tab"
+                        style="@style/groupStylebluegray_800"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_marginBottom="@dimen/_1pxv"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageVolume"
+                            android:layout_width="@dimen/_20pxh"
+                            android:layout_height="@dimen/_20pxh"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_9pxv"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_volume"
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/img_volume" />
+
+                        <TextView
+                            android:id="@+id/txtCaptionOne"
+                            style="@style/txtRobotoregular12_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_2pxh"
+                            android:layout_marginTop="@dimen/_3pxv"
+                            android:layout_marginEnd="@dimen/_2pxh"
+                            android:layout_marginBottom="@dimen/_8pxv"
+                            android:ellipsize="end"
+                            android:gravity="center_horizontal"
+                            android:letterSpacing="0.02"
+                            android:lineSpacingExtra="@dimen/_1pxh"
+                            android:singleLine="true"
+                            android:text="Information"
+                            tools:text="@string/lbl_information" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

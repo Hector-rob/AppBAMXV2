@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import androidx.activity.viewModels
+import com.application.app.FormularioComun
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.databinding.ActivityFormularioOtroAlimentoBinding
@@ -39,8 +40,9 @@ class FormularioOtroAlimentoActivity :
       val foodDonations = hashMapOf(
         "frutasYVegetales" to binding.frutasVerdurasInput.text.toString(),
         "noPerecederos" to binding.noPerecederosInput.text.toString())
-      //val intent = Intent(this, FormularioComun::class.java)
-      //startActivity(intent)
+      val intent = Intent(this, FormularioComun::class.java)
+      intent.putExtra("foodDonations",foodDonations)
+      startActivity(intent)
     }
     binding.imageArrowleft.setOnClickListener {
       val destIntent = MenPrincipalActivity.getIntent(this, null)
