@@ -15,12 +15,14 @@ import kotlin.Unit
 
 class FormularioDonaciNActivity :
     BaseActivity<ActivityFormularioDonaciNBinding>(R.layout.activity_formulario_donaci_n) {
+
   private val viewModel: FormularioDonaciNVM by viewModels<FormularioDonaciNVM>()
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     val listlabelAdapter = ListlabelAdapter(viewModel.listlabelList.value?:mutableListOf())
     binding.recyclerListlabel.adapter = listlabelAdapter
+
     listlabelAdapter.setOnItemClickListener(
     object : ListlabelAdapter.OnItemClickListener {
       override fun onItemClick(view:View, position:Int, item : ListlabelRowModel) {
