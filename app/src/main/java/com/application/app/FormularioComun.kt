@@ -25,7 +25,7 @@ class FormularioComun : AppCompatActivity() {
         var apellidoP = findViewById<EditText>(R.id.APFormularioComunInput).text.toString()
         var apellidoM = findViewById<EditText>(R.id.AMFormularioComunInput).text.toString()
         var correo = findViewById<EditText>(R.id.CorreoFormularioComunInput).text.toString()
-        var numero = findViewById<EditText>(R.id.CorreoFormularioComunInput).text.toString()
+        var numero = findViewById<EditText>(R.id.NumeroFormularioComunInput).text.toString()
         //var hash = intent.getStringArrayExtra("foodDonations")
         var hash = intent.getSerializableExtra("foodDonations")
         val donor = hashMapOf(
