@@ -112,18 +112,6 @@ class HigieneYLimpiezaActivity :
         "productos" to productos,
         "descripcion" to descripcion,
       )
-      val collection : CollectionReference =
-        Firebase.firestore.collection("donors")
-
-      val taskAdd = collection.add(donacion)
-      taskAdd.addOnSuccessListener { documentReference ->
-        Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
-      }.addOnFailureListener{error ->
-        Toast.makeText(this, "Error al guardar datos", Toast.LENGTH_SHORT).show()
-
-        Log.e("Firestore","error: $error")
-
-      }
 
 
       // Intent para mandar al formulario general
