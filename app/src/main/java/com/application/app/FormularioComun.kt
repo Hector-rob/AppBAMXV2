@@ -1,5 +1,6 @@
 package com.application.app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -46,6 +48,8 @@ class FormularioComun : AppCompatActivity() {
             Log.e("Firestore","error: $error")
 
         }
+        val intent = Intent(this,MensajeDonaciNActivity::class.java)
+        startActivity(intent)
 
 
     }
