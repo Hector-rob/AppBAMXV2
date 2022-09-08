@@ -459,7 +459,6 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_8pxv"
                         android:onClick="returnMenu"
-                        android:tint="#00FFFFFF"
                         app:srcCompat="@drawable/img_home" />
 
                     <TextView
