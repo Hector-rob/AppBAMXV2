@@ -166,9 +166,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
-                    android:inputType="textPersonName"
                     android:textColor="#000000"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:inputType="number"/>
 
                 <ImageView android:id="@+id/imageLabelTwo"
                     android:layout_gravity="bottom|start"
@@ -197,7 +197,8 @@
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
                         android:text="Cantidad *"
-                        tools:text="@string/lbl_cantidad" />
+                        tools:text="@string/lbl_cantidad"
+                       />
 
                     <View android:background="@color/black_900_1e"
                         android:id="@+id/lineUpperSurfaceOne"
@@ -243,7 +244,7 @@
                     <TextView
                         android:id="@+id/txtLabelFive"
                         style="@style/txtRobotoregular16_1"
-                        android:layout_width="1dp"
+                        android:layout_width="31dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.29"
                         android:ellipsize="end"
@@ -283,6 +284,8 @@
                 android:text="@string/lbl_enviar"
                 android:textAllCaps="true"
                 tools:text="@string/lbl_enviar" />
+
+
         </LinearLayout>
         <FrameLayout android:gravity="center_horizontal"
             android:id="@+id/frameBottombar"
