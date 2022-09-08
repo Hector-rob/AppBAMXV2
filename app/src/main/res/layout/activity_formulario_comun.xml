@@ -427,19 +427,6 @@
                 android:textAllCaps="true"
                 tools:text="@string/lbl_enviar" />
 
-            <EditText
-                android:id="@+id/editTextTextEmailAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textEmailAddress" />
-
-            <EditText
-                android:id="@+id/editTextPhone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="phone" />
         </LinearLayout>
 
         <FrameLayout
@@ -464,16 +451,16 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/imageHome"
+                    <ImageButton
+                        android:id="@+id/menuB"
                         android:layout_width="@dimen/_30pxh"
                         android:layout_height="@dimen/_21pxh"
+                        android:backgroundTint="#00FFFFFF"
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_8pxv"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/img_home"
-                        tools:ignore="ContentDescription"
-                        tools:src="@drawable/img_home" />
+                        android:onClick="returnMenu"
+                        android:tint="#00FFFFFF"
+                        app:srcCompat="@drawable/img_home" />
 
                     <TextView
                         android:id="@+id/txtCaption"

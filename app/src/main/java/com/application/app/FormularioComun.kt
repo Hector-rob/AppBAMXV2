@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -18,6 +19,8 @@ class FormularioComun : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario_comun)
+
+
     }
 
     fun subirDatos(view: View?){
@@ -52,6 +55,11 @@ class FormularioComun : AppCompatActivity() {
         startActivity(intent)
 
 
+    }
+
+    fun returnMenu(view: View?){
+        val intent = Intent(this,MenPrincipalActivity::class.java)
+        startActivity(intent)
     }
 
 }

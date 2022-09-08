@@ -50,6 +50,13 @@ class HigieneYLimpiezaActivity :
     var titulo = findViewById<TextView>(R.id.txtH5)
     titulo.text = "HIGIENE Y LIMPIEZA"
 
+    var menu = findViewById<TextView>(R.id.txtCaption)
+    var info = findViewById<TextView>(R.id.txtCaptionOne)
+
+    menu.text = "Menú"
+    info.text = "Información"
+
+
 
     val spinner: Spinner = findViewById(R.id.spinnerListBoxMain)
     val categorias = resources.getStringArray(R.array.categorias)
