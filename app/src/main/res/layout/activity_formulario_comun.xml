@@ -116,7 +116,7 @@
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="@dimen/_1pxh"
                 android:singleLine="true"
-                android:text="Ingrese sus datos"
+                android:text="@string/ingrese"
                 tools:text="Ingrese sus datos" />
 
             <FrameLayout
@@ -162,7 +162,7 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="Nombre(s)*" />
+                        android:text="@string/lbl_nombre_s2" />
 
                     <View
                         android:id="@+id/lineUpperSurfaceFC"
@@ -218,7 +218,7 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="Apellido Paterno *" />
+                        android:text="@string/msg_apellido_patern" />
 
                     <View
                         android:id="@+id/lineUpperSurfaceFC1"
@@ -275,7 +275,7 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="Apellido Materno *" />
+                        android:text="@string/lbl_ApellidoM" />
 
                     <View
                         android:id="@+id/lineUpperSurfaceFC2"
@@ -332,7 +332,7 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="Correo electrónico *" />
+                        android:text="@string/msg_correo_electr_n" />
 
                     <View
                         android:id="@+id/lineUpperSurfaceFC3"
@@ -389,7 +389,7 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="Número telefónico *" />
+                        android:text="@string/lbl_numT" />
 
                     <View
                         android:id="@+id/lineUpperSurfaceFC4"

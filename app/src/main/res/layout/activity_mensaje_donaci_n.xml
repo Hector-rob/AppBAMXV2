@@ -69,16 +69,20 @@
                         tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_1"/>
                 </FrameLayout>
             </FrameLayout>
-            <TextView android:id="@+id/txtGraciasportu"
-                android:layout_gravity="center_horizontal"
+
+            <TextView
+                android:id="@+id/txtGraciasportu"
+                style="@style/txtRobotoromansemibold30"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_84pxh"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/_84pxh"
                 android:layout_marginTop="@dimen/_194pxv"
-                android:layout_width="wrap_content"
+                android:layout_marginEnd="@dimen/_84pxh"
                 android:lineSpacingExtra="@dimen/_1pxh"
                 android:text="@{mensajeDonaciNVM.mensajeDonaciNModel.txtGraciasportu}"
-                style="@style/txtRobotoromansemibold30" tools:text="@string/msg_gracias_por_tu"/>
+                android:textAlignment="center"
+                tools:text="@string/msg_gracias_por_tu" />
             <TextView android:gravity="center_horizontal"
                 android:id="@+id/txtElBancodeAli"
                 android:layout_height="wrap_content"

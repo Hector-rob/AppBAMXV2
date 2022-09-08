@@ -73,11 +73,9 @@ class HigieneYLimpiezaActivity :
       spinner.onItemSelectedListener = object :
         AdapterView.OnItemSelectedListener {
         override fun onItemSelected( parent: AdapterView<*>,  view: View, position: Int, id: Long) {
-          Toast.makeText(
-            this@HigieneYLimpiezaActivity,
-            getString(R.string.item) + " " +
-                    "" + categorias[position], Toast.LENGTH_SHORT
-          ).show()
+          //Toast.makeText( this@HigieneYLimpiezaActivity, getString(R.string.item) + " " +
+                    // "" + categorias[position], Toast.LENGTH_SHORT
+          //).show()
 
 
           //obtener selección de spinner

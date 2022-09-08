@@ -158,7 +158,8 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="@string/lbl_frutasYVerduras" />
+                        android:text="@string/lbl_frutasYVerduras"
+                        tools:text="@string/lbl_frutasYVerduras" />
 
                     <View
                         android:id="@+id/lineUpperSurface"
@@ -215,7 +216,8 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="@string/lbl_no_perecederos" />
+                        android:text="@string/lbl_no_perecederos"
+                        tools:text="@string/lbl_no_perecederos" />
 
                     <View
                         android:id="@+id/lineUpperSurfaceTwo"

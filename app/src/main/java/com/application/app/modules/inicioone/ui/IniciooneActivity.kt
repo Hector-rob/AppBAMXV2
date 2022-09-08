@@ -3,6 +3,7 @@ package com.application.app.modules.inicioone.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import androidx.activity.viewModels
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
@@ -18,6 +19,12 @@ class IniciooneActivity : BaseActivity<ActivityIniciooneBinding>(R.layout.activi
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.iniciooneVM = viewModel
+
+    Handler().postDelayed(Runnable {
+      val i = Intent(this, InicioActivity::class.java)
+      startActivity(i)
+      finish()
+    }, 1000)
   }
 
   override fun setUpClicks(): Unit {

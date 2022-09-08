@@ -5,7 +5,7 @@
     <string name="no_internet_connection">No internet connection!</string>
     <string name="lbl_tama_o">Tamaño *</string>
     <string name="lbl_buscar">Buscar</string>
-    <string name="msg_correo_electr_n">Correo electrónico</string>
+    <string name="msg_correo_electr_n">Correo electrónico *</string>
     <string name="msg_apellido_patern2">Apellido paterno</string>
     <string name="msg_embutidos_y_l_c">Embutidos y
 lácteos</string>
@@ -54,6 +54,7 @@ donación!</string>
     <string name="lbl_men">Menú</string>
     <string name="lbl_canasta_b_sica">CANASTA
 BÁSICA</string>
+    <string name="lbl_donDinero">DONACIÓN MONETARIA</string>
     <string name="lbl_jugo_de_naranja">Jugo de naranja</string>
     <string name="lbl_filtrar">Filtrar</string>
     <string name="msg_higiene_y_limpi">HIGIENE Y LIMPIEZA</string>
@@ -107,6 +108,8 @@ verdura</string>
     <string name="lbl_ApellidoM">Apellido Materno * </string>
     <string name="lbl_correo">Correo </string>
     <string name="lbl_num">Número telefónico</string>
+    <string name="lbl_numT">Número telefónico *</string>
     <string name="lbl_estado">Estado de residencia *</string>
     <string name="item">Artículo seleccionado</string>
+    <string name="ingrese">INGRESE SUS DATOS</string>
 </resources>
