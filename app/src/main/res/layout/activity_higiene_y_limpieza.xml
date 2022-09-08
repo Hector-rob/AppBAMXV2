@@ -299,14 +299,17 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" android:layout_width="0dp"
                     android:orientation="vertical" style="@style/groupStylebluegray_800">
-                    <ImageView android:id="@+id/imageHome"
-                        android:layout_gravity="center"
-                        android:layout_height="@dimen/_21pxh"
-                        android:layout_marginTop="@dimen/_8pxv"
+                    <ImageButton
+                        android:id="@+id/menuB"
                         android:layout_width="@dimen/_30pxh"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/img_home"
-                        tools:ignore="ContentDescription" tools:src="@drawable/img_home"/>
+                        android:layout_height="@dimen/_21pxh"
+                        android:backgroundTint="#00FFFFFF"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_8pxv"
+                        android:onClick="returnMenu1"
+                        android:tint="#00FFFFFF"
+                        android:src="@drawable/img_home" />
+
                     <TextView android:ellipsize="end"
                         android:gravity="center_horizontal"
                         android:id="@+id/txtCaption"

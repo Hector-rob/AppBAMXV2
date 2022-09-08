@@ -93,6 +93,11 @@ class HigieneYLimpiezaActivity :
     }
   }
 
+  fun returnMenu1(view: View?){
+      val intent = Intent(this,MenPrincipalActivity::class.java)
+      startActivity(intent)
+  }
+
 
   override fun setUpClicks(): Unit {
     binding.imageArrowleft.setOnClickListener {
@@ -127,6 +132,7 @@ class HigieneYLimpiezaActivity :
       startActivity(intent)
     }
   }
+
 
   companion object {
     const val TAG: String = "HIGIENE_Y_LIMPIEZA_ACTIVITY"
