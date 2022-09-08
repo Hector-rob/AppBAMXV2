@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.application.app.FormularioComun
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.databinding.ActivityDonacionesBinding
@@ -38,7 +39,9 @@ class DonacionesActivity : BaseActivity<ActivityDonacionesBinding>(R.layout.acti
     }
     binding.btnTiempo.setOnClickListener {
       val destIntent = VoluntariadoActivity.getIntent(this, null)
-      startActivity(destIntent)
+      val intent = Intent(this, FormularioComun::class.java)
+      intent.putExtra("donation","Persona voluntaria")
+      startActivity(intent)
     }
     binding.btnHigieneLimpiezaOne.setOnClickListener {
       val destIntent = HigieneYLimpiezaActivity.getIntent(this, null)
