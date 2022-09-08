@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="iniciozeroVM" type="com.application.app.modules.iniciozero.data.viewmodel.IniciozeroVM"/>
     </data>
@@ -12,42 +14,55 @@
             android:id="@+id/frameSystembar"
             android:layout_height="@dimen/_29pxv"
             android:layout_width="match_parent" style="@style/groupStylegray_900_14">
-            <ImageView android:id="@+id/imageMask"
-                android:layout_gravity="end"
+
+            <ImageView
+                android:id="@+id/imageMask"
+                android:layout_width="@dimen/_52pxh"
                 android:layout_height="@dimen/_12pxh"
-                android:layout_marginBottom="@dimen/_8pxv"
-                android:layout_marginEnd="@dimen/_9pxh"
+                android:layout_gravity="end"
                 android:layout_marginStart="@dimen/_10pxh"
                 android:layout_marginTop="@dimen/_8pxv"
-                android:layout_width="@dimen/_52pxh"
+                android:layout_marginEnd="@dimen/_9pxh"
+                android:layout_marginBottom="@dimen/_8pxv"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_mask"
-                tools:ignore="ContentDescription" tools:src="@drawable/img_mask"/>
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/img_mask" />
         </FrameLayout>
-        <FrameLayout android:id="@+id/frameStackfiginicio"
+
+        <FrameLayout
+            android:id="@+id/frameStackfiginicio"
+            android:layout_width="299dp"
+            android:layout_height="296dp"
             android:layout_gravity="center_horizontal"
-            android:layout_height="@dimen/_279pxv"
-            android:layout_marginBottom="@dimen/_20pxv"
-            android:layout_marginEnd="@dimen/_61pxh"
             android:layout_marginStart="@dimen/_62pxh"
-            android:layout_marginTop="@dimen/_180pxv" android:layout_width="@dimen/_287pxh">
+            android:layout_marginTop="@dimen/_180pxv"
+            android:layout_marginEnd="@dimen/_61pxh"
+            android:layout_marginBottom="@dimen/_20pxv">
+
             <View
-                android:background="@drawable/rectangle_bg_bluegray_800_radius_139_5"
                 android:id="@+id/viewFiginicio"
+                android:layout_width="290dp"
+                android:layout_height="288dp"
                 android:layout_gravity="center"
-                android:layout_height="@dimen/_279pxh"
-                android:layout_marginEnd="@dimen/_4pxh"
-                android:layout_marginStart="@dimen/_5pxh" android:layout_width="@dimen/_278pxh"/>
-            <ImageView android:id="@+id/imageBamxlogoTwo"
-                android:layout_gravity="bottom|start"
-                android:layout_height="@dimen/_170pxv"
-                android:layout_marginBottom="@dimen/_38pxv"
-                android:layout_marginTop="@dimen/_38pxv"
-                android:layout_width="match_parent"
-                android:scaleType="fitXY"
+                android:layout_marginStart="@dimen/_15pxh"
+                android:layout_marginEnd="@dimen/_14pxh"
+                android:background="@drawable/rectangle_bg_bluegray_800_radius_139_5" />
+
+            <ImageView
+                android:id="@+id/imageBamxlogoTwo"
                 cornerRadius="@{@dimen/_30pxh}"
-                imageRes="@{@drawable/img_bamxlogo2}"
-                tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2"/>
+                android:layout_width="270dp"
+                android:layout_height="@dimen/_150pxv"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_38pxv"
+                android:layout_marginBottom="@dimen/_38pxv"
+                android:scaleType="fitXY"
+                android:src="@drawable/logo_gdl_bamx_ch"
+                imageRes="@{@drawable/logo_gdl_bamx_ch}"
+                tools:ignore="ContentDescription" />
+
         </FrameLayout>
+
     </LinearLayout>
 </layout>
