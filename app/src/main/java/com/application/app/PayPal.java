@@ -3,11 +3,13 @@ package com.application.app;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.application.app.Config.Config;
 import com.paypal.android.sdk.payments.PayPalConfiguration;
@@ -60,7 +62,7 @@ public class PayPal extends AppCompatActivity {
     }
     private void processPayment(){
         amount = edtAmount.getText().toString();
-        PayPalPayment payPalPayment = new PayPalPayment(new BigDecimal(String.valueOf(amount)),"MX",
+        PayPalPayment payPalPayment = new PayPalPayment(new BigDecimal(String.valueOf(amount)),"USD",
                 "Donate for BAMX", PayPalPayment.PAYMENT_INTENT_SALE);
         Intent intent = new Intent(this, PaymentActivity.class);
         intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,config);
@@ -71,20 +73,27 @@ public class PayPal extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if(requestCode == PAYPAL_REQUEST_CODE){
-            if(resultCode == RESULT_OK){
-                PaymentConfirmation confirmation= data.getParcelableExtra(PaymentActivity.EXTRA_RESULT_CONFIRMATION);
-                if(confirmation!= null){
-                    try{
+        if(requestCode == PAYPAL_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                PaymentConfirmation confirmation = data.getParcelableExtra(PaymentActivity.EXTRA_RESULT_CONFIRMATION);
+                if (confirmation != null) {
+                    try {
                         String paymentDetails = confirmation.toJSONObject().toString(4);
-                        startActivity(new Intent(this, PaymentDetails.class));
-                    }
-                    catch (JSONException e){
+                        startActivity(new Intent(this, PaymentDetails.class)
+                                .putExtra("PaymentDetails", paymentDetails)
+                                .putExtra("PaymentAmount", amount)
+                        );
+                    } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
                 }
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                Toast.makeText(this, "Cancel", Toast.LENGTH_SHORT).show();
             }
+
+        }else if(resultCode == PaymentActivity.RESULT_EXTRAS_INVALID){
+            Toast.makeText(this,"Invalid",Toast.LENGTH_SHORT).show();
 
         }
     }

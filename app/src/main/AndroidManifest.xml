@@ -18,11 +18,15 @@
         <activity
             android:name=".PaymentDetails"
             android:exported="false" />
+        <!--
         <activity
             android:name=".PayPal"
             android:exported="false" />
+                        android:name=".modules.iniciozero.ui.IniciozeroActivity"
+
+            -->
         <activity
-            android:name=".modules.iniciozero.ui.IniciozeroActivity"
+            android:name=".PayPal"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
