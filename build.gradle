@@ -4,7 +4,9 @@ buildscript {
     repositories {
         google()
         jcenter()
-        mavenCentral()  // Maven Central repository
+        mavenCentral()
+       // Maven Central repository
+
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.3"
@@ -21,6 +23,8 @@ allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
+        // This private repository is required to resolve the Cardinal SDK transitive dependency.
         maven { url "https://jitpack.io" }
     }
 }
