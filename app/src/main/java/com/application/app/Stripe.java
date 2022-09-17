@@ -104,7 +104,7 @@ public class Stripe extends AppCompatActivity {
         }
     }
 
-    private void getEphericalKey(String customerID) {
+    private void getEphericalKey(String customerID2) {
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
                 "https://api.stripe.com/v1/ephemeral_keys",
                 new Response.Listener<String>() {
@@ -114,7 +114,7 @@ public class Stripe extends AppCompatActivity {
                             JSONObject object = new JSONObject(response);
                             EphericalKey=object.getString("id");
                             Log.wtf("JSON",EphericalKey);
-                            getClientSecret(customerID,EphericalKey);
+                            getClientSecret(customerID2,EphericalKey);
 
 
                         } catch (JSONException e) {
@@ -140,8 +140,8 @@ public class Stripe extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("customer",customerID);
-                return super.getParams();
+                params.put("customer",customerID2);
+                return params;
             }
         };
 
@@ -189,7 +189,7 @@ public class Stripe extends AppCompatActivity {
                 params.put("amount","1000" + "00");
                 params.put("currency","mxn");
                 params.put("automatic_payment_methods[enabled]","true");
-                return super.getParams();
+                return params;
             }
         };
 
