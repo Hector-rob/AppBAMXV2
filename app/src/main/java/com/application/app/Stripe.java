@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -34,6 +35,8 @@ public class Stripe extends AppCompatActivity {
     String customerID;
     String EphericalKey;
     String ClientSecret;
+    EditText money;
+    Boolean focus = true;
 
 
 
@@ -46,6 +49,19 @@ public class Stripe extends AppCompatActivity {
         setContentView(R.layout.activity_stripe);
 
         button = findViewById(R.id.btn);
+        money = findViewById(R.id.money);
+
+       money.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if(!hasFocus && money.getText().toString() != null){
+                    focus = false;
+                    Log.wtf("JSON","Sin focus");
+                }
+
+            }
+        });
+
 
         PaymentConfiguration.init(this, PUBLISH_KEY);
         paymentSheet = new PaymentSheet(this, paymentSheetResult -> {
@@ -185,8 +201,10 @@ public class Stripe extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
+                money = findViewById(R.id.money);
                 params.put("customer",customerID);
                 params.put("amount","1000" + "00");
+                Log.wtf("JSON",money.getText().toString());
                 params.put("currency","mxn");
                 params.put("automatic_payment_methods[enabled]","true");
                 return params;

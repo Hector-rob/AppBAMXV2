@@ -16,6 +16,7 @@ import kotlin.Unit
 class DineroActivity : BaseActivity<ActivityDineroBinding>(R.layout.activity_dinero) {
   private val viewModel: DineroVM by viewModels<DineroVM>()
 
+
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.dineroVM = viewModel
