@@ -3,11 +3,13 @@ package com.application.app;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -35,8 +37,10 @@ public class Stripe extends AppCompatActivity {
     String customerID;
     String EphericalKey;
     String ClientSecret;
-    EditText money;
+    TextView money;
     Boolean focus = true;
+    Integer amt;
+
 
 
 
@@ -50,6 +54,9 @@ public class Stripe extends AppCompatActivity {
 
         button = findViewById(R.id.btn);
         money = findViewById(R.id.money);
+        Intent intent = getIntent();
+        amt = intent.getIntExtra("dinero",0);
+        money.setText("Cantidad a donar: " + amt.toString());
 
        money.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -203,7 +210,7 @@ public class Stripe extends AppCompatActivity {
                 Map<String, String> params = new HashMap<>();
                 money = findViewById(R.id.money);
                 params.put("customer",customerID);
-                params.put("amount","1000" + "00");
+                params.put("amount",amt.toString() + "00");
                 Log.wtf("JSON",money.getText().toString());
                 params.put("currency","mxn");
                 params.put("automatic_payment_methods[enabled]","true");

@@ -259,7 +259,7 @@
                         tools:text="@string/msg_ingresa_la_cant" />
 
                     <EditText
-                        android:id="@+id/etBox"
+                        android:id="@+id/dinero"
                         style="@style/etSolidRoundedOutline"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

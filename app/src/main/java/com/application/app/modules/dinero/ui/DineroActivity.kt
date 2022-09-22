@@ -5,13 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.application.app.R
+import com.application.app.Stripe
 import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.databinding.ActivityDineroBinding
-import com.application.app.modules.dinero.`data`.viewmodel.DineroVM
+import com.application.app.modules.dinero.data.viewmodel.DineroVM
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
-import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity
-import kotlin.String
-import kotlin.Unit
 
 class DineroActivity : BaseActivity<ActivityDineroBinding>(R.layout.activity_dinero) {
   private val viewModel: DineroVM by viewModels<DineroVM>()
@@ -35,9 +33,11 @@ class DineroActivity : BaseActivity<ActivityDineroBinding>(R.layout.activity_din
       startActivity(destIntent)
     }
     binding.btnEnviarDonacinOne.setOnClickListener {
-      val destIntent = MensajeDonaciNActivity.getIntent(this, null)
-      startActivity(destIntent)
+     val intent = Intent(this, Stripe::class.java)
+      intent.putExtra("dinero",binding.dinero.text.toString().toInt())
+      startActivity(intent)
     }
+
   }
 
   companion object {

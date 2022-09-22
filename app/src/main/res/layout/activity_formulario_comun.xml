@@ -91,7 +91,6 @@
 
                     <ImageView
                         android:id="@+id/imageBamxlogoTwoOne3"
-                        imageRes="@{@drawable/img_bamxlogo2_13}"
                         android:layout_width="@dimen/_62pxh"
                         android:layout_height="@dimen/_64pxh"
                         android:layout_gravity="bottom|end"
