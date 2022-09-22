@@ -11,8 +11,8 @@ class RecetitaAdapter (var titulos: ArrayList<String>, var ingredientes: ArrayLi
     RecyclerView.Adapter<RecetitaAdapter.RecetitaViewHolder>(){
 
     class RecetitaViewHolder (itemView: View): RecyclerView.ViewHolder(itemView){
-        lateinit var titulo: TextView
-        lateinit var ingrediente: TextView
+        var titulo: TextView
+        var ingrediente: TextView
 
         init {
             titulo = itemView.findViewById(R.id.receta_titulo)

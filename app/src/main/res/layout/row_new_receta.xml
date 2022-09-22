@@ -23,13 +23,12 @@
         android:paddingEnd="@dimen/_14pxh"
         android:paddingBottom="@dimen/_16pxv"
         android:singleLine="true"
-        android:text="TextView"
+        android:text="@string/lbl_recetas"
         android:textColorHint="@color/black_900_dd"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="Autofill"
-        android:textStyle="bold"
-        />
+        tools:ignore="Autofill" />
 
     <TextView
         android:id="@+id/receta_ingredientes"
@@ -37,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rectangle_bg_white_a700"
-        android:drawableEnd="@drawable/img_favorite"
+
         android:drawablePadding="@dimen/_30pxh"
         android:ellipsize="end"
         android:hint="@string/lbl_receta_1"
@@ -48,13 +47,12 @@
         android:paddingEnd="@dimen/_14pxh"
         android:paddingBottom="@dimen/_16pxv"
         android:singleLine="true"
-        android:text="TextView"
+        android:text="@string/lbl_recetas"
         android:textColorHint="@color/black_900_dd"
+        android:textStyle="italic"
         app:layout_constraintStart_toStartOf="@+id/receta_titulo"
         app:layout_constraintTop_toBottomOf="@+id/receta_titulo"
-        tools:ignore="Autofill"
-        android:textStyle="italic"
-        />
+        tools:ignore="Autofill" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
