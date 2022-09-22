@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/receta_titulo"
+        style="@style/etSolid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_bg_white_a700"
+        android:drawableEnd="@drawable/img_favorite"
+        android:drawablePadding="@dimen/_30pxh"
+        android:ellipsize="end"
+        android:hint="@string/lbl_receta_1"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="@dimen/_1pxh"
+        android:paddingStart="@dimen/_12pxh"
+        android:paddingTop="@dimen/_15pxv"
+        android:paddingEnd="@dimen/_14pxh"
+        android:paddingBottom="@dimen/_16pxv"
+        android:singleLine="true"
+        android:text="TextView"
+        android:textColorHint="@color/black_900_dd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Autofill"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/receta_ingredientes"
+        style="@style/etSolid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_bg_white_a700"
+        android:drawableEnd="@drawable/img_favorite"
+        android:drawablePadding="@dimen/_30pxh"
+        android:ellipsize="end"
+        android:hint="@string/lbl_receta_1"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="@dimen/_1pxh"
+        android:paddingStart="@dimen/_12pxh"
+        android:paddingTop="@dimen/_15pxv"
+        android:paddingEnd="@dimen/_14pxh"
+        android:paddingBottom="@dimen/_16pxv"
+        android:singleLine="true"
+        android:text="TextView"
+        android:textColorHint="@color/black_900_dd"
+        app:layout_constraintStart_toStartOf="@+id/receta_titulo"
+        app:layout_constraintTop_toBottomOf="@+id/receta_titulo"
+        tools:ignore="Autofill"
+        android:textStyle="italic"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
