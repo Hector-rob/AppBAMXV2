@@ -105,7 +105,7 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="660dp">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -205,27 +205,6 @@
                         android:textAllCaps="true"
                         tools:text="@string/lbl_500_00" />
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn1000Zero"
-                        style="@style/btnSolidRounded_2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_31pxh"
-                        android:layout_marginTop="@dimen/_29pxv"
-                        android:layout_marginEnd="@dimen/_31pxh"
-                        android:ellipsize="end"
-                        android:gravity="center"
-                        android:letterSpacing="0.06"
-                        android:lineSpacingExtra="@dimen/_1pxh"
-                        android:paddingStart="@dimen/_30pxh"
-                        android:paddingTop="@dimen/_12pxv"
-                        android:paddingEnd="@dimen/_30pxh"
-                        android:paddingBottom="@dimen/_12pxv"
-                        android:singleLine="true"
-                        android:text="@string/lbl_1_000_00"
-                        android:textAllCaps="true"
-                        tools:text="@string/lbl_1_000_00" />
-
                     <TextView
                         android:id="@+id/txtH5One"
                         style="@style/txt_2"
@@ -268,7 +247,7 @@
                         android:layout_marginEnd="@dimen/_31pxh"
                         android:background="@drawable/rectangle_bg_white_a700_border_bluegray_101_radius_4"
                         android:ellipsize="end"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:singleLine="true"
                         android:text="@={dineroVM.dineroModel.etBoxValue}"
                         tools:ignore="Autofill" />
@@ -299,10 +278,12 @@
 
         </LinearLayout>
 
-        <FrameLayout
+        <RelativeLayout
             android:id="@+id/frameBottombar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+
             android:layout_marginEnd="@dimen/_1pxh"
             android:gravity="center_horizontal">
 
@@ -311,6 +292,7 @@
                 style="@style/groupStylebluegray_802"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -397,6 +379,6 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </FrameLayout>
+        </RelativeLayout>
     </LinearLayout>
 </layout>

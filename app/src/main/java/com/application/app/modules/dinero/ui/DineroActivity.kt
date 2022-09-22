@@ -38,6 +38,26 @@ class DineroActivity : BaseActivity<ActivityDineroBinding>(R.layout.activity_din
       startActivity(intent)
     }
 
+    binding.btn100Zero.setOnClickListener {
+      val intent = Intent(this, Stripe::class.java)
+      intent.putExtra("dinero",100)
+      startActivity(intent)
+    }
+
+    binding.btn200Zero.setOnClickListener {
+      val intent = Intent(this, Stripe::class.java)
+      intent.putExtra("dinero",200)
+      startActivity(intent)
+    }
+
+    binding.btn500Zero.setOnClickListener {
+      val intent = Intent(this, Stripe::class.java)
+      intent.putExtra("dinero",500)
+      startActivity(intent)
+    }
+
+
+
   }
 
   companion object {
