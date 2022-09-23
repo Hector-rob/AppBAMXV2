@@ -1,5 +1,6 @@
 package com.application.app.modules.recetas.ui
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,37 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.application.app.R
 
+
+class RecetitaAdapter (private val recetasList: ArrayList<Receta>) : RecyclerView.Adapter<RecetitaAdapter.MyViewHolder>(){
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecetitaAdapter.MyViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.row_new_receta, parent, false)
+
+        return MyViewHolder(itemView)
+    }
+
+    override fun onBindViewHolder(holder: RecetitaAdapter.MyViewHolder, position: Int) {
+
+        val receta: Receta = recetasList[position]
+        holder.titulo.text = receta.title
+        holder.ingredientes.text = receta.ingredients
+    }
+
+    override fun getItemCount(): Int {
+        return recetasList.size
+    }
+
+
+    public class MyViewHolder (itemView: View): RecyclerView.ViewHolder(itemView) {
+        val titulo : TextView = itemView.findViewById(R.id.receta_titulo)
+        val ingredientes : TextView = itemView.findViewById(R.id.receta_ingredientes)
+    }
+
+
+
+}
+
+/*
 class RecetitaAdapter (var titulos: ArrayList<String>, var ingredientes: ArrayList<String>, var listener: View.OnClickListener):
     RecyclerView.Adapter<RecetitaAdapter.RecetitaViewHolder>(){
 
@@ -31,8 +63,17 @@ class RecetitaAdapter (var titulos: ArrayList<String>, var ingredientes: ArrayLi
     }
 
     override fun onBindViewHolder(holder: RecetitaViewHolder, position: Int) {
-        holder.titulo.text = titulos[position]
-        holder.ingrediente.text = ingredientes[position]
+
+        //aquí un for por elemento en range de 0 a getitemcount y le vas sumando 1
+
+        //for (i in 0 until titulos.size){
+            holder.titulo.text = titulos[position]
+            holder.ingrediente.text = ingredientes[position]
+        //}
+        //holder.titulo.text = titulos[1]
+        //holder.ingrediente.text = ingredientes[1]
+
+        Log.wtf("Firestore", "adapter: $position")
     }
 
     override fun getItemCount(): Int {
@@ -83,3 +124,5 @@ class RecetitaAdapter (var titulos: ArrayList<String>, var ingredientes: ArrayLi
 
         */
 }
+
+ */

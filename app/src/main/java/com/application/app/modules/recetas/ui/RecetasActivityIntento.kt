@@ -3,6 +3,7 @@ package com.application.app.modules.recetas.ui
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -17,8 +18,6 @@ import com.application.app.modules.favoritos.ui.FavoritosActivity
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.application.app.modules.recetas.data.model.RecetasRowModel
 import com.application.app.modules.recetas.data.viewmodel.RecetasVM
-import com.google.firebase.firestore.DocumentChange
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -27,6 +26,8 @@ import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.google.firebase.firestore.*
+import com.google.firebase.firestore.ktx.toObject
 
 class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
@@ -35,14 +36,17 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
   //Ya alv hay que hacerlo como en la act 4
 
   lateinit var recyclerView: RecyclerView
-  lateinit var recetitaArrayList : ArrayList<Recetita>
-  //lateinit var recetitaAdapter: RecetitaAdapter
+  lateinit var recetaArrayList : ArrayList<Receta>
+  lateinit var myAdapter: RecetitaAdapter
   lateinit var db: FirebaseFirestore
 
+  /*
   lateinit var llm: LinearLayoutManager
 
   lateinit var titulos: ArrayList<String>
   lateinit var ingredientes: ArrayList<String>
+
+   */
 
   lateinit var titulo : TextView
 
@@ -54,6 +58,18 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
       titulo = findViewById(R.id.txtH5)
       titulo.text = "RECETAS"
 
+      recyclerView = findViewById(R.id.recyclerViewRecetas)
+      recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+      recyclerView.setHasFixedSize(true)
+
+      recetaArrayList = arrayListOf()
+
+      myAdapter = RecetitaAdapter(recetaArrayList)
+      recyclerView.adapter = myAdapter
+
+      eventChangeListener()
+
+      /*
 
       titulos = ArrayList()
       ingredientes = ArrayList()
@@ -102,6 +118,9 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
           recyclerView.adapter = adapter
 
 
+          Log.wtf("Firestore", "$llm")
+
+
 
 
       }.addOnFailureListener{ error ->
@@ -109,66 +128,35 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
       }
 
 
+       */
 
-      Log.wtf("Firestore", "afuera: $titulos, $ingredientes")
+
+
 
 
 
   }
 
 
-  fun eventChangeListener() {
+  private fun eventChangeListener() {
+      db = FirebaseFirestore.getInstance()
+      db.collection("recipes").orderBy("title", Query.Direction.ASCENDING).
+              addSnapshotListener(object : EventListener<QuerySnapshot>{
+                  override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
+                      if (error != null){
+                          return
+                      }
 
-    /*
-      val coleccion = Firebase.firestore.collection("recipes")
-    val queryTask = coleccion.get()
+                      for(dc: DocumentChange in value?.documentChanges!!){
+                          if (dc.type == DocumentChange.Type.ADDED){
+                              recetaArrayList.add(dc.document.toObject(Receta::class.java))
+                              Log.wtf("Firestore", "$recetaArrayList")
+                          }
+                      }
 
-    queryTask.addOnSuccessListener { result ->
-        //algo sencillo - recorrer datos
-        Toast.makeText(
-          this,
-          "Query exitoso",
-          Toast.LENGTH_SHORT
-        ).show()
-
-        for(documentoActual in result) {
-          //Log.wtf("Firestore", "${documentoActual.id} ${documentoActual.data}")
-
-              titulos.add(documentoActual.data["title"].toString())
-              ingredientes.add(documentoActual.data["ingredients"].toString())
-
-            Log.wtf("Firestore", "$titulos , $ingredientes")
-
-              //aquí vamos a hacer dos arrays, tipo la actividad 4
-              /*
-          uno para titulos
-          otro para ingredientes
-          luego se lo pasas a recetita adapter(la modificas como perrito adapter)
-           */
-              //recetitaArrayList.add(Recetita(documentoActual.data.get("title").toString(), documentoActual.data.get("ingredients").toString()))
-              //Log.wtf("Firestore", "$recetitaArrayList")
-
-            }
-
-        val adapter = RecetitaAdapter(titulos, ingredientes, this)
-        recyclerView.layoutManager = llm
-        recyclerView.adapter = adapter
-
-
-
-
-    }.addOnFailureListener{ error ->
-      Log.wtf("Firestore", "Error en query: $error")
-    }
-
-
-       */
-
-    //otra cosa
-
-
-
-
+                      myAdapter.notifyDataSetChanged()
+                  }
+              })
 
 
 
