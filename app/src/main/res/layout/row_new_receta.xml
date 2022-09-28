@@ -10,6 +10,26 @@
     android:layout_marginTop="30dp">
 
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEnviar2"
+        style="@style/btnSolidRounded_2"
+        android:layout_width="@dimen/_150pxh"
+        android:layout_height="@dimen/_43pxv"
+        android:layout_gravity="center_horizontal"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="@dimen/_1pxh"
+
+        android:singleLine="true"
+        android:text="@string/lbl_verRecetas"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="222dp"
+        tools:layout_editor_absoluteY="31dp"
+        tools:text="@string/lbl_verRecetas" />
+
     <TextView
         android:id="@+id/receta_titulo"
         style="@style/etSolid"
@@ -22,6 +42,7 @@
         android:hint="@string/lbl_receta_1"
         android:letterSpacing="0.01"
         android:lineSpacingExtra="@dimen/_1pxh"
+        android:orientation="vertical"
         android:paddingStart="@dimen/_12pxh"
         android:paddingTop="@dimen/_15pxv"
         android:paddingEnd="@dimen/_14pxh"
@@ -31,11 +52,10 @@
         android:textColorHint="@color/black_900_dd"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="Autofill"
-        android:orientation="vertical"/>
+        tools:ignore="Autofill" />
 
     <TextView
         android:id="@+id/receta_ingredientes"

@@ -162,6 +162,10 @@ class VerRecetasActivity : AppCompatActivity(), View.OnClickListener{
         finish()
     }
 
+    fun verMas(view: View?){
+
+    }
+
 
   companion object {
     const val TAG: String = "RECETAS_ACTIVITY"

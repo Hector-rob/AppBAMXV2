@@ -142,7 +142,7 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
   }
 
-    override fun onClick(p0: View?) {
+    override fun onClick(p0: View) {
 
         val position3 = p0?.id
         Log.wtf("Firestore", "$position3")
@@ -152,6 +152,11 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
         val position2 = p0?.let { recyclerView.getChildAdapterPosition(it) }
         Log.wtf("Firestore", "$position2")
+
+        val position4 = recyclerView.getChildLayoutPosition(p0)
+        Toast.makeText(this, "id: $position4", Toast.LENGTH_SHORT).show()
+        Log.wtf("Firestore", "$position4")
+
     }
 
 
