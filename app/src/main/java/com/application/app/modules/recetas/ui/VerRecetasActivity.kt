@@ -31,7 +31,7 @@ import com.android.volley.toolbox.Volley
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.toObject
 
-class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
+class VerRecetasActivity : AppCompatActivity(), View.OnClickListener{
 
   //private val viewModel: RecetasVM by viewModels<RecetasVM>()
 
@@ -59,7 +59,7 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_recetas_intento)
+    setContentView(R.layout.activity_ver_recetas)
 
       titulo = findViewById(R.id.txtH5)
       titulo.text = "RECETAS"
@@ -140,40 +140,7 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
        */
 
-  }
 
-    override fun onClick(p0: View?) {
-
-        val position3 = p0?.id
-        Log.wtf("Firestore", "$position3")
-
-        val position = p0?.let { recyclerView.getChildLayoutPosition(it) }
-        Log.wtf("Firestore", "$position")
-
-        val position2 = p0?.let { recyclerView.getChildAdapterPosition(it) }
-        Log.wtf("Firestore", "$position2")
-    }
-
-
-    private fun eventChangeListener() {
-      db = FirebaseFirestore.getInstance()
-      db.collection("recipes").orderBy("title", Query.Direction.ASCENDING).
-              addSnapshotListener(object : EventListener<QuerySnapshot>{
-                  override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
-                      if (error != null){
-                          return
-                      }
-
-                      for(dc: DocumentChange in value?.documentChanges!!){
-                          if (dc.type == DocumentChange.Type.ADDED){
-                              recetaArrayList.add(dc.document.toObject(Receta::class.java))
-                              //Log.wtf("Firestore", "$recetaArrayList")
-                          }
-                      }
-
-                      myAdapter.notifyDataSetChanged()
-                  }
-              })
 
 
 
@@ -181,6 +148,10 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
   }
 
 
+  private fun eventChangeListener() {
+
+
+  }
 
     fun goHome(view: View?){
         val intent = Intent(this, MenPrincipalActivity::class.java)
@@ -195,6 +166,10 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
   companion object {
     const val TAG: String = "RECETAS_ACTIVITY"
 
+  }
+
+  override fun onClick(row: View?) {
+    TODO("Not yet implemented")
   }
 
 

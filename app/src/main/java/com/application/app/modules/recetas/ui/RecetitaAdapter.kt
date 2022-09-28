@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.application.app.R
 
 
-class RecetitaAdapter (private val recetasList: ArrayList<Receta>) : RecyclerView.Adapter<RecetitaAdapter.MyViewHolder>(){
+class RecetitaAdapter (private val recetasList: ArrayList<Receta>) : RecyclerView.Adapter<RecetitaAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecetitaAdapter.MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.row_new_receta, parent, false)
@@ -33,6 +33,8 @@ class RecetitaAdapter (private val recetasList: ArrayList<Receta>) : RecyclerVie
         val titulo : TextView = itemView.findViewById(R.id.receta_titulo)
         val ingredientes : TextView = itemView.findViewById(R.id.receta_ingredientes)
     }
+
+
 
 
 
