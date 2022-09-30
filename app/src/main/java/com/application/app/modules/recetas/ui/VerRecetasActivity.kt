@@ -31,24 +31,7 @@ import com.android.volley.toolbox.Volley
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.toObject
 
-class VerRecetasActivity : AppCompatActivity(), View.OnClickListener{
-
-  //private val viewModel: RecetasVM by viewModels<RecetasVM>()
-
-  //Ya alv hay que hacerlo como en la act 4
-
-  lateinit var recyclerView: RecyclerView
-  lateinit var recetaArrayList : ArrayList<Receta>
-  lateinit var myAdapter: RecetitaAdapter
-  lateinit var db: FirebaseFirestore
-
-  /*
-  lateinit var llm: LinearLayoutManager
-
-  lateinit var titulos: ArrayList<String>
-  lateinit var ingredientes: ArrayList<String>
-
-   */
+class VerRecetasActivity : AppCompatActivity(){
 
   lateinit var titulo : TextView
 
@@ -56,6 +39,7 @@ class VerRecetasActivity : AppCompatActivity(), View.OnClickListener{
   lateinit var info: LinearLayout
   lateinit var flecha: ImageView
 
+  lateinit var fragmentVerReceta: FragmentVerReceta
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -64,82 +48,20 @@ class VerRecetasActivity : AppCompatActivity(), View.OnClickListener{
       titulo = findViewById(R.id.txtH5)
       titulo.text = "RECETAS"
 
-      recyclerView = findViewById(R.id.recyclerViewRecetas)
-      recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-      recyclerView.setHasFixedSize(true)
-
-      recetaArrayList = arrayListOf()
-
-      myAdapter = RecetitaAdapter(recetaArrayList)
-      recyclerView.adapter = myAdapter
 
       home = findViewById(R.id.linear1Tab)
       info = findViewById(R.id.linearColumnvolume)
       flecha = findViewById(R.id.imageArrowleft)
 
-      eventChangeListener()
+      fragmentVerReceta = FragmentVerReceta()
+      val titulo = intent.getStringExtra("titulo").toString()
+      val ingredientes = intent.getStringExtra("ingredientes").toString()
+      val descripcion = intent.getStringExtra("descripcion").toString()
 
-      /*
-
-      titulos = ArrayList()
-      ingredientes = ArrayList()
-
-      recyclerView = findViewById(R.id.recyclerViewRecetas)
-
-
-    val llm = LinearLayoutManager(this)
-    llm.orientation = LinearLayoutManager.VERTICAL
-
-      val glm = GridLayoutManager(this, 2)
-
-      recyclerView.layoutManager = llm
-
-
-    db = FirebaseFirestore.getInstance()
-    //recetitaArrayList = arrayListOf(Recetita())
-    //recetitaAdapter = RecetitaAdapter(this, recetitaArrayList)
-
-    //recyclerView.adapter = recetitaAdapter;
-
-      val coleccion = Firebase.firestore.collection("recipes")
-      val queryTask = coleccion.get()
-
-      queryTask.addOnSuccessListener { result ->
-          //algo sencillo - recorrer datos
-          Toast.makeText(
-              this,
-              "Query exitoso",
-              Toast.LENGTH_SHORT
-          ).show()
-
-          var cont = 0
-          for(documentoActual in result) {
-              cont +=1
-              //Log.wtf("Firestore", "${documentoActual.data.size}")
-
-              titulos.add(documentoActual.data["title"].toString())
-              ingredientes.add(documentoActual.data["ingredients"].toString())
-
-
-          }
-          Log.wtf("Firestore", "$titulos, $ingredientes")
-          val adapter = RecetitaAdapter(titulos, ingredientes, this)
-          recyclerView.layoutManager = llm
-          recyclerView.adapter = adapter
-
-
-          Log.wtf("Firestore", "$llm")
-
-
-
-
-      }.addOnFailureListener{ error ->
-          Log.wtf("Firestore", "Error en query: $error")
-      }
-
-
-       */
-
+      fragmentVerReceta = FragmentVerReceta.newInstance(titulo, ingredientes, descripcion)
+      val transaction = supportFragmentManager.beginTransaction()
+      transaction.add(R.id.fragmentContainerView3, fragmentVerReceta)
+      transaction.commit()
 
 
 
@@ -148,10 +70,6 @@ class VerRecetasActivity : AppCompatActivity(), View.OnClickListener{
   }
 
 
-  private fun eventChangeListener() {
-
-
-  }
 
     fun goHome(view: View?){
         val intent = Intent(this, MenPrincipalActivity::class.java)
@@ -164,6 +82,7 @@ class VerRecetasActivity : AppCompatActivity(), View.OnClickListener{
 
     fun verMas(view: View?){
 
+
     }
 
 
@@ -172,9 +91,7 @@ class VerRecetasActivity : AppCompatActivity(), View.OnClickListener{
 
   }
 
-  override fun onClick(row: View?) {
-    TODO("Not yet implemented")
-  }
+
 
 
 

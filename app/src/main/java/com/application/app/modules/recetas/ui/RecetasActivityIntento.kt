@@ -1,6 +1,6 @@
 package com.application.app.modules.recetas.ui
 
-import android.content.Intent
+
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -31,6 +31,9 @@ import com.android.volley.toolbox.Volley
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.toObject
 
+import android.content.Intent
+
+
 class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
   //private val viewModel: RecetasVM by viewModels<RecetasVM>()
@@ -56,6 +59,8 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
   lateinit var info: LinearLayout
   lateinit var flecha: ImageView
 
+  lateinit var verRecetaFragment: FragmentVerReceta
+
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -70,94 +75,23 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
       recetaArrayList = arrayListOf()
 
-      myAdapter = RecetitaAdapter(recetaArrayList)
+      myAdapter = RecetitaAdapter(recetaArrayList, this)
       recyclerView.adapter = myAdapter
 
       home = findViewById(R.id.linear1Tab)
       info = findViewById(R.id.linearColumnvolume)
       flecha = findViewById(R.id.imageArrowleft)
 
+      verRecetaFragment = FragmentVerReceta()
+
+
+
+
       eventChangeListener()
-
-      /*
-
-      titulos = ArrayList()
-      ingredientes = ArrayList()
-
-      recyclerView = findViewById(R.id.recyclerViewRecetas)
-
-
-    val llm = LinearLayoutManager(this)
-    llm.orientation = LinearLayoutManager.VERTICAL
-
-      val glm = GridLayoutManager(this, 2)
-
-      recyclerView.layoutManager = llm
-
-
-    db = FirebaseFirestore.getInstance()
-    //recetitaArrayList = arrayListOf(Recetita())
-    //recetitaAdapter = RecetitaAdapter(this, recetitaArrayList)
-
-    //recyclerView.adapter = recetitaAdapter;
-
-      val coleccion = Firebase.firestore.collection("recipes")
-      val queryTask = coleccion.get()
-
-      queryTask.addOnSuccessListener { result ->
-          //algo sencillo - recorrer datos
-          Toast.makeText(
-              this,
-              "Query exitoso",
-              Toast.LENGTH_SHORT
-          ).show()
-
-          var cont = 0
-          for(documentoActual in result) {
-              cont +=1
-              //Log.wtf("Firestore", "${documentoActual.data.size}")
-
-              titulos.add(documentoActual.data["title"].toString())
-              ingredientes.add(documentoActual.data["ingredients"].toString())
-
-
-          }
-          Log.wtf("Firestore", "$titulos, $ingredientes")
-          val adapter = RecetitaAdapter(titulos, ingredientes, this)
-          recyclerView.layoutManager = llm
-          recyclerView.adapter = adapter
-
-
-          Log.wtf("Firestore", "$llm")
-
-
-
-
-      }.addOnFailureListener{ error ->
-          Log.wtf("Firestore", "Error en query: $error")
-      }
-
-
-       */
 
   }
 
-    override fun onClick(p0: View) {
 
-        val position3 = p0?.id
-        Log.wtf("Firestore", "$position3")
-
-        val position = p0?.let { recyclerView.getChildLayoutPosition(it) }
-        Log.wtf("Firestore", "$position")
-
-        val position2 = p0?.let { recyclerView.getChildAdapterPosition(it) }
-        Log.wtf("Firestore", "$position2")
-
-        val position4 = recyclerView.getChildLayoutPosition(p0)
-        Toast.makeText(this, "id: $position4", Toast.LENGTH_SHORT).show()
-        Log.wtf("Firestore", "$position4")
-
-    }
 
 
     private fun eventChangeListener() {
@@ -202,7 +136,22 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
   }
 
+    override fun onClick(p0: View?) {
+        val position = p0?.let { recyclerView.getChildLayoutPosition(it) }
+        Log.wtf("Firestore", "id: $position")
+        Toast.makeText(this, "id: $position", Toast.LENGTH_SHORT).show()
+        Log.wtf("Firestore", "lista: ${recetaArrayList[position!!]}")
 
+        val intent = Intent(this, VerRecetasActivity::class.java)
+        intent.putExtra("titulo", recetaArrayList[position].title)
+        intent.putExtra("ingredientes", recetaArrayList[position].ingredients)
+        intent.putExtra("descripcion", recetaArrayList[position].description)
+
+        startActivity(intent)
+
+    }
 
 
 }
+
+
