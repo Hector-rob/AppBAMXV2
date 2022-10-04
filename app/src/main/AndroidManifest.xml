@@ -25,6 +25,7 @@
             android:name=".modules.dinero.ui.DineroActivity"
         -->
         android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".modules.iniciozero.ui.IniciozeroActivity"
             android:exported="true"
