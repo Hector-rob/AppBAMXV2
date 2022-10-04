@@ -24,16 +24,29 @@
             android:exported="false" />
             android:name=".modules.dinero.ui.DineroActivity"
         -->
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".modules.iniciozero.ui.IniciozeroActivity"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".modules.seleccinalimentos.ui.CanastaBasicaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".modules.seleccinalimentos.ui.AbarrotesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".modules.seleccinalimentos.ui.EmbutidosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".modules.seleccinalimentos.ui.FrutasYVerdurasActivity"
+            android:exported="false" />
         <activity
             android:name=".FormularioComun"
             android:exported="false" />

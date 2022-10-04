@@ -73,7 +73,7 @@
             android:layout_marginHorizontal="@dimen/_28pxh"
             android:layout_marginVertical="@dimen/_28pxv"
             android:layout_width="match_parent" android:orientation="vertical">
-            <ImageView android:id="@+id/imageRedApplePNGC"
+            <ImageView android:id="@+id/imageArticulo"
                 android:layout_gravity="start"
                 android:layout_height="@dimen/_64pxh"
                 android:layout_width="@dimen/_94pxh"
@@ -82,7 +82,7 @@
                 tools:ignore="ContentDescription" tools:src="@drawable/img_redapplepngc"/>
             <TextView android:ellipsize="end"
                 android:gravity="center_horizontal"
-                android:id="@+id/txtMANZANA"
+                android:id="@+id/txtArticulo"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_22pxh"
                 android:layout_marginStart="@dimen/_22pxh"
