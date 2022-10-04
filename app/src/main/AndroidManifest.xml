@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.application.app" >
+    package="com.application.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,13 +14,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp"
-        android:usesCleartextTraffic="true" >
-
-
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".modules.iniciozero.ui.IniciozeroActivity"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,12 +26,23 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".modules.seleccinalimentos.ui.CanastaBasicaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".modules.seleccinalimentos.ui.AbarrotesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".modules.seleccinalimentos.ui.EmbutidosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".modules.seleccinalimentos.ui.FrutasYVerdurasActivity"
+            android:exported="false" />
+        <activity
             android:name=".FormularioComun"
             android:exported="false" />
         <activity
             android:name=".modules.recetas.ui.RecetasActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".modules.voluntariado.MainActivity"
             android:screenOrientation="portrait" />
@@ -46,7 +55,6 @@
         <activity
             android:name=".modules.higieneylimpieza.ui.HigieneYLimpiezaActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".modules.voluntariado.ui.VoluntariadoActivity"
             android:screenOrientation="portrait" />

@@ -112,4 +112,11 @@ verdura</string>
     <string name="lbl_estado">Estado de residencia *</string>
     <string name="item">Artículo seleccionado</string>
     <string name="ingrese">INGRESE SUS DATOS</string>
+    <string name="lbl_canasta_basica">CANASTA BÁSICA</string>
+    <string name="lbl_frutas_verduras">Frutas y Verduras</string>
+    <string name="lbl_embutidos_y_lacteos">Embutidos y Lácteos</string>
+    <string name="lbl_plus">+</string>
+    <string name="lbl_minus">-</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
