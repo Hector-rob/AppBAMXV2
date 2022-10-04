@@ -45,6 +45,14 @@
             android:name=".modules.recetas.ui.RecetasActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".modules.recetas.ui.VerRecetasActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".modules.recetas.ui.RecetasActivityIntento"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".modules.voluntariado.MainActivity"
             android:screenOrientation="portrait" />
         <activity

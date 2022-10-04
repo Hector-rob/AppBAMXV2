@@ -38,19 +38,24 @@
                     android:layout_marginTop="@dimen/_10pxv"
                     android:layout_width="match_parent"
                     android:orientation="vertical" style="@style/groupStylewhite_A700">
-                    <TextView android:ellipsize="end"
-                        android:gravity="end" android:id="@+id/txtH5"
+
+                    <TextView
+                        android:id="@+id/txtH5"
+                        style="@style/txt_1"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="@dimen/_21pxv"
-                        android:layout_marginEnd="@dimen/_101pxh"
                         android:layout_marginStart="@dimen/_101pxh"
                         android:layout_marginTop="@dimen/_42pxv"
-                        android:layout_width="match_parent"
+                        android:layout_marginEnd="@dimen/_101pxh"
+                        android:layout_marginBottom="@dimen/_21pxv"
+                        android:ellipsize="end"
+                        android:gravity="end"
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
                         android:text="@{recetasVM.recetasModel.txtH5}"
-                        style="@style/txt_1" tools:text="@string/lbl_recetas2"/>
+                        android:textAlignment="center"
+                        tools:text="@string/lbl_recetas2" />
                 </LinearLayout>
                 <FrameLayout android:id="@+id/frameStackbamxlogotwo"
                     android:layout_gravity="top|start"
