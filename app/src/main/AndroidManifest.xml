@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.application.app" >
+    package="com.application.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,9 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp"
-        android:usesCleartextTraffic="true" >
+        android:windowSoftInputMode="stateHidden"
+        android:usesCleartextTraffic="true">
 
-
+        <!--
+        <activity
+            android:name=".Stripe"
+            android:name=".modules.iniciozero.ui.IniciozeroActivity"
+            android:exported="false" />
+            android:name=".modules.dinero.ui.DineroActivity"
+        -->
         <activity
             android:name=".modules.iniciozero.ui.IniciozeroActivity"
             android:exported="true"
@@ -30,10 +37,13 @@
         <activity
             android:name=".FormularioComun"
             android:exported="false" />
+
+        <activity
+            android:name=".Stripe"
+            android:exported="false" />
         <activity
             android:name=".modules.recetas.ui.RecetasActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".modules.recetas.ui.VerRecetasActivity"
             android:screenOrientation="portrait" />
@@ -54,7 +64,6 @@
         <activity
             android:name=".modules.higieneylimpieza.ui.HigieneYLimpiezaActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".modules.voluntariado.ui.VoluntariadoActivity"
             android:screenOrientation="portrait" />
@@ -94,9 +103,19 @@
         <activity
             android:name=".modules.seleccinalimentos.ui.SelecciNAlimentosActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".modules.dinero.ui.DineroActivity"
+            android:exported="true"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait" />
+
+
+        <!--
         <activity
             android:name=".modules.dinero.ui.DineroActivity"
             android:screenOrientation="portrait" />
+            -->
     </application>
 
 </manifest>
