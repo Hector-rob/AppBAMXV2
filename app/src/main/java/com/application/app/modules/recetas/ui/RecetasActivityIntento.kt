@@ -84,9 +84,6 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
       verRecetaFragment = FragmentVerReceta()
 
-
-
-
       eventChangeListener()
 
   }
