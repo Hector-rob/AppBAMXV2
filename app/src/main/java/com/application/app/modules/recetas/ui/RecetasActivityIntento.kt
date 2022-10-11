@@ -1,37 +1,19 @@
 package com.application.app.modules.recetas.ui
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.viewModels
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.appcompat.widget.SearchView
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.application.app.R
-import com.application.app.appcomponents.base.BaseActivity
-import com.application.app.databinding.ActivityRecetasBinding
-import com.application.app.modules.favoritos.ui.FavoritosActivity
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
-import com.application.app.modules.recetas.data.model.RecetasRowModel
-import com.application.app.modules.recetas.data.viewmodel.RecetasVM
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-
-import com.android.volley.Request
-import com.android.volley.RequestQueue
-import com.android.volley.toolbox.JsonArrayRequest
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
 import com.google.firebase.firestore.*
-import com.google.firebase.firestore.ktx.toObject
-
-import android.content.Intent
 
 
 class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
@@ -44,6 +26,9 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
   lateinit var recetaArrayList : ArrayList<Receta>
   lateinit var myAdapter: RecetitaAdapter
   lateinit var db: FirebaseFirestore
+
+  lateinit var filteredList : ArrayList<Receta>
+
 
   /*
   lateinit var llm: LinearLayoutManager
@@ -61,6 +46,8 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
   lateinit var verRecetaFragment: FragmentVerReceta
 
+  lateinit var searchView: SearchView
+
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -75,6 +62,11 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
       recetaArrayList = arrayListOf()
 
+      filteredList = arrayListOf()
+
+
+
+
       myAdapter = RecetitaAdapter(recetaArrayList, this)
       recyclerView.adapter = myAdapter
 
@@ -82,13 +74,51 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
       info = findViewById(R.id.linearColumnvolume)
       flecha = findViewById(R.id.imageArrowleft)
 
+      searchView = findViewById(R.id.searchView)
+      searchView.clearFocus()
+      searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+          override fun onQueryTextSubmit(query: String?): Boolean {
+              filterList(query)
+              return false;
+          }
+
+          override fun onQueryTextChange(newText: String?): Boolean {
+              //filterList(newText)
+              return true;
+          }
+
+      })
+
+
+
       verRecetaFragment = FragmentVerReceta()
 
       eventChangeListener()
 
   }
 
+    private fun filterList(text: String?) {
 
+        for (receta in recetaArrayList){
+            if(receta.title.toString().contains(text.toString()) or receta.ingredients.toString().contains(text.toString())){
+
+                filteredList.add(receta)
+                Log.wtf("lista", "$filteredList")
+            }
+
+        }
+
+        if(filteredList.isEmpty()){
+            Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show()
+        }
+        else {
+            myAdapter.setFilteredList(filteredList)
+        }
+
+
+
+
+    }
 
 
     private fun eventChangeListener() {
@@ -136,7 +166,7 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
     override fun onClick(p0: View?) {
         val position = p0?.let { recyclerView.getChildLayoutPosition(it) }
         Log.wtf("Firestore", "id: $position")
-        Toast.makeText(this, "id: $position", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "id: $position", Toast.LENGTH_SHORT).show()
         Log.wtf("Firestore", "lista: ${recetaArrayList[position!!]}")
 
         val intent = Intent(this, VerRecetasActivity::class.java)
@@ -150,5 +180,7 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
 
 }
+
+
 
 
