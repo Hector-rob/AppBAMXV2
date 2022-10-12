@@ -100,6 +100,7 @@ class RecetasFiltradasActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
 
+
         if(filteredList.isEmpty()){
             Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show()
             //myAdapter.setFilteredList(recetaArrayList)
