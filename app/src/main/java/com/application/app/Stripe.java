@@ -60,7 +60,9 @@ public class Stripe extends AppCompatActivity {
         money = findViewById(R.id.money);
         Intent intent = getIntent();
         amt = intent.getIntExtra("dinero",0);
-        hashMap = (HashMap<String, String>)intent.getSerializableExtra("donor");        money.setText("Cantidad a donar: " + amt.toString());
+        money.setText("Cantidad a donar: " + amt.toString());
+        hashMap = (HashMap<String, String>)intent.getSerializableExtra("donor");
+        Log.wtf("JSON",amt.toString());
 
        money.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -80,11 +82,11 @@ public class Stripe extends AppCompatActivity {
 
         });
 
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PaymentFlow();
-
             }
         });
 
@@ -128,6 +130,9 @@ public class Stripe extends AppCompatActivity {
     private void onPaymentResult(PaymentSheetResult paymentSheetResult) {
         if(paymentSheetResult instanceof PaymentSheetResult.Completed){
             Toast.makeText(this,"payment success",Toast.LENGTH_SHORT).show();
+            Intent myIntent = new Intent(Stripe.this, MensajeDonaciNActivity.class);
+            myIntent.putExtra("donation", hashMap); //Optional parameters
+            Stripe.this.startActivity(myIntent);
         }
     }
 
@@ -233,10 +238,9 @@ public class Stripe extends AppCompatActivity {
                                 customerID,
                                 EphericalKey
                         ))
+
         );
-        Intent myIntent = new Intent(Stripe.this, MensajeDonaciNActivity.class);
-        myIntent.putExtra("donation", hashMap); //Optional parameters
-        Stripe.this.startActivity(myIntent);
+
 
 
     }

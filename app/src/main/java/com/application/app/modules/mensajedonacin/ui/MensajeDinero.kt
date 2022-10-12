@@ -2,7 +2,9 @@ package com.application.app.modules.mensajedonacin.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.application.app.R
 import com.google.firebase.firestore.CollectionReference
@@ -17,13 +19,21 @@ class MensajeDinero : AppCompatActivity() {
 
     fun subirDatos(view: View?){
 
-        val hash= intent.getSerializableExtra("hashMap") as HashMap<String, String>?
+        val hash= intent.getSerializableExtra("donation") as HashMap<String, String>?
 
 
         val collection : CollectionReference =
             Firebase.firestore.collection("donors")
 
-        val taskAdd = collection.add(hash)
+        val taskAdd = hash!!.let { collection.add(it) }
+        taskAdd.addOnSuccessListener { documentReference ->
+            Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener{error ->
+            Toast.makeText(this, "Error al guardar datos", Toast.LENGTH_SHORT).show()
+
+            Log.e("Firestore","error: $error")
+
+        }
 
         val intent = Intent(this,MensajeDonaciNActivity::class.java)
         startActivity(intent)
