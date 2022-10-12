@@ -245,22 +245,6 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <androidx.fragment.app.FragmentContainerView
-                            android:id="@+id/fragment13"
-                            android:name="com.application.app.modules.seleccinalimentos.ui.articuloFragment"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            tools:layout="@layout/fragment_articulo" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
                         android:layout_height="50dp">
 
                     </LinearLayout>
@@ -286,6 +270,7 @@
                 android:singleLine="true"
                 android:text="@string/lbl_donar"
                 android:textAllCaps="true"
+                android:onClick="btnDonar"
                 style="@style/btnSolidRounded_2" tools:text="@string/lbl_donar"/>
         </LinearLayout>
         <FrameLayout android:gravity="center_horizontal"
