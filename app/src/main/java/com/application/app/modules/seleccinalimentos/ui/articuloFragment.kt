@@ -14,10 +14,12 @@ import org.w3c.dom.Text
 
 private const val IMAGE = "image"
 private const val NAME = "name"
+private const val AMOUNT = "amount"
 
 class articuloFragment() : Fragment() {
     private var image: String? = null
     private var name: String? = null
+    private var amount: String? = null
 
     lateinit var image_view: ImageView
     lateinit var name_text: TextView
@@ -30,6 +32,7 @@ class articuloFragment() : Fragment() {
         arguments?.let {
             image = it.getString(IMAGE)
             name = it.getString(NAME)
+            amount = it.getString(AMOUNT)
         }
 
     }
@@ -60,6 +63,7 @@ class articuloFragment() : Fragment() {
             val prevAmount = amount_text.text.toString().toInt()
             val newAmount = prevAmount + 1
             amount_text.text = newAmount.toString()
+            amount = amount_text.text.toString()
         }
 
         lessBtn.setOnClickListener {
@@ -67,20 +71,30 @@ class articuloFragment() : Fragment() {
             if(prevAmount >= 1){
                 val newAmount = prevAmount - 1
                 amount_text.text = newAmount.toString()
+                amount = amount_text.text.toString()
             }
         }
 
         return view
     }
 
+    fun getAmount(): Int{
+        return amount_text.toString().toInt()
+    }
+
+    fun getName(): String?{
+        return name
+    }
+
 
     companion object {
         @JvmStatic
-        fun newInstance(image: String, name: String): articuloFragment {
+        fun newInstance(image: String, name: String, amount: String): articuloFragment {
             val result = articuloFragment()
             val bundle = Bundle()
             bundle.putString(IMAGE, image)
             bundle.putString(NAME, name)
+            bundle.putString(AMOUNT, amount)
             result.arguments = bundle
 
             return result

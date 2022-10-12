@@ -220,6 +220,7 @@
                 android:singleLine="true"
                 android:text="@string/lbl_donar"
                 android:textAllCaps="true"
+                android:onClick="btnDonar"
                 style="@style/btnSolidRounded_2" tools:text="@string/lbl_donar"/>
         </LinearLayout>
         <FrameLayout android:gravity="center_horizontal"

@@ -5,10 +5,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.application.app.FormularioComun
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.databinding.ActivityAbarrotesBinding
@@ -48,7 +51,7 @@ class AbarrotesActivity :
             val name = key.toString()
             val imgLink = products[name].toString()
             Log.e("abarrotes", "img link: $imgLink, name: $name")
-            val frag: articuloFragment = articuloFragment.newInstance(imgLink, name)
+            val frag: articuloFragment = articuloFragment.newInstance(imgLink, name, "0")
             fragments.add(frag)
         }
         updateFragments()
@@ -64,6 +67,61 @@ class AbarrotesActivity :
         fragTransaction.replace(R.id.fragment7, fragments[6])
 
         fragTransaction.commit()
+    }
+
+    private fun Donar(): HashMap<String, Int> {
+        val frag1 = fragMng.findFragmentById(R.id.fragment1) to articuloFragment
+        val frag2 = fragMng.findFragmentById(R.id.fragment2) to articuloFragment
+        val frag3 = fragMng.findFragmentById(R.id.fragment3) to articuloFragment
+        val frag4 = fragMng.findFragmentById(R.id.fragment4) to articuloFragment
+        val frag5 = fragMng.findFragmentById(R.id.fragment5) to articuloFragment
+        val frag6 = fragMng.findFragmentById(R.id.fragment6) to articuloFragment
+        val frag7 = fragMng.findFragmentById(R.id.fragment7) to articuloFragment
+
+        val name1 = frag1.first?.view?.findViewById<TextView>(R.id.txtArticulo)?.text.toString()
+        val amount1 =
+            frag1.first?.view?.findViewById<TextView>(R.id.amount)?.text.toString().toInt()
+
+        val name2 = frag2.first?.view?.findViewById<TextView>(R.id.txtArticulo)?.text.toString()
+        val amount2 =
+            frag2.first?.view?.findViewById<TextView>(R.id.amount)?.text.toString().toInt()
+
+        val name3 = frag3.first?.view?.findViewById<TextView>(R.id.txtArticulo)?.text.toString()
+        val amount3 =
+            frag3.first?.view?.findViewById<TextView>(R.id.amount)?.text.toString().toInt()
+
+        val name4 = frag4.first?.view?.findViewById<TextView>(R.id.txtArticulo)?.text.toString()
+        val amount4 =
+            frag4.first?.view?.findViewById<TextView>(R.id.amount)?.text.toString().toInt()
+
+        val name5 = frag5.first?.view?.findViewById<TextView>(R.id.txtArticulo)?.text.toString()
+        val amount5 =
+            frag5.first?.view?.findViewById<TextView>(R.id.amount)?.text.toString().toInt()
+
+        val name6 = frag6.first?.view?.findViewById<TextView>(R.id.txtArticulo)?.text.toString()
+        val amount6 =
+            frag6.first?.view?.findViewById<TextView>(R.id.amount)?.text.toString().toInt()
+
+        val name7 = frag7.first?.view?.findViewById<TextView>(R.id.txtArticulo)?.text.toString()
+        val amount7 =
+            frag7.first?.view?.findViewById<TextView>(R.id.amount)?.text.toString().toInt()
+
+        return hashMapOf(
+            name1 to amount1,
+            name2 to amount2,
+            name3 to amount3,
+            name4 to amount4,
+            name5 to amount5,
+            name6 to amount6,
+            name7 to amount7,
+        )
+    }
+
+    fun btnDonar(view: View){
+        val foodDonations = Donar()
+        val intent = Intent(this, FormularioComun::class.java)
+        intent.putExtra("donation", foodDonations)
+        startActivity(intent)
     }
 
     override fun setUpClicks(): Unit {
