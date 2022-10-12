@@ -19,6 +19,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.ktx.Firebase;
 import com.stripe.android.PaymentConfiguration;
 import com.stripe.android.paymentsheet.PaymentSheet;
 import com.stripe.android.paymentsheet.PaymentSheetResult;
@@ -40,6 +43,7 @@ public class Stripe extends AppCompatActivity {
     TextView money;
     Boolean focus = true;
     Integer amt;
+    HashMap<String, String> hashMap;
 
 
 
@@ -56,7 +60,7 @@ public class Stripe extends AppCompatActivity {
         money = findViewById(R.id.money);
         Intent intent = getIntent();
         amt = intent.getIntExtra("dinero",0);
-        money.setText("Cantidad a donar: " + amt.toString());
+        hashMap = (HashMap<String, String>)intent.getSerializableExtra("donor");        money.setText("Cantidad a donar: " + amt.toString());
 
        money.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -230,5 +234,10 @@ public class Stripe extends AppCompatActivity {
                                 EphericalKey
                         ))
         );
+        Intent myIntent = new Intent(Stripe.this, MensajeDonaciNActivity.class);
+        myIntent.putExtra("donation", hashMap); //Optional parameters
+        Stripe.this.startActivity(myIntent);
+
+
     }
 }

@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.application.app.DineroFormulario
 import com.application.app.FormularioComun
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
@@ -11,6 +12,7 @@ import com.application.app.databinding.ActivityDonacionesBinding
 import com.application.app.modules.alimentos.ui.AlimentosActivity
 import com.application.app.modules.dinero.ui.DineroActivity
 import com.application.app.modules.donaciones.`data`.viewmodel.DonacionesVM
+import com.application.app.modules.donaciones.ui.DonacionesActivity.Companion.getIntent
 import com.application.app.modules.higieneylimpieza.ui.HigieneYLimpiezaActivity
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.application.app.modules.voluntariado.ui.VoluntariadoActivity
@@ -48,7 +50,7 @@ class DonacionesActivity : BaseActivity<ActivityDonacionesBinding>(R.layout.acti
       startActivity(destIntent)
     }
     binding.btnDinero.setOnClickListener {
-      val destIntent = DineroActivity.getIntent(this, null)
+      val destIntent = Intent(this,DineroFormulario::class.java)
       startActivity(destIntent)
     }
   }

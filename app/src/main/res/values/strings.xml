@@ -9,6 +9,7 @@
     <string name="msg_apellido_patern2">Apellido paterno</string>
     <string name="msg_embutidos_y_l_c">Embutidos y
 lácteos</string>
+    <string name="cantDinero">Cantidad a donar: </string>
     <string name="msg_quiero_donar_lo">QUIERO DONAR LO EQUIVALENTE A:</string>
     <string name="lbl_receta_6">Receta 6</string>
     <string name="msg_rescatamos_135">Rescatamos 135,504,773 kg de alimento
@@ -119,4 +120,5 @@ verdura</string>
     <string name="lbl_plus">+</string>
     <string name="lbl_minus">-</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
