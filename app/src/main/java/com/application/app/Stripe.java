@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,8 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.ktx.Firebase;
+
 import com.stripe.android.PaymentConfiguration;
 import com.stripe.android.paymentsheet.PaymentSheet;
 import com.stripe.android.paymentsheet.PaymentSheetResult;
@@ -41,15 +39,8 @@ public class Stripe extends AppCompatActivity {
     String EphericalKey;
     String ClientSecret;
     TextView money;
-    Boolean focus = true;
     Integer amt;
     HashMap<String, String> hashMap;
-
-
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,18 +54,6 @@ public class Stripe extends AppCompatActivity {
         money.setText("Cantidad a donar: " + amt.toString());
         hashMap = (HashMap<String, String>)intent.getSerializableExtra("donor");
         Log.wtf("JSON",amt.toString());
-
-       money.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean hasFocus) {
-                if(!hasFocus && money.getText().toString() != null){
-                    focus = false;
-                    Log.wtf("JSON","Sin focus");
-                }
-
-            }
-        });
-
 
         PaymentConfiguration.init(this, PUBLISH_KEY);
         paymentSheet = new PaymentSheet(this, paymentSheetResult -> {
@@ -240,8 +219,5 @@ public class Stripe extends AppCompatActivity {
                         ))
 
         );
-
-
-
     }
 }
