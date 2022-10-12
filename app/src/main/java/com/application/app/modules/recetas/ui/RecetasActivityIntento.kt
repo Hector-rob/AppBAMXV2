@@ -18,10 +18,6 @@ import com.google.firebase.firestore.*
 
 class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
-  //private val viewModel: RecetasVM by viewModels<RecetasVM>()
-
-  //Ya alv hay que hacerlo como en la act 4
-
   lateinit var recyclerView: RecyclerView
   lateinit var recetaArrayList : ArrayList<Receta>
   lateinit var myAdapter: RecetitaAdapter
@@ -71,6 +67,8 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
       info = findViewById(R.id.linearColumnvolume)
       flecha = findViewById(R.id.imageArrowleft)
 
+
+        /*
       searchView = findViewById(R.id.searchView)
       searchView.clearFocus()
       searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
@@ -87,13 +85,15 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
       })
 
-
+         */
 
       verRecetaFragment = FragmentVerReceta()
 
       eventChangeListener()
 
   }
+
+    /*
 
     private fun filterList(text: String?) {
 
@@ -115,6 +115,8 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
             myAdapter.setFilteredList(filteredList)
         }
     }
+
+     */
 
 
     private fun eventChangeListener() {
@@ -148,6 +150,11 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
     fun regresar(view: View?){
         finish()
+    }
+
+    fun buscar(view: View?){
+        val intent = Intent(this, RecetasFiltradasActivity::class.java)
+        startActivity(intent)
     }
 
 

@@ -17,8 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rectangle_bg_white_a700"
-        android:drawableEnd="@drawable/img_favorite"
-        android:drawablePadding="@dimen/_30pxh"
+
         android:ellipsize="end"
         android:hint="@string/lbl_receta_1"
         android:letterSpacing="0.01"

@@ -14,9 +14,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp"
-        android:windowSoftInputMode="stateHidden"
-        android:usesCleartextTraffic="true">
-
+        android:usesCleartextTraffic="true"
+        android:windowSoftInputMode="stateHidden">
+        <activity
+            android:name=".RecetasFiltradasActivity"
+            android:exported="false" />
         <!--
         <activity
             android:name=".Stripe"
@@ -27,7 +29,7 @@
         <activity
             android:name=".modules.iniciozero.ui.IniciozeroActivity"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,21 +39,23 @@
         <activity
             android:name=".FormularioComun"
             android:exported="false" />
-
         <activity
             android:name=".Stripe"
             android:exported="false" />
         <activity
             android:name=".modules.recetas.ui.RecetasActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".modules.recetas.ui.RecetasFiltradasActivity"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".modules.recetas.ui.VerRecetasActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".modules.recetas.ui.RecetasActivityIntento"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".modules.voluntariado.MainActivity"
             android:screenOrientation="portrait" />
@@ -103,19 +107,11 @@
         <activity
             android:name=".modules.seleccinalimentos.ui.SelecciNAlimentosActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".modules.dinero.ui.DineroActivity"
             android:exported="true"
-            android:windowSoftInputMode="stateHidden"
-            android:screenOrientation="portrait" />
-
-
-        <!--
-        <activity
-            android:name=".modules.dinero.ui.DineroActivity"
-            android:screenOrientation="portrait" />
-            -->
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>
