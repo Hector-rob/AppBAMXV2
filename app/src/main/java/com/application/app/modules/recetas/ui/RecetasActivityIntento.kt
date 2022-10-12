@@ -114,8 +114,6 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
         else {
             myAdapter.setFilteredList(filteredList)
         }
-
-
     }
 
 
