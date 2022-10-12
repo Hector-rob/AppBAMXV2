@@ -64,9 +64,6 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
       filteredList = arrayListOf()
 
-
-
-
       myAdapter = RecetitaAdapter(recetaArrayList, this)
       recyclerView.adapter = myAdapter
 
@@ -77,6 +74,7 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
       searchView = findViewById(R.id.searchView)
       searchView.clearFocus()
       searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+
           override fun onQueryTextSubmit(query: String?): Boolean {
               filterList(query)
               return false;
@@ -100,22 +98,22 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
     private fun filterList(text: String?) {
 
         for (receta in recetaArrayList){
-            if(receta.title.toString().contains(text.toString()) or receta.ingredients.toString().contains(text.toString())){
+            if(receta.title.toString().lowercase().contains(text.toString().lowercase())
+                or receta.ingredients.toString().lowercase().contains(text.toString().lowercase())){
 
                 filteredList.add(receta)
                 Log.wtf("lista", "$filteredList")
             }
-
         }
 
         if(filteredList.isEmpty()){
             Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show()
+            //myAdapter.setFilteredList(recetaArrayList)
+
         }
         else {
             myAdapter.setFilteredList(filteredList)
         }
-
-
 
 
     }
@@ -140,9 +138,6 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
                       myAdapter.notifyDataSetChanged()
                   }
               })
-
-
-
 
   }
 

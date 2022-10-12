@@ -38,8 +38,6 @@ class RecetitaAdapter (private var recetasList: ArrayList<Receta>, val listener:
 
     public fun setFilteredList(filteredList: ArrayList<Receta>){
 
-        //Log.wtf("Lista", "$filteredList")
-
         this.recetasList = filteredList
         notifyDataSetChanged()
 

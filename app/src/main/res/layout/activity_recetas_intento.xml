@@ -121,9 +121,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:background="@drawable/search_view_bg"
-                android:textColorHint = "@android:color/white"
-                app:queryHint="Buscar..."
-                app:iconifiedByDefault="false">
+                android:textColorHint="@android:color/black"
+                app:iconifiedByDefault="false"
+                app:queryHint="Buscar...">
+
 
             </androidx.appcompat.widget.SearchView>
 
