@@ -148,7 +148,6 @@ class RecetasFiltradasActivity : AppCompatActivity(), View.OnClickListener {
 
     companion object {
         const val TAG: String = "RECETAS_ACTIVITY"
-
     }
 
     override fun onClick(p0: View?) {
