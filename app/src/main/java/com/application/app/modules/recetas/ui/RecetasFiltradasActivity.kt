@@ -1,6 +1,8 @@
 package com.application.app.modules.recetas.ui
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -44,6 +46,9 @@ class RecetasFiltradasActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var searchView: SearchView
 
+    var ARCHIVO_PREFS = "preferencias.prefs"
+    private lateinit var sharedPrefs: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recetas_filtradas)
@@ -80,6 +85,24 @@ class RecetasFiltradasActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         })
+
+        //para guardar recetas
+        sharedPrefs = getSharedPreferences(ARCHIVO_PREFS, Context.MODE_PRIVATE)
+
+        //Editar sharedpref
+        val editor: SharedPreferences.Editor = sharedPrefs.edit()
+
+        var titulito: String
+        var ingredientitos:String
+        var descripcioncita:String
+
+
+        for (i in 0 until 2) {
+            titulito = sharedPrefs.getString("title: $i", "No hay datos").toString()
+            ingredientitos = sharedPrefs.getString("ingredients: $i", "No hay datos").toString()
+            descripcioncita = sharedPrefs.getString("description: $i", "No hay datos").toString()
+            recetaArrayList.add(Receta(titulito, ingredientitos, descripcioncita))
+        }
 
 
 

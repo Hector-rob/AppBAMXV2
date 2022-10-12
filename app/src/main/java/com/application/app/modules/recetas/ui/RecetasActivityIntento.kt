@@ -1,7 +1,9 @@
 package com.application.app.modules.recetas.ui
 
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -44,6 +46,10 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
   lateinit var searchView: SearchView
 
+  var ARCHIVO_PREFS = "preferencias.prefs"
+    private lateinit var sharedPrefs: SharedPreferences
+
+
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -68,24 +74,73 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
       flecha = findViewById(R.id.imageArrowleft)
 
 
-        /*
-      searchView = findViewById(R.id.searchView)
-      searchView.clearFocus()
-      searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+      //para guardar recetas
+      sharedPrefs = getSharedPreferences(ARCHIVO_PREFS, Context.MODE_PRIVATE)
 
-          override fun onQueryTextSubmit(query: String?): Boolean {
-              filterList(query)
-              return false;
-          }
+      //Editar sharedpref
+      val editor: SharedPreferences.Editor = sharedPrefs.edit()
 
-          override fun onQueryTextChange(newText: String?): Boolean {
-              //filterList(newText)
-              return true;
-          }
+      //borar sharedprefs
+      //editor.clear()
+      //editor.commit()
 
-      })
+      //agregar a sharedprefs
+      //editor.putString("Lat: " + (locationCount-1).toString(), latLng.latitude.toString())
 
-         */
+
+      // ********** NOTA **********
+      // Receta 1 y 2 solo se deben correr una vez para que se guarden en sharedprefs
+      // Después de eso, comentar esa sección de código
+      // En caso de cagarla y seguir corriéndolo, borrar sharedprefs y volver a correr 1 una vez
+
+        //Comienzo de código comentado
+      /*
+      //receta 1
+      val titulito1 = "Ensalada de nopales"
+      val ingredientitos1 = "Nopales, jitomate, cebolla, cilantro"
+      val descripcioncita1 = "Cortar los nopales, hervirlos con sal por 15 min. Añadir jitomate, cilantro, cebolla picada y sal al gusto. Revolver"
+      editor.putString("title: " + (0).toString(), titulito1)
+      editor.putString("ingredients: " + (0).toString(), ingredientitos1)
+      editor.putString("description: " + (0).toString(), descripcioncita1)
+      //editor.commit()
+
+      //Receta2
+      val titulito2 = "Caldo de res"
+      val ingredientitos2 = "Carne de res, chayotes, papas, zanahorias, elotes, col"
+      val descripcioncita2 = "Condimentar la carne de res con una pizca de sal.\n" +
+              "Calentar el aceite en una olla a fuego alto.\n" +
+              "Poner el hueso y la carne en la olla y dorar.\n" +
+              "Agregar agua, una cucharada pequeña de sal y el ajo en polvo. Cocínar a fuego alto para hervir el agua.\n" +
+              "Reducir el calor y cocina a fuego lento. Remover constantemente la espuma que se acumula en la parte superior. Cocinar la carne por aproximadamente 1 hora.\n" +
+              "Agregar las papas y siguir cocinando a fuego lento aproximadamente 10 minutos.\n" +
+              "Agregar la col, el elote, la calabaza verde, las zanahorias. Y seguir cocinando a fuego lento por otros 5-10 minutos."
+      editor.putString("title: " + (1).toString(), titulito2)
+      editor.putString("ingredients: " + (1).toString(), ingredientitos2)
+      editor.putString("description: " + (1).toString(), descripcioncita2)
+      editor.commit()
+       */
+      //Fin de código comentado
+
+      var titulito: String
+      var ingredientitos:String
+      var descripcioncita:String
+
+
+      for (i in 0 until 2) {
+          titulito = sharedPrefs.getString("title: $i", "No hay datos").toString()
+          ingredientitos = sharedPrefs.getString("ingredients: $i", "No hay datos").toString()
+          descripcioncita = sharedPrefs.getString("description: $i", "No hay datos").toString()
+          recetaArrayList.add(Receta(titulito, ingredientitos, descripcioncita))
+      }
+
+
+      //Agregar a lista recetas
+      //recetaArrayList.add(Receta(titulito, ingredientitos, descripcioncita))
+      //editor.commit()
+
+      //obtener de sharedprefs
+      //lat = sharedPrefs.getString("Lat: $i", "0").toString()
+
 
       verRecetaFragment = FragmentVerReceta()
 
