@@ -15,9 +15,11 @@ class MensajeDinero : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mensaje_dinero)
+        subirDatos()
     }
 
-    fun subirDatos(view: View?){
+
+    fun subirDatos(){
 
         val hash= intent.getSerializableExtra("donation") as HashMap<String, String>?
 
@@ -34,10 +36,6 @@ class MensajeDinero : AppCompatActivity() {
             Log.e("Firestore","error: $error")
 
         }
-
-        val intent = Intent(this,MensajeDonaciNActivity::class.java)
-        startActivity(intent)
-
 
     }
 }

@@ -36,6 +36,7 @@ class DineroFormulario : AppCompatActivity() {
             "dinero" to dinero
 
         )
+        /*
         val collection : CollectionReference =
             Firebase.firestore.collection("donors")
 
@@ -48,6 +49,7 @@ class DineroFormulario : AppCompatActivity() {
             Log.e("Firestore","error: $error")
 
         }
+        */
         val intent = Intent(this, Stripe::class.java)
         intent.putExtra("dinero",dinero.toInt())
         intent.putExtra("donor",donor)
