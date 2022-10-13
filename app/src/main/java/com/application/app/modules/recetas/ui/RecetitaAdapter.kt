@@ -12,7 +12,7 @@ import com.application.app.R
 class RecetitaAdapter (private var recetasList: ArrayList<Receta>, val listener: View.OnClickListener) : RecyclerView.Adapter<RecetitaAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecetitaAdapter.MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.row_new_intento_receta, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.row_new_receta, parent, false)
 
         itemView.setOnClickListener(listener)
 

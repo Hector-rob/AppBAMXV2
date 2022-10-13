@@ -15,8 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
-import com.application.app.databinding.ActivityRecetasBinding
-import com.application.app.modules.favoritos.ui.FavoritosActivity
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.application.app.modules.recetas.data.model.RecetasRowModel
 import com.application.app.modules.recetas.data.viewmodel.RecetasVM
