@@ -36,7 +36,10 @@ class DineroFormulario : AppCompatActivity() {
             "dinero" to dinero
 
         )
+
         /*
+         donor.forEach { (key, value) -> Log.wtf("Hash",("$key = $value")) }
+
         val collection : CollectionReference =
             Firebase.firestore.collection("donors")
 
@@ -52,7 +55,7 @@ class DineroFormulario : AppCompatActivity() {
         */
         val intent = Intent(this, Stripe::class.java)
         intent.putExtra("dinero",dinero.toInt())
-        intent.putExtra("donor",donor)
+        intent.putExtra("donation",donor)
         startActivity(intent)
 
 

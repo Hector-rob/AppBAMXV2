@@ -16,26 +16,36 @@ class MensajeDinero : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mensaje_dinero)
         subirDatos()
+
     }
 
 
     fun subirDatos(){
-
-        val hash= intent.getSerializableExtra("donation") as HashMap<String, String>?
-
-
+        val hash= intent.getSerializableExtra("donation") as HashMap<Any,Any>
         val collection : CollectionReference =
             Firebase.firestore.collection("donors")
+        collection.add(hash)
 
-        val taskAdd = hash!!.let { collection.add(it) }
-        taskAdd.addOnSuccessListener { documentReference ->
+    /*taskAdd.addOnSuccessListener { documentReference ->
             Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener{error ->
+            Toast.makeText(this, "Error al guardar datos", Toast.LENGTH_SHORT).show()
+            Log.e("Firestore","error: $error")
+        }
+
+         */
+
+       /* val taskAdd = hash?.let { collection.add(it) }
+        taskAdd?.addOnSuccessListener { documentReference ->
+            Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
+        }?.addOnFailureListener{error ->
             Toast.makeText(this, "Error al guardar datos", Toast.LENGTH_SHORT).show()
 
             Log.e("Firestore","error: $error")
 
         }
+        */
+
 
     }
 }
