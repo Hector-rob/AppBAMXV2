@@ -80,9 +80,9 @@
                 android:layout_marginTop="@dimen/_194pxv"
                 android:layout_marginEnd="@dimen/_84pxh"
                 android:lineSpacingExtra="@dimen/_1pxh"
-                android:text="@{mensajeDonaciNVM.mensajeDonaciNModel.txtGraciasportu}"
+                android:text="¡Gracias por tu donación!"
                 android:textAlignment="center"
-                tools:text="@string/msg_gracias_por_tu" />
+                />
             <TextView android:gravity="center_horizontal"
                 android:id="@+id/txtElBancodeAli"
                 android:layout_height="wrap_content"
@@ -92,8 +92,8 @@
                 android:layout_width="match_parent"
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="@dimen/_1pxh"
-                android:text="@{mensajeDonaciNVM.mensajeDonaciNModel.txtElBancodeAli}"
-                style="@style/txtRobotoromanregular15" tools:text="@string/msg_el_banco_de_ali"/>
+                android:text="El Banco de Alimentos México se pondrá en contacto contigo"
+                style="@style/txtRobotoromanregular15" />
         </LinearLayout>
         <FrameLayout android:gravity="center_horizontal"
             android:id="@+id/frameBottombar"
