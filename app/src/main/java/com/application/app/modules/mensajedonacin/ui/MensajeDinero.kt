@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.application.app.R
+import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -17,6 +18,12 @@ class MensajeDinero : AppCompatActivity() {
         setContentView(R.layout.activity_mensaje_dinero)
         subirDatos()
 
+    }
+
+
+    fun returnMenu2(){
+            val intent = Intent(this, MenPrincipalActivity::class.java)
+            startActivity(intent)
     }
 
 

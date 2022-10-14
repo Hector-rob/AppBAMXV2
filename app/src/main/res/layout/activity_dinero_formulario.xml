@@ -333,8 +333,7 @@
                     android:layout_height="match_parent"
                     android:ems="13"
                     android:layout_marginTop="@dimen/_10pxv"
-                    android:inputType="textPersonName"
-                    android:textColor="#000000"
+                    android:inputType="textEmailAddress"                    android:textColor="#000000"
                     android:textSize="13sp" />
 
                 <ImageView
@@ -369,7 +368,8 @@
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
                         android:text="Correo electrónico *"
-                        tools:text="Correo electrónico *" />
+                        tools:text="Correo electrónico *"
+                         />
 
                     <View
                         android:id="@+id/lineUpperSurfaceTwo4"
@@ -398,7 +398,7 @@
                     android:layout_height="match_parent"
                     android:ems="13"
                     android:layout_marginTop="@dimen/_10pxv"
-                    android:inputType="textPersonName"
+                    android:inputType="phone"
                     android:textColor="#000000"
                     android:textSize="13sp" />
 
@@ -433,7 +433,7 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="Número telefónico*"
+                        android:text="Número telefónico *"
                         tools:text="Número telefónico *" />
 
                     <View
@@ -463,7 +463,7 @@
                     android:layout_height="match_parent"
                     android:ems="13"
                     android:layout_marginTop="@dimen/_10pxv"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textColor="#000000"
                     android:textSize="13sp" />
 
