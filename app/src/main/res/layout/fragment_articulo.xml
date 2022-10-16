@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
-    <data>
-        <variable name="listrectanglefourteenRowModel" type="com.application.app.modules.seleccinalimentos.data.model.ListrectanglefourteenRowModel"/>
-    </data>
+
     <FrameLayout android:id="@+id/frameStackrectanglefourteen"
         android:layout_height="wrap_content" android:layout_width="@dimen/_152pxh">
 
@@ -32,7 +30,6 @@
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="@dimen/_1pxh"
                 android:singleLine="true"
-                android:text="@{listrectanglefourteenRowModel.txtMANZANA}"
                 style="@style/txtRobotoromanregular10" tools:text="@string/lbl_manzana"/>
 
             <LinearLayout

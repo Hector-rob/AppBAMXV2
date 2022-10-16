@@ -18,7 +18,6 @@ import com.application.app.databinding.ActivityAbarrotesBinding
 import com.application.app.databinding.ActivitySelecciNAlimentosBinding
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity
-import com.application.app.modules.resumenalimentos.ui.ResumenAlimentosActivity
 import com.application.app.modules.seleccinalimentos.data.viewmodel.SelecciNAlimentosVM
 import java.util.ArrayList
 
@@ -133,8 +132,8 @@ class AbarrotesActivity :
             finish()
         }
         binding.imageImageFiftyOne.setOnClickListener {
-            val destIntent = ResumenAlimentosActivity.getIntent(this, null)
-            startActivity(destIntent)
+//            val destIntent = ResumenAlimentosActivity.getIntent(this, null)
+//            startActivity(destIntent)
         }
         binding.btnDonar.setOnClickListener {
             val destIntent = MensajeDonaciNActivity.getIntent(this, null)
@@ -150,7 +149,7 @@ class AbarrotesActivity :
         const val TAG: String = "SELECCI_N_ALIMENTOS_ACTIVITY"
 
         fun getIntent(context: Context, bundle: Bundle?): Intent {
-            val destIntent = Intent(context, SelecciNAlimentosActivity::class.java)
+            val destIntent = Intent(context, AbarrotesActivity::class.java)
             destIntent.putExtra("bundle", bundle)
             return destIntent
         }

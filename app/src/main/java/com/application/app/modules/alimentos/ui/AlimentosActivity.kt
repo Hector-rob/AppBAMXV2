@@ -67,10 +67,6 @@ class AlimentosActivity : BaseActivity<ActivityAlimentosBinding>(R.layout.activi
       startActivity(intent)
     }
 
-    binding.linear3ContainedB1.setOnClickListener {
-      val destIntent = SelecciNAlimentosActivity.getIntent(this, null)
-      startActivity(destIntent)
-    }
     binding.linear1Tab.setOnClickListener {
       val destIntent = MenPrincipalActivity.getIntent(this, null)
       startActivity(destIntent)

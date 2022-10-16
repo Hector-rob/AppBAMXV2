@@ -23,28 +23,6 @@
             android:orientation="vertical">
 
             <FrameLayout
-                android:id="@+id/frameSystembar1"
-                style="@style/groupStylegray_900_14"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_29pxv"
-                android:gravity="start">
-
-                <ImageView
-                    android:id="@+id/imageMask1"
-                    android:layout_width="@dimen/_52pxh"
-                    android:layout_height="@dimen/_12pxh"
-                    android:layout_gravity="end"
-                    android:layout_marginStart="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_8pxv"
-                    android:layout_marginEnd="@dimen/_9pxh"
-                    android:layout_marginBottom="@dimen/_8pxv"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_mask_black_900"
-                    tools:ignore="ContentDescription"
-                    tools:src="@drawable/img_mask_black_900" />
-            </FrameLayout>
-
-            <FrameLayout
                 android:id="@+id/frameStackbamxlogotwo2"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_70pxv"

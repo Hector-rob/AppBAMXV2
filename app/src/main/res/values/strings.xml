@@ -120,5 +120,7 @@ verdura</string>
     <string name="lbl_plus">+</string>
     <string name="lbl_minus">-</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu">Menú</string>
+    <string name="information">Información</string>
 
 </resources>
