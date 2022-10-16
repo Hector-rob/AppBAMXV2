@@ -31,31 +31,44 @@ class FormularioComun : AppCompatActivity() {
         var numero = findViewById<EditText>(R.id.NumeroFormularioComunInput).text.toString()
         //var hash = intent.getStringArrayExtra("foodDonations")
         var hash = intent.getSerializableExtra("donation")
-        val donor = hashMapOf(
-            "name" to nombre,
-            "firstLN" to apellidoP,
-            "secondLN" to apellidoM,
-            "mail" to correo,
-            "number" to numero,
-            "donation" to hash
-        )
-        val collection : CollectionReference =
-            Firebase.firestore.collection("donors")
+        if (nombre.trim().isNotEmpty() &&
+            nombre.trim().isNotBlank() &&
+            apellidoP.trim().isNotEmpty() &&
+            apellidoP.trim().isNotBlank() &&
+            apellidoM.trim().isNotEmpty() &&
+            apellidoM.trim().isNotBlank() &&
+            correo.trim().isNotEmpty() &&
+            correo.trim().isNotBlank() &&
+            numero.trim().isNotEmpty() &&
+            numero.trim().isNotBlank()) {
+                val donor = hashMapOf(
+                    "name" to nombre,
+                    "firstLN" to apellidoP,
+                    "secondLN" to apellidoM,
+                    "mail" to correo,
+                    "number" to numero,
+                    "donation" to hash
 
-        val taskAdd = collection.add(donor)
-        taskAdd.addOnSuccessListener { documentReference ->
-            Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
-        }.addOnFailureListener{error ->
-            Toast.makeText(this, "Error al guardar datos", Toast.LENGTH_SHORT).show()
+                )
+                val collection: CollectionReference =
+                    Firebase.firestore.collection("donors")
 
-            Log.e("Firestore","error: $error")
+                val taskAdd = collection.add(donor)
+                taskAdd.addOnSuccessListener { documentReference ->
+                    Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener { error ->
+                    Toast.makeText(this, "Error al guardar datos", Toast.LENGTH_SHORT).show()
 
-        }
-        val intent = Intent(this,MensajeDonaciNActivity::class.java)
-        startActivity(intent)
+                    Log.e("Firestore", "error: $error")
 
+                }
+                val intent = Intent(this, MensajeDonaciNActivity::class.java)
+                startActivity(intent)
+         } else {
+            Toast.makeText(this, "Campo faltante", Toast.LENGTH_SHORT).show()
+         }
+}
 
-    }
 
     fun returnMenu(view: View?){
         val intent = Intent(this,MenPrincipalActivity::class.java)

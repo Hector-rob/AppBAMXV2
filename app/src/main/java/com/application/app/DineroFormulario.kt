@@ -13,52 +13,53 @@ import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
+
 class DineroFormulario : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dinero_formulario)
     }
 
     fun subirDatos(view: View?){
+
         var nombre = findViewById<EditText>(R.id.nombreFormularioComunInputDinero).text.toString()
         var apellidoP = findViewById<EditText>(R.id.APFormularioComunInputDinero).text.toString()
         var apellidoM = findViewById<EditText>(R.id.AMFormularioComunInputDinero).text.toString()
         var correo = findViewById<EditText>(R.id.CorreoFormularioComunInputDinero).text.toString()
         var numero = findViewById<EditText>(R.id.NumeroFormularioComunInputDinero).text.toString()
         var dinero = findViewById<EditText>(R.id.DineroForm).text.toString()
-        //var hash = intent.getStringArrayExtra("foodDonations")
-        val donor = hashMapOf(
-            "name" to nombre,
-            "firstLN" to apellidoP,
-            "secondLN" to apellidoM,
-            "mail" to correo,
-            "number" to numero,
-            "dinero" to dinero
+        if (nombre.trim().isNotEmpty() &&
+            nombre.trim().isNotBlank() &&
+            apellidoP.trim().isNotEmpty() &&
+            apellidoP.trim().isNotBlank() &&
+            apellidoM.trim().isNotEmpty() &&
+            apellidoM.trim().isNotBlank() &&
+            correo.trim().isNotEmpty() &&
+            correo.trim().isNotBlank() &&
+            numero.trim().isNotEmpty() &&
+            numero.trim().isNotBlank() &&
+            dinero.trim().isNotEmpty() &&
+            dinero.trim().isNotBlank()) {
 
-        )
+            val donor = hashMapOf(
+                "name" to nombre,
+                "firstLN" to apellidoP,
+                "secondLN" to apellidoM,
+                "mail" to correo,
+                "number" to numero,
+                "dinero" to dinero
 
-        /*
-         donor.forEach { (key, value) -> Log.wtf("Hash",("$key = $value")) }
+            )
+            val intent = Intent(this, Stripe::class.java)
+            intent.putExtra("dinero",dinero.toInt())
+            intent.putExtra("donation",donor)
+            startActivity(intent)
 
-        val collection : CollectionReference =
-            Firebase.firestore.collection("donors")
-
-        val taskAdd = collection.add(donor)
-        taskAdd.addOnSuccessListener { documentReference ->
-            Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
-        }.addOnFailureListener{error ->
-            Toast.makeText(this, "Error al guardar datos", Toast.LENGTH_SHORT).show()
-
-            Log.e("Firestore","error: $error")
-
+            // your code
+        } else {
+            Toast.makeText(this, "Campo faltante", Toast.LENGTH_SHORT).show()
         }
-        */
-        val intent = Intent(this, Stripe::class.java)
-        intent.putExtra("dinero",dinero.toInt())
-        intent.putExtra("donation",donor)
-        startActivity(intent)
-
-
     }
 
     fun returnMenu(view: View?){
