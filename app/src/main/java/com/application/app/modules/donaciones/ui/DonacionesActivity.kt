@@ -50,7 +50,7 @@ class DonacionesActivity : BaseActivity<ActivityDonacionesBinding>(R.layout.acti
       startActivity(destIntent)
     }
     binding.btnDinero.setOnClickListener {
-      val destIntent = Intent(this,DineroFormulario::class.java)
+      val destIntent = Intent(this,DineroActivity::class.java)
       startActivity(destIntent)
     }
   }

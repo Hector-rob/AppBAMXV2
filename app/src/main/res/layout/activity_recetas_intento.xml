@@ -14,21 +14,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:orientation="vertical" style="@style/groupStylewhite_A700">
-            <FrameLayout android:id="@+id/frameSystembar"
-                android:layout_height="@dimen/_29pxv"
-                android:layout_width="match_parent" style="@style/groupStylegray_900_14">
-                <ImageView android:id="@+id/imageMask"
-                    android:layout_gravity="end"
-                    android:layout_height="@dimen/_12pxh"
-                    android:layout_marginBottom="@dimen/_8pxv"
-                    android:layout_marginEnd="@dimen/_9pxh"
-                    android:layout_marginStart="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_8pxv"
-                    android:layout_width="@dimen/_52pxh"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_mask_black_900"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_mask_black_900"/>
-            </FrameLayout>
             <FrameLayout android:id="@+id/frameStack"
                 android:layout_height="@dimen/_140pxv" android:layout_width="match_parent">
                 <LinearLayout android:id="@+id/linearColumn"
@@ -95,7 +80,7 @@
                                 android:layout_height="@dimen/_25pxh"
                                 android:layout_marginBottom="@dimen/_15pxv"
                                 android:layout_marginEnd="@dimen/_320pxh"
-                                android:layout_marginStart="@dimen/_13pxh"
+                                android:layout_marginStart="@dimen/_25pxh"
                                 android:layout_marginTop="@dimen/_16pxv"
                                 android:layout_width="@dimen/_25pxh"
                                 android:scaleType="fitXY"
@@ -118,7 +103,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewRecetas"
                 android:layout_width="match_parent"
-                android:layout_height="519dp" >
+                android:layout_height="535dp" >
 
             </androidx.recyclerview.widget.RecyclerView>
 
@@ -126,7 +111,6 @@
                 android:id="@+id/frameBottombar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_1pxh"
                 android:gravity="center_horizontal">
 
                 <LinearLayout
@@ -182,7 +166,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:onClick="info">
 
                         <LinearLayout
                             android:id="@+id/linear3Tab"

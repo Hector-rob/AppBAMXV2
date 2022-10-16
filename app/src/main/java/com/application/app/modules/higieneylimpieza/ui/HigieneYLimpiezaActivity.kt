@@ -15,6 +15,7 @@ import com.application.app.modules.higieneylimpieza.`data`.model.SpinnerListBoxM
 import com.application.app.modules.higieneylimpieza.`data`.viewmodel.HigieneYLimpiezaVM
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 import com.application.app.modules.voluntariado.MainActivity
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.ktx.firestore
@@ -129,6 +130,11 @@ class HigieneYLimpiezaActivity :
       intent.putExtra( "donation", donacion)
       startActivity(intent)
     }
+  }
+
+  fun info(view: View){
+    val intent = Intent(this, QhacemosActivity::class.java)
+    startActivity(intent)
   }
 
 

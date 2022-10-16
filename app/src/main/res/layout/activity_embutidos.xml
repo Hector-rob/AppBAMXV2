@@ -43,6 +43,7 @@
                             android:layout_marginTop="@dimen/_16pxv"
                             android:layout_width="@dimen/_26pxh"
                             android:scaleType="fitXY"
+                            android:onClick="back"
                             android:src="@drawable/img_arrowleft_white_a700"
                             tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_white_a700"/>
                     </FrameLayout>
@@ -64,6 +65,7 @@
                         android:layout_marginTop="@dimen/_4pxv"
                         android:layout_width="@dimen/_56pxh"
                         android:scaleType="fitXY"
+                        android:onClick="carButton"
                         imageRes="@{@drawable/img_image51}"
                         tools:ignore="ContentDescription" tools:src="@drawable/img_image51"/>
                 </FrameLayout>
@@ -235,7 +237,8 @@
                 <LinearLayout android:id="@+id/linear1Tab"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" android:layout_width="0dp"
-                    android:orientation="vertical" style="@style/groupStylebluegray_800">
+                    android:orientation="vertical" style="@style/groupStylebluegray_800"
+                    android:onClick="returnMenu">
                     <ImageView android:id="@+id/imageHome"
                         android:layout_gravity="center"
                         android:layout_height="@dimen/_21pxh"
@@ -262,7 +265,8 @@
                 <LinearLayout android:id="@+id/linearColumnvolume"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" android:layout_width="0dp"
-                    android:orientation="vertical" style="@style/groupStylebluegray_800">
+                    android:orientation="vertical" style="@style/groupStylebluegray_800"
+                    android:onClick="info">
                     <LinearLayout android:id="@+id/linear3Tab"
                         android:layout_height="match_parent"
                         android:layout_marginBottom="@dimen/_1pxv"

@@ -281,7 +281,8 @@
                 <LinearLayout android:id="@+id/linearColumnvolume"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" android:layout_width="0dp"
-                    android:orientation="vertical" style="@style/groupStylebluegray_800">
+                    android:orientation="vertical" style="@style/groupStylebluegray_800"
+                    android:onClick="info">
                     <LinearLayout android:id="@+id/linear3Tab"
                         android:layout_height="match_parent"
                         android:layout_marginBottom="@dimen/_1pxv"

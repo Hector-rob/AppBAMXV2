@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -19,18 +19,16 @@ class FormularioComun : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario_comun)
-
-
     }
 
     fun subirDatos(view: View?){
-        var nombre = findViewById<EditText>(R.id.nombreFormularioComunInput).text.toString()
-        var apellidoP = findViewById<EditText>(R.id.APFormularioComunInput).text.toString()
-        var apellidoM = findViewById<EditText>(R.id.AMFormularioComunInput).text.toString()
-        var correo = findViewById<EditText>(R.id.CorreoFormularioComunInput).text.toString()
-        var numero = findViewById<EditText>(R.id.NumeroFormularioComunInput).text.toString()
+        val nombre = findViewById<EditText>(R.id.nombreFormularioComunInput).text.toString()
+        val apellidoP = findViewById<EditText>(R.id.APFormularioComunInput).text.toString()
+        val apellidoM = findViewById<EditText>(R.id.AMFormularioComunInput).text.toString()
+        val correo = findViewById<EditText>(R.id.CorreoFormularioComunInput).text.toString()
+        val numero = findViewById<EditText>(R.id.NumeroFormularioComunInput).text.toString()
         //var hash = intent.getStringArrayExtra("foodDonations")
-        var hash = intent.getSerializableExtra("donation")
+        val hash = intent.getSerializableExtra("donation")
         val donor = hashMapOf(
             "name" to nombre,
             "firstLN" to apellidoP,
@@ -55,6 +53,15 @@ class FormularioComun : AppCompatActivity() {
         startActivity(intent)
 
 
+    }
+
+    fun back(view: View?){
+        finish()
+    }
+
+    fun info(view: View){
+        val intent = Intent(this, QhacemosActivity::class.java)
+        startActivity(intent)
     }
 
     fun returnMenu(view: View?){

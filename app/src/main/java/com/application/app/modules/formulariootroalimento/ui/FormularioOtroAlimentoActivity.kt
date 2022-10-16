@@ -14,6 +14,7 @@ import com.application.app.modules.formulariootroalimento.`data`.model.Listlabel
 import com.application.app.modules.formulariootroalimento.`data`.viewmodel.FormularioOtroAlimentoVM
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -52,6 +53,10 @@ class FormularioOtroAlimentoActivity :
       finish()
     }
   }
+      fun info(view: View){
+        val intent = Intent(this, QhacemosActivity::class.java)
+        startActivity(intent)
+      }
 
   companion object {
     const val TAG: String = "FORMULARIO_OTRO_ALIMENTO_ACTIVITY"

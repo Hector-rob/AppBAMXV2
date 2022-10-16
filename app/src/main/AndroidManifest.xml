@@ -112,12 +112,6 @@
             android:name=".modules.favoritos.ui.FavoritosActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".modules.resumenalimentos.ui.ResumenAlimentosActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".modules.seleccinalimentos.ui.SelecciNAlimentosActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".modules.dinero.ui.DineroActivity"
             android:exported="true"
             android:screenOrientation="portrait"
