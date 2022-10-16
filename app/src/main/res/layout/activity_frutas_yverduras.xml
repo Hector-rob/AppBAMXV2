@@ -54,7 +54,7 @@
                         android:layout_marginTop="@dimen/_10pxv"
                         android:layout_width="@dimen/_62pxh"
                         android:scaleType="fitXY"
-                        imageRes="@{@drawable/img_bamxlogo2_5}"
+                        imageRes="@drawable/img_bamxlogo2_5"
                         tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_5"/>
                     <ImageView android:id="@+id/imageImageFiftyOne"
                         android:layout_gravity="top|end"
@@ -66,7 +66,7 @@
                         android:layout_width="@dimen/_56pxh"
                         android:scaleType="fitXY"
                         android:onClick="carButton"
-                        imageRes="@{@drawable/img_image51}"
+                        imageRes="@drawable/img_image51"
                         tools:ignore="ContentDescription" tools:src="@drawable/img_image51"/>
                 </FrameLayout>
             </FrameLayout>
@@ -84,8 +84,7 @@
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="@dimen/_1pxh"
                 android:singleLine="true"
-                android:text="@{selecciNAlimentosVM.selecciNAlimentosModel.fruta}"
-                tools:text="@string/lbl_frutasYVerduras" />
+                android:text="@string/lbl_fruta_y_verdura2"/>
 
             <ScrollView
                 android:id="@+id/scrollView"
@@ -309,7 +308,7 @@
                         android:letterSpacing="0.02"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="@{selecciNAlimentosVM.selecciNAlimentosModel.txtCaption}"
+                        android:text="@string/lbl_men"
                         style="@style/txtRobotoregular12" tools:text="@string/lbl_men"/>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearColumnvolume"
@@ -343,7 +342,7 @@
                             android:letterSpacing="0.02"
                             android:lineSpacingExtra="@dimen/_1pxh"
                             android:singleLine="true"
-                            android:text="@{selecciNAlimentosVM.selecciNAlimentosModel.txtCaptionOne}"
+                            android:text="@string/lbl_information"
                             style="@style/txtRobotoregular12_1" tools:text="@string/lbl_information"/>
                     </LinearLayout>
                 </LinearLayout>

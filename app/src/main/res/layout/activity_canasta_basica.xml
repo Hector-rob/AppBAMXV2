@@ -42,7 +42,7 @@
                         android:layout_marginTop="@dimen/_10pxv"
                         android:layout_width="@dimen/_62pxh"
                         android:scaleType="fitXY"
-                        imageRes="@{@drawable/img_bamxlogo2_5}"
+                        imageRes="@drawable/img_bamxlogo2_5"
                         tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_5"/>
                     <ImageView android:id="@+id/imageImageFiftyOne"
                         android:layout_gravity="top|end"
@@ -53,7 +53,7 @@
                         android:layout_marginTop="@dimen/_4pxv"
                         android:layout_width="@dimen/_56pxh"
                         android:scaleType="fitXY"
-                        imageRes="@{@drawable/img_image51}"
+                        imageRes="@drawable/img_image51"
                         tools:ignore="ContentDescription" tools:src="@drawable/img_image51"/>
                 </FrameLayout>
             </FrameLayout>
@@ -71,13 +71,13 @@
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="@dimen/_1pxh"
                 android:singleLine="true"
+                android:text="@string/lbl_canasta_basica"
                 tools:text="@string/lbl_canasta_basica" />
 
             <ScrollView
                 android:id="@+id/scrollView"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_450pxh"
-                android:contentDescription="@string/lbl_frutasYVerduras">
+                android:layout_height="@dimen/_450pxh">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -95,7 +95,6 @@
 
                         <androidx.fragment.app.FragmentContainerView
                             android:id="@+id/fragment1"
-                            android:name="com.application.app.modules.seleccinalimentos.ui.articuloFragment"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -288,6 +287,7 @@
                         android:letterSpacing="0.02"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
+                        android:text="@string/lbl_men"
                         style="@style/txtRobotoregular12" tools:text="@string/lbl_men"/>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearColumnvolume"
@@ -321,6 +321,7 @@
                             android:letterSpacing="0.02"
                             android:lineSpacingExtra="@dimen/_1pxh"
                             android:singleLine="true"
+                            android:text="@string/information"
                             style="@style/txtRobotoregular12_1" tools:text="@string/information"/>
                     </LinearLayout>
                 </LinearLayout>
