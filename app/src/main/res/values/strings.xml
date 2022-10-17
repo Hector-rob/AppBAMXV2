@@ -29,6 +29,8 @@ talentos.</string>
     <string name="lbl_recetas">Recetas</string>
     <string name="lbl_information">Información</string>
     <string name="lbl_en_el_mundo">EN EL MUNDO</string>
+    <string name="lbl_en_mexico">EN MEXICO</string>
+    <string name="lbl_la_red_bamx">EN LA RED BAMX</string>
     <string name="lbl_durazno">DURAZNO</string>
     <string name="lbl_recetas2">RECETAS</string>
     <string name="msg_ingresa_la_cant">Ingresa la cantidad que deseas donar</string>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="qhacemosVM" type="com.application.app.modules.qhacemos.data.viewmodel.QhacemosVM"/>
     </data>
@@ -83,9 +85,9 @@
                         style="@style/txtRobotoromanextrabold25"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_37pxh"
-                        android:layout_marginTop="@dimen/_38pxv"
-                        android:layout_marginEnd="@dimen/_37pxh"
+                        android:layout_marginStart="37dp"
+                        android:layout_marginTop="38dp"
+                        android:layout_marginEnd="37dp"
                         android:ellipsize="end"
                         android:gravity="center_horizontal"
                         android:letterSpacing="0.01"
@@ -99,9 +101,9 @@
                         style="@style/txtRobotoromanregular15_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_37pxh"
-                        android:layout_marginTop="@dimen/_27pxv"
-                        android:layout_marginEnd="@dimen/_37pxh"
+                        android:layout_marginStart="37dp"
+                        android:layout_marginTop="27dp"
+                        android:layout_marginEnd="37dp"
                         android:gravity="center_horizontal"
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
@@ -122,13 +124,30 @@
                         tools:src="@drawable/img_image3" />
 
                     <TextView
+                        android:id="@+id/txtH2"
+                        style="@style/txtRobotoromanextrabold25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="37dp"
+                        android:layout_marginTop="38dp"
+                        android:layout_marginEnd="37dp"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="@{qhacemosVM.qhacemosModel.txtH5}"
+                        tools:text="@string/lbl_en_mexico"
+                        android:textColor="#419244" />
+
+                    <TextView
                         android:id="@+id/txtDescriptionOne"
                         style="@style/txtRobotoromanregular15_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_37pxh"
-                        android:layout_marginTop="@dimen/_65pxv"
-                        android:layout_marginEnd="@dimen/_25pxh"
+                        android:layout_marginStart="37dp"
+                        android:layout_marginTop="27dp"
+                        android:layout_marginEnd="37dp"
                         android:gravity="center_horizontal"
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
@@ -138,8 +157,8 @@
                     <ImageView
                         android:id="@+id/imageImageSix"
                         imageRes="@{@drawable/img_image6}"
-                        android:layout_width="@dimen/_112pxh"
-                        android:layout_height="@dimen/_154pxh"
+                        android:layout_width="137dp"
+                        android:layout_height="173dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginStart="@dimen/_37pxh"
                         android:layout_marginTop="@dimen/_65pxv"
@@ -149,13 +168,31 @@
                         tools:src="@drawable/img_image6" />
 
                     <TextView
+                        android:id="@+id/txtH3"
+                        style="@style/txtRobotoromanextrabold25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="37dp"
+                        android:layout_marginTop="38dp"
+                        android:layout_marginEnd="37dp"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="@{qhacemosVM.qhacemosModel.txtH5}"
+                        tools:text="@string/lbl_la_red_bamx"
+                        android:textColor = "#D73946" />
+
+                    <TextView
                         android:id="@+id/txtWeight"
                         style="@style/txtRobotoromanregular15_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_37pxh"
-                        android:layout_marginTop="@dimen/_101pxv"
-                        android:layout_marginEnd="@dimen/_25pxh"
+                        android:layout_marginStart="37dp"
+                        android:layout_marginTop="27dp"
+                        android:layout_marginEnd="37dp"
+                        android:layout_marginBottom="50dp"
                         android:gravity="center_horizontal"
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
