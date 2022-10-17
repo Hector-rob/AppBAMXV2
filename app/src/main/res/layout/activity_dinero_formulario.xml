@@ -505,7 +505,7 @@
                 android:gravity="center"
                 android:letterSpacing="0.06"
                 android:lineSpacingExtra="@dimen/_1pxh"
-                android:onClick="subirDatos"
+                android:onClick="subirDatosaa"
                 android:paddingStart="@dimen/_30pxh"
                 android:paddingTop="@dimen/_14pxv"
                 android:paddingEnd="@dimen/_30pxh"

@@ -21,7 +21,7 @@ class DineroFormulario : AppCompatActivity() {
         setContentView(R.layout.activity_dinero_formulario)
     }
 
-    fun subirDatos(view: View?){
+    fun subirDatosaa(view: View?){
 
         var nombre = findViewById<EditText>(R.id.nombreFormularioComunInputDinero).text.toString()
         var apellidoP = findViewById<EditText>(R.id.APFormularioComunInputDinero).text.toString()
