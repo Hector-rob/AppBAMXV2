@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -76,4 +77,11 @@ class DineroFormulario : AppCompatActivity() {
         val intent = Intent(this, MenPrincipalActivity::class.java)
         startActivity(intent)
     }
+
+    fun info(view: View){
+        val intent = Intent(this, QhacemosActivity::class.java)
+        startActivity(intent)
+    }
+
+
 }
