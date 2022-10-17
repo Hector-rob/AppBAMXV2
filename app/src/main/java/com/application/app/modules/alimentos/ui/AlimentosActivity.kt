@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
@@ -12,6 +13,7 @@ import com.application.app.modules.alimentos.`data`.viewmodel.AlimentosVM
 import com.application.app.modules.donaciones.ui.DonacionesActivity
 import com.application.app.modules.formulariootroalimento.ui.FormularioOtroAlimentoActivity
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 import com.application.app.modules.seleccinalimentos.ui.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -67,10 +69,6 @@ class AlimentosActivity : BaseActivity<ActivityAlimentosBinding>(R.layout.activi
       startActivity(intent)
     }
 
-    binding.linear3ContainedB1.setOnClickListener {
-      val destIntent = SelecciNAlimentosActivity.getIntent(this, null)
-      startActivity(destIntent)
-    }
     binding.linear1Tab.setOnClickListener {
       val destIntent = MenPrincipalActivity.getIntent(this, null)
       startActivity(destIntent)
@@ -192,6 +190,11 @@ class AlimentosActivity : BaseActivity<ActivityAlimentosBinding>(R.layout.activi
       .addOnFailureListener { exception ->
         Log.e("Firestore", "Error getting documents: ", exception)
       }
+  }
+
+  fun info(view: View){
+    val intent = Intent(this, QhacemosActivity::class.java)
+    startActivity(intent)
   }
 
   companion object {

@@ -3,6 +3,7 @@ package com.application.app.modules.dinero.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import com.application.app.R
 import com.application.app.Stripe
@@ -10,6 +11,7 @@ import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.databinding.ActivityDineroBinding
 import com.application.app.modules.dinero.data.viewmodel.DineroVM
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 
 class DineroActivity : BaseActivity<ActivityDineroBinding>(R.layout.activity_dinero) {
   private val viewModel: DineroVM by viewModels<DineroVM>()
@@ -56,8 +58,11 @@ class DineroActivity : BaseActivity<ActivityDineroBinding>(R.layout.activity_din
       startActivity(intent)
     }
 
+  }
 
-
+  fun info(view: View){
+    val intent = Intent(this, QhacemosActivity::class.java)
+    startActivity(intent)
   }
 
   companion object {

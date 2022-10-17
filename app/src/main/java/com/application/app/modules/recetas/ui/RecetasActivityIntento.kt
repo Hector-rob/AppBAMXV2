@@ -32,6 +32,7 @@ import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.toObject
 
 import android.content.Intent
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 
 
 class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
@@ -125,6 +126,11 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
     fun regresar(view: View?){
         finish()
+    }
+
+    fun info(view: View){
+        val intent = Intent(this, QhacemosActivity::class.java)
+        startActivity(intent)
     }
 
 

@@ -6,40 +6,27 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
-import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.application.app.FormularioComun
 import com.application.app.R
-import com.application.app.appcomponents.base.BaseActivity
-import com.application.app.databinding.ActivityCanastaBasicaBinding
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
-import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity
-import com.application.app.modules.resumenalimentos.ui.ResumenAlimentosActivity
-import com.application.app.modules.seleccinalimentos.data.viewmodel.SelecciNAlimentosVM
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 import java.util.ArrayList
 
-class CanastaBasicaActivity :
-    BaseActivity<ActivityCanastaBasicaBinding>(R.layout.activity_canasta_basica) {
-
-    private val viewModel: SelecciNAlimentosVM by viewModels<SelecciNAlimentosVM>()
+class CanastaBasicaActivity : AppCompatActivity() {
 
     private var fragMng: FragmentManager = supportFragmentManager
     var fragTransaction : FragmentTransaction = fragMng.beginTransaction()
     private var fragments = arrayListOf<Fragment>()
-
-    override fun onInitialized(): Unit {
-        viewModel.navArguments = intent.extras?.getBundle("bundle")
-        binding.selecciNAlimentosVM = viewModel
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_canasta_basica)
 
         createFragments()
-
     }
 
     private fun createFragments(){
@@ -152,35 +139,23 @@ class CanastaBasicaActivity :
         startActivity(intent)
     }
 
-    override fun setUpClicks(): Unit {
-        binding.imageArrowleft.setOnClickListener {
-            val destIntent = MenPrincipalActivity.getIntent(this, null)
-            startActivity(destIntent)
-        }
-        binding.imageArrowleft.setOnClickListener {
-            finish()
-        }
-        binding.imageImageFiftyOne.setOnClickListener {
-            val destIntent = ResumenAlimentosActivity.getIntent(this, null)
-            startActivity(destIntent)
-        }
-        binding.btnDonar.setOnClickListener {
-            val destIntent = MensajeDonaciNActivity.getIntent(this, null)
-            startActivity(destIntent)
-        }
-        binding.linear1Tab.setOnClickListener {
-            val destIntent = MenPrincipalActivity.getIntent(this, null)
-            startActivity(destIntent)
-        }
+    fun back(view: View){
+        finish()
     }
 
-    companion object {
-        const val TAG: String = "CANASTA_BASICA_ACTIVITY"
-
-        fun getIntent(context: Context, bundle: Bundle?): Intent {
-            val destIntent = Intent(context, SelecciNAlimentosActivity::class.java)
-            destIntent.putExtra("bundle", bundle)
-            return destIntent
-        }
+    fun carButton(view: View){
+        //val intent = Intent(this, )
+        //startActivity(intent)
     }
+
+    fun returnMenu(view: View){
+        val intent = Intent(this, MenPrincipalActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun info(view: View){
+        val intent = Intent(this, QhacemosActivity::class.java)
+        startActivity(intent)
+    }
+
 }
