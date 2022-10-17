@@ -9,10 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.application.app.R
 
 
-class RecetitaAdapter (private val recetasList: ArrayList<Receta>, val listener: View.OnClickListener) : RecyclerView.Adapter<RecetitaAdapter.MyViewHolder>() {
+class RecetitaAdapter (private var recetasList: ArrayList<Receta>, val listener: View.OnClickListener) : RecyclerView.Adapter<RecetitaAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecetitaAdapter.MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.row_new_intento_receta, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.row_new_receta, parent, false)
 
         itemView.setOnClickListener(listener)
 
@@ -34,6 +34,13 @@ class RecetitaAdapter (private val recetasList: ArrayList<Receta>, val listener:
     public class MyViewHolder (itemView: View): RecyclerView.ViewHolder(itemView) {
         val titulo : TextView = itemView.findViewById(R.id.receta_titulo)
         val ingredientes : TextView = itemView.findViewById(R.id.receta_ingredientes)
+    }
+
+    public fun setFilteredList(filteredList: ArrayList<Receta>){
+
+        this.recetasList = filteredList
+        notifyDataSetChanged()
+
     }
 
 

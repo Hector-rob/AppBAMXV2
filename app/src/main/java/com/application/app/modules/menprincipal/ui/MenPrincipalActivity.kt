@@ -10,7 +10,6 @@ import com.application.app.databinding.ActivityMenPrincipalBinding
 import com.application.app.modules.donaciones.ui.DonacionesActivity
 import com.application.app.modules.menprincipal.`data`.viewmodel.MenPrincipalVM
 import com.application.app.modules.qhacemos.ui.QhacemosActivity
-import com.application.app.modules.recetas.ui.RecetasActivity
 import com.application.app.modules.recetas.ui.RecetasActivityIntento
 import kotlin.String
 import kotlin.Unit

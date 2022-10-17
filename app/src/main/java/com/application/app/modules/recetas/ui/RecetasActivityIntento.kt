@@ -1,50 +1,32 @@
 package com.application.app.modules.recetas.ui
 
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.viewModels
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.appcompat.widget.SearchView
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.application.app.R
-import com.application.app.appcomponents.base.BaseActivity
-import com.application.app.databinding.ActivityRecetasBinding
-import com.application.app.modules.favoritos.ui.FavoritosActivity
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
-import com.application.app.modules.recetas.data.model.RecetasRowModel
-import com.application.app.modules.recetas.data.viewmodel.RecetasVM
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-
-import com.android.volley.Request
-import com.android.volley.RequestQueue
-import com.android.volley.toolbox.JsonArrayRequest
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
 import com.google.firebase.firestore.*
-import com.google.firebase.firestore.ktx.toObject
-
-import android.content.Intent
-import com.application.app.modules.qhacemos.ui.QhacemosActivity
 
 
 class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
-
-  //private val viewModel: RecetasVM by viewModels<RecetasVM>()
-
-  //Ya alv hay que hacerlo como en la act 4
 
   lateinit var recyclerView: RecyclerView
   lateinit var recetaArrayList : ArrayList<Receta>
   lateinit var myAdapter: RecetitaAdapter
   lateinit var db: FirebaseFirestore
+
+  lateinit var filteredList : ArrayList<Receta>
+
 
   /*
   lateinit var llm: LinearLayoutManager
@@ -62,6 +44,12 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
   lateinit var verRecetaFragment: FragmentVerReceta
 
+  lateinit var searchView: SearchView
+
+  var ARCHIVO_PREFS = "preferencias.prefs"
+    private lateinit var sharedPrefs: SharedPreferences
+
+
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -76,6 +64,8 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
       recetaArrayList = arrayListOf()
 
+      filteredList = arrayListOf()
+
       myAdapter = RecetitaAdapter(recetaArrayList, this)
       recyclerView.adapter = myAdapter
 
@@ -83,13 +73,104 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
       info = findViewById(R.id.linearColumnvolume)
       flecha = findViewById(R.id.imageArrowleft)
 
+      //para guardar recetas
+      sharedPrefs = getSharedPreferences(ARCHIVO_PREFS, Context.MODE_PRIVATE)
+
+      //Editar sharedpref
+      val editor: SharedPreferences.Editor = sharedPrefs.edit()
+
+      //borar sharedprefs
+      //editor.clear()
+      //editor.commit()
+
+      //agregar a sharedprefs
+      //editor.putString("Lat: " + (locationCount-1).toString(), latLng.latitude.toString())
+
+
+      // ********** NOTA **********
+      // Receta 1 y 2 solo se deben correr una vez para que se guarden en sharedprefs
+      // Después de eso, comentar esa sección de código
+      // En caso de cagarla y seguir corriéndolo, borrar sharedprefs y volver a correr 1 una vez
+
+        //Comienzo de código comentado
+      /*
+      //receta 1
+      val titulito1 = "Ensalada de nopales"
+      val ingredientitos1 = "Nopales, jitomate, cebolla, cilantro"
+      val descripcioncita1 = "Cortar los nopales, hervirlos con sal por 15 min. Añadir jitomate, cilantro, cebolla picada y sal al gusto. Revolver"
+      editor.putString("title: " + (0).toString(), titulito1)
+      editor.putString("ingredients: " + (0).toString(), ingredientitos1)
+      editor.putString("description: " + (0).toString(), descripcioncita1)
+      //editor.commit()
+
+      //Receta2
+      val titulito2 = "Caldo de res"
+      val ingredientitos2 = "Carne de res, chayotes, papas, zanahorias, elotes, col"
+      val descripcioncita2 = "Condimentar la carne de res con una pizca de sal.\n" +
+              "Calentar el aceite en una olla a fuego alto.\n" +
+              "Poner el hueso y la carne en la olla y dorar.\n" +
+              "Agregar agua, una cucharada pequeña de sal y el ajo en polvo. Cocínar a fuego alto para hervir el agua.\n" +
+              "Reducir el calor y cocina a fuego lento. Remover constantemente la espuma que se acumula en la parte superior. Cocinar la carne por aproximadamente 1 hora.\n" +
+              "Agregar las papas y siguir cocinando a fuego lento aproximadamente 10 minutos.\n" +
+              "Agregar la col, el elote, la calabaza verde, las zanahorias. Y seguir cocinando a fuego lento por otros 5-10 minutos."
+      editor.putString("title: " + (1).toString(), titulito2)
+      editor.putString("ingredients: " + (1).toString(), ingredientitos2)
+      editor.putString("description: " + (1).toString(), descripcioncita2)
+      editor.commit()
+       */
+      //Fin de código comentado
+
+      var titulito: String
+      var ingredientitos:String
+      var descripcioncita:String
+
+
+      for (i in 0 until 2) {
+          titulito = sharedPrefs.getString("title: $i", "No hay datos").toString()
+          ingredientitos = sharedPrefs.getString("ingredients: $i", "No hay datos").toString()
+          descripcioncita = sharedPrefs.getString("description: $i", "No hay datos").toString()
+          recetaArrayList.add(Receta(titulito, ingredientitos, descripcioncita))
+      }
+
+
+      //Agregar a lista recetas
+      //recetaArrayList.add(Receta(titulito, ingredientitos, descripcioncita))
+      //editor.commit()
+
+      //obtener de sharedprefs
+      //lat = sharedPrefs.getString("Lat: $i", "0").toString()
+
+
       verRecetaFragment = FragmentVerReceta()
 
       eventChangeListener()
 
   }
 
+    /*
 
+    private fun filterList(text: String?) {
+
+        for (receta in recetaArrayList){
+            if(receta.title.toString().lowercase().contains(text.toString().lowercase())
+                or receta.ingredients.toString().lowercase().contains(text.toString().lowercase())){
+
+                filteredList.add(receta)
+                Log.wtf("lista", "$filteredList")
+            }
+        }
+
+        if(filteredList.isEmpty()){
+            Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show()
+            //myAdapter.setFilteredList(recetaArrayList)
+
+        }
+        else {
+            myAdapter.setFilteredList(filteredList)
+        }
+    }
+
+     */
 
 
     private fun eventChangeListener() {
@@ -112,9 +193,6 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
                   }
               })
 
-
-
-
   }
 
 
@@ -128,8 +206,8 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
         finish()
     }
 
-    fun info(view: View){
-        val intent = Intent(this, QhacemosActivity::class.java)
+    fun buscar(view: View?){
+        val intent = Intent(this, RecetasFiltradasActivity::class.java)
         startActivity(intent)
     }
 
@@ -142,7 +220,7 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
     override fun onClick(p0: View?) {
         val position = p0?.let { recyclerView.getChildLayoutPosition(it) }
         Log.wtf("Firestore", "id: $position")
-        Toast.makeText(this, "id: $position", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "id: $position", Toast.LENGTH_SHORT).show()
         Log.wtf("Firestore", "lista: ${recetaArrayList[position!!]}")
 
         val intent = Intent(this, VerRecetasActivity::class.java)
@@ -156,5 +234,7 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
 
 }
+
+
 
 
