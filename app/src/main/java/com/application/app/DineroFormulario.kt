@@ -29,6 +29,7 @@ class DineroFormulario : AppCompatActivity() {
         var correo = findViewById<EditText>(R.id.CorreoFormularioComunInputDinero).text.toString()
         var numero = findViewById<EditText>(R.id.NumeroFormularioComunInputDinero).text.toString()
         var dinero = findViewById<EditText>(R.id.DineroForm).text.toString()
+
         if (nombre.trim().isNotEmpty() &&
             nombre.trim().isNotBlank() &&
             apellidoP.trim().isNotEmpty() &&
@@ -42,19 +43,27 @@ class DineroFormulario : AppCompatActivity() {
             dinero.trim().isNotEmpty() &&
             dinero.trim().isNotBlank()) {
 
-            val donor = hashMapOf(
-                "name" to nombre,
-                "firstLN" to apellidoP,
-                "secondLN" to apellidoM,
-                "mail" to correo,
-                "number" to numero,
-                "dinero" to dinero
+            if(!correo.contains("@") || !(correo.contains(".com"))){
+                Toast.makeText(this, "Correo inválido", Toast.LENGTH_SHORT).show()
+            }
+            else if(numero.length != 10){
+                Toast.makeText(this, "El número telefónico tiene que ser de 10 números", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                val donor = hashMapOf(
+                    "name" to nombre,
+                    "firstLN" to apellidoP,
+                    "secondLN" to apellidoM,
+                    "mail" to correo,
+                    "number" to numero,
+                    "dinero" to dinero
 
-            )
-            val intent = Intent(this, Stripe::class.java)
-            intent.putExtra("dinero",dinero.toInt())
-            intent.putExtra("donation",donor)
-            startActivity(intent)
+                )
+                val intent = Intent(this, Stripe::class.java)
+                intent.putExtra("dinero", dinero.toInt())
+                intent.putExtra("donation", donor)
+                startActivity(intent)
+            }
 
             // your code
         } else {

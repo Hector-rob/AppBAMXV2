@@ -52,7 +52,6 @@
                         android:layout_marginEnd="@dimen/_101pxh"
                         android:layout_marginBottom="@dimen/_21pxv"
                         android:ellipsize="end"
-                        android:gravity="end"
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
