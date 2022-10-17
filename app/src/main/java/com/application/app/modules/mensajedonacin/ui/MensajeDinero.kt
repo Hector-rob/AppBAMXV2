@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.application.app.R
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -59,5 +60,14 @@ class MensajeDinero : AppCompatActivity() {
         */
 
 
+    }
+
+    fun back(view: View?){
+        finish()
+    }
+
+    fun info(view: View){
+        val intent = Intent(this, QhacemosActivity::class.java)
+        startActivity(intent)
     }
 }

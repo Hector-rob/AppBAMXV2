@@ -13,21 +13,6 @@
             android:id="@+id/linearColumnmask"
             android:layout_height="0dp" android:layout_weight="1.0"
             android:layout_width="match_parent" android:orientation="vertical">
-            <FrameLayout android:id="@+id/frameSystembar"
-                android:layout_height="@dimen/_29pxv"
-                android:layout_width="match_parent" style="@style/groupStylegray_900_14">
-                <ImageView android:id="@+id/imageMask"
-                    android:layout_gravity="end"
-                    android:layout_height="@dimen/_12pxh"
-                    android:layout_marginBottom="@dimen/_8pxv"
-                    android:layout_marginEnd="@dimen/_9pxh"
-                    android:layout_marginStart="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_8pxv"
-                    android:layout_width="@dimen/_52pxh"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_mask_black_900"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_mask_black_900"/>
-            </FrameLayout>
             <FrameLayout android:id="@+id/frameStackbamxlogotwo"
                 android:layout_height="@dimen/_70pxv" android:layout_width="match_parent">
                 <ImageView android:id="@+id/imageBamxlogoTwo"
@@ -42,12 +27,15 @@
                 <FrameLayout android:id="@+id/frameStackbamxlogotwoOne"
                     android:layout_gravity="start"
                     android:layout_height="@dimen/_70pxv" android:layout_width="match_parent">
+
                     <FrameLayout android:id="@+id/frameStackarrowleft"
                         android:layout_gravity="top|start"
                         android:layout_height="@dimen/_56pxv"
                         android:layout_marginBottom="@dimen/_10pxv"
                         android:layout_width="match_parent" style="@style/groupStylebluegray_801">
-                        <ImageView android:id="@+id/imageArrowleft"
+
+                        <ImageView
+                            android:id="@+id/imageArrowleft"
                             android:layout_gravity="start"
                             android:layout_height="@dimen/_22pxh"
                             android:layout_marginBottom="@dimen/_16pxv"
@@ -56,8 +44,11 @@
                             android:layout_marginTop="@dimen/_16pxv"
                             android:layout_width="@dimen/_26pxh"
                             android:scaleType="fitXY"
+                            android:focusable="true"
+                            android:onClick="back"
                             android:src="@drawable/img_arrowleft_white_a700"
-                            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_white_a700"/>
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_white_a700" />
+
                     </FrameLayout>
                     <ImageView android:id="@+id/imageBamxlogoTwoOne"
                         android:layout_gravity="bottom|end"
@@ -173,15 +164,22 @@
         <FrameLayout android:gravity="center_horizontal"
             android:id="@+id/frameBottombar"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_1pxh" android:layout_width="match_parent">
+            android:layout_width="match_parent">
             <LinearLayout android:id="@+id/linear2FourupAO"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:orientation="horizontal" style="@style/groupStylebluegray_802">
+                android:orientation="horizontal"
+                style="@style/groupStylebluegray_802">
+
                 <LinearLayout android:id="@+id/linear1Tab"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" android:layout_width="0dp"
-                    android:orientation="vertical" style="@style/groupStylebluegray_800">
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:focusable="true"
+                    android:onClick="returnMenu"
+                    style="@style/groupStylebluegray_800">
+
                     <ImageView android:id="@+id/imageHome"
                         android:layout_gravity="center"
                         android:layout_height="@dimen/_21pxh"
@@ -190,6 +188,7 @@
                         android:scaleType="fitXY"
                         android:src="@drawable/img_home"
                         tools:ignore="ContentDescription" tools:src="@drawable/img_home"/>
+
                     <TextView android:ellipsize="end"
                         android:gravity="center_horizontal"
                         android:id="@+id/txtCaption"
@@ -205,10 +204,14 @@
                         android:text="Menú"
                         style="@style/txtRobotoregular12" tools:text="@string/lbl_men"/>
                 </LinearLayout>
+
                 <LinearLayout android:id="@+id/linearColumnvolume"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" android:layout_width="0dp"
-                    android:orientation="vertical" style="@style/groupStylebluegray_800">
+                    android:orientation="vertical" style="@style/groupStylebluegray_800"
+                    android:focusable="true"
+                    android:onClick="infoFromStripe">
+
                     <LinearLayout android:id="@+id/linear3Tab"
                         android:layout_height="match_parent"
                         android:layout_marginBottom="@dimen/_1pxv"

@@ -43,6 +43,7 @@
                             android:layout_marginTop="@dimen/_16pxv"
                             android:layout_width="@dimen/_26pxh"
                             android:scaleType="fitXY"
+                            android:onClick="back"
                             android:src="@drawable/img_arrowleft_white_a700"
                             tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_white_a700"/>
                     </FrameLayout>
@@ -138,7 +139,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:onClick="info">
 
                     <LinearLayout
                         android:id="@+id/linear3Tab"
