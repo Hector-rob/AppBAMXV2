@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.application.app.R
@@ -11,12 +12,16 @@ import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import org.w3c.dom.Text
 
 class MensajeDinero : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mensaje_dinero)
-        subirDatos()
+        var gracias = findViewById<TextView>(R.id.txtGraciasportu)
+        val hash= intent.getSerializableExtra("donation") as HashMap<Any,Any>
+        gracias.setText("¡Muchas gracias por tu donación " + hash.get("name") + "!")
+        subirDatos(hash)
 
     }
 
@@ -27,8 +32,8 @@ class MensajeDinero : AppCompatActivity() {
     }
 
 
-    fun subirDatos(){
-        val hash= intent.getSerializableExtra("donation") as HashMap<Any,Any>
+    fun subirDatos(hash: HashMap<Any,Any>){
+
         val collection : CollectionReference =
             Firebase.firestore.collection("donors")
         collection.add(hash)

@@ -43,6 +43,10 @@ public class Stripe extends AppCompatActivity {
     TextView money;
     Integer amt;
     HashMap<String, Object> hashMap;
+    TextView name;
+    TextView apellidos;
+    TextView correo;
+    TextView numero;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +57,17 @@ public class Stripe extends AppCompatActivity {
         money = findViewById(R.id.money);
         Intent intent = getIntent();
         amt = intent.getIntExtra("dinero",0);
-        money.setText("Cantidad a donar: " + amt.toString());
+        money.setText("Cantidad a donar: " + " "+ amt.toString() + " mxn");
         hashMap = (HashMap<String, Object>)intent.getSerializableExtra("donation");
+        name = findViewById(R.id.nombreTxt);
+        apellidos = findViewById(R.id.apellidosTxt);
+        correo = findViewById(R.id.correoTxt);
+        numero = findViewById(R.id.numeroTxt);
+        name.setText("Nombre(s): " + " " + hashMap.get("name"));
+        apellidos.setText("Apellidos: " + hashMap.get("firstLN") +" " +hashMap.get("secondLN") );
+        correo.setText("Correo: " + " " + hashMap.get("mail"));
+        numero.setText("Número telefónico: " + " " + hashMap.get("number"));
+
 
         /*Log.wtf("JSON",amt.toString());
         hashMap.forEach((key,value) ->{

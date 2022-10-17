@@ -112,7 +112,7 @@
                         android:letterSpacing="0.02"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="@{mensajeDonaciNVM.mensajeDonaciNModel.txtCaption}"
+                        android:text="Menú"
                         style="@style/txtRobotoregular12" tools:text="@string/lbl_men"/>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearColumnvolume"
@@ -145,7 +145,7 @@
                             android:letterSpacing="0.02"
                             android:lineSpacingExtra="@dimen/_1pxh"
                             android:singleLine="true"
-                            android:text="@{mensajeDonaciNVM.mensajeDonaciNModel.txtCaptionOne}"
+                            android:text="Información}"
                             style="@style/txtRobotoregular12_1" tools:text="@string/lbl_information"/>
                     </LinearLayout>
                 </LinearLayout>

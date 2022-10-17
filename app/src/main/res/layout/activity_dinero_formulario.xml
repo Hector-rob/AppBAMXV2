@@ -476,8 +476,8 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="Cantidad a donar *"
-                        tools:text="Cantidad a donar *" />
+                        android:text="Cantidad a donar (MXN) *"
+                        tools:text="Cantidad a donar (MXN) *" />
 
                     <View
                         android:id="@+id/lineUpperSurfaceTwo6"
