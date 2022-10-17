@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +18,10 @@ import com.google.firebase.ktx.Firebase
 import org.w3c.dom.Text
 
 class MensajeDinero : AppCompatActivity() {
+
+    lateinit var menu : LinearLayout
+    lateinit var backButton : ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mensaje_dinero)
@@ -24,12 +30,18 @@ class MensajeDinero : AppCompatActivity() {
         gracias.setText("¡Muchas gracias por tu donación " + hash.get("name") + "!")
         subirDatos(hash)
 
-    }
+        menu = findViewById(R.id.linear1Tab)
+        backButton = findViewById(R.id.imageArrowleft)
 
-
-    fun returnMenu2(){
+        menu.setOnClickListener{
             val intent = Intent(this, MenPrincipalActivity::class.java)
             startActivity(intent)
+        }
+        backButton.setOnClickListener{
+            val intent = Intent(this, MenPrincipalActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 
@@ -62,9 +74,6 @@ class MensajeDinero : AppCompatActivity() {
 
     }
 
-    fun back(view: View?){
-        finish()
-    }
 
     fun info(view: View){
         val intent = Intent(this, QhacemosActivity::class.java)

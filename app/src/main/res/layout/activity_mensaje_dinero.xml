@@ -43,9 +43,9 @@
                             android:layout_marginTop="@dimen/_16pxv"
                             android:layout_width="@dimen/_26pxh"
                             android:scaleType="fitXY"
-                            android:onClick="back"
                             android:src="@drawable/img_arrowleft_white_a700"
-                            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_white_a700"/>
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_white_a700"
+                            android:focusable="true" />
                     </FrameLayout>
                     <ImageView android:id="@+id/imageBamxlogoTwoOne"
                         android:layout_gravity="bottom|end"
@@ -84,100 +84,78 @@
                 android:text="El Banco de Alimentos México se pondrá en contacto contigo"
                 style="@style/txtRobotoromanregular15" />
         </LinearLayout>
-        <FrameLayout
+        <FrameLayout android:gravity="center_horizontal"
             android:id="@+id/frameBottombar"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:id="@+id/linear2FourupAO"
-                style="@style/groupStylebluegray_802"
-                android:layout_width="match_parent"
+            android:layout_width="match_parent">
+            <LinearLayout android:id="@+id/linear2FourupAO"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/linear1Tab"
-                    style="@style/groupStylebluegray_800"
-                    android:layout_width="0dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal" style="@style/groupStylebluegray_802"
+                android:baselineAligned="false">
+                <LinearLayout android:id="@+id/linear1Tab"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:id="@+id/menuB"
-                        android:layout_width="@dimen/_30pxh"
-                        android:layout_height="@dimen/_21pxh"
+                    android:layout_weight="1" android:layout_width="0dp"
+                    android:orientation="vertical" style="@style/groupStylebluegray_800">
+                    <ImageView android:id="@+id/imageHome"
                         android:layout_gravity="center"
+                        android:layout_height="@dimen/_21pxh"
                         android:layout_marginTop="@dimen/_8pxv"
-                        android:backgroundTint="#00FFFFFF"
-                        android:onClick="returnMenu2"
-                        app:srcCompat="@drawable/img_home" />
-
-                    <TextView
+                        android:layout_width="@dimen/_30pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_home"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_home"/>
+                    <TextView android:ellipsize="end"
+                        android:gravity="center_horizontal"
                         android:id="@+id/txtCaption"
-                        style="@style/txtRobotoregular12"
-                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_11pxv"
+                        android:layout_marginEnd="@dimen/_2pxh"
                         android:layout_marginStart="@dimen/_2pxh"
                         android:layout_marginTop="@dimen/_1pxv"
-                        android:layout_marginEnd="@dimen/_2pxh"
-                        android:layout_marginBottom="@dimen/_11pxv"
-                        android:ellipsize="end"
-                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
                         android:letterSpacing="0.02"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="Menu"
-                        tools:text="@string/lbl_men" />
+                        android:text="@string/lbl_men"
+                        style="@style/txtRobotoregular12" tools:text="@string/lbl_men"/>
                 </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearColumnvolume"
-                    style="@style/groupStylebluegray_800"
-                    android:layout_width="0dp"
+                <LinearLayout android:id="@+id/linearColumnvolume"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
+                    android:layout_weight="1" android:layout_width="0dp"
+                    android:orientation="vertical" style="@style/groupStylebluegray_800"
                     android:onClick="info">
-
-                    <LinearLayout
-                        android:id="@+id/linear3Tab"
-                        style="@style/groupStylebluegray_800"
-                        android:layout_width="match_parent"
+                    <LinearLayout android:id="@+id/linear3Tab"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/_1pxv"
                         android:layout_marginBottom="@dimen/_1pxv"
-                        android:orientation="vertical">
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical" style="@style/groupStylebluegray_800">
 
                         <ImageView
                             android:id="@+id/imageVolume"
-                            android:layout_width="@dimen/_20pxh"
-                            android:layout_height="@dimen/_20pxh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="@dimen/_9pxv"
                             android:scaleType="fitXY"
                             android:src="@drawable/img_volume"
                             tools:ignore="ContentDescription"
                             tools:src="@drawable/img_volume" />
-
-                        <TextView
+                        <TextView android:ellipsize="end"
+                            android:gravity="center_horizontal"
                             android:id="@+id/txtCaptionOne"
-                            style="@style/txtRobotoregular12_1"
-                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_8pxv"
+                            android:layout_marginEnd="@dimen/_2pxh"
                             android:layout_marginStart="@dimen/_2pxh"
                             android:layout_marginTop="@dimen/_3pxv"
-                            android:layout_marginEnd="@dimen/_2pxh"
-                            android:layout_marginBottom="@dimen/_8pxv"
-                            android:ellipsize="end"
-                            android:gravity="center_horizontal"
+                            android:layout_width="match_parent"
                             android:letterSpacing="0.02"
                             android:lineSpacingExtra="@dimen/_1pxh"
                             android:singleLine="true"
-                            android:text="Information"
-                            tools:text="@string/lbl_information" />
+                            android:text="@string/information"
+                            style="@style/txtRobotoregular12_1" tools:text="@string/information"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
