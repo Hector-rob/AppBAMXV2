@@ -41,6 +41,15 @@ class FormularioComun : AppCompatActivity() {
             correo.trim().isNotBlank() &&
             numero.trim().isNotEmpty() &&
             numero.trim().isNotBlank()) {
+
+            if(!correo.contains("@") || !(correo.contains(".com") || correo.contains(".mx")
+                        || correo.contains(".org"))){
+                Toast.makeText(this, "Correo inválido", Toast.LENGTH_SHORT).show()
+            }
+            else if(numero.length != 10){
+                Toast.makeText(this, "El número telefónico tiene que ser de 10 números", Toast.LENGTH_SHORT).show()
+            }
+            else {
                 val donor = hashMapOf(
                     "name" to nombre,
                     "firstLN" to apellidoP,
@@ -64,6 +73,7 @@ class FormularioComun : AppCompatActivity() {
                 }
                 val intent = Intent(this, MensajeDonaciNActivity::class.java)
                 startActivity(intent)
+            }
          } else {
             Toast.makeText(this, "Campo faltante", Toast.LENGTH_SHORT).show()
          }
