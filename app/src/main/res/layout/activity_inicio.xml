@@ -10,22 +10,7 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical" style="@style/groupStylebluegray_800">
-        <FrameLayout android:gravity="start"
-            android:id="@+id/frameSystembar"
-            android:layout_height="@dimen/_29pxv"
-            android:layout_width="match_parent" style="@style/groupStylegray_900_14">
-            <ImageView android:id="@+id/imageMask"
-                android:layout_gravity="end"
-                android:layout_height="@dimen/_12pxh"
-                android:layout_marginBottom="@dimen/_8pxv"
-                android:layout_marginEnd="@dimen/_9pxh"
-                android:layout_marginStart="@dimen/_10pxh"
-                android:layout_marginTop="@dimen/_8pxv"
-                android:layout_width="@dimen/_52pxh"
-                android:scaleType="fitXY"
-                android:src="@drawable/img_mask_black_900"
-                tools:ignore="ContentDescription" tools:src="@drawable/img_mask_black_900"/>
-        </FrameLayout>
+
 
         <ImageView
             android:id="@+id/imageBamxlogoOne"

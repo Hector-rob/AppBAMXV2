@@ -13,22 +13,7 @@
             android:id="@+id/linearColumnmask"
             android:layout_height="0dp" android:layout_weight="1.0"
             android:layout_width="match_parent" android:orientation="vertical">
-            <FrameLayout android:gravity="start"
-                android:id="@+id/frameSystembar"
-                android:layout_height="@dimen/_29pxv"
-                android:layout_width="match_parent" style="@style/groupStylegray_900_14">
-                <ImageView android:id="@+id/imageMask"
-                    android:layout_gravity="end"
-                    android:layout_height="@dimen/_12pxh"
-                    android:layout_marginBottom="@dimen/_8pxv"
-                    android:layout_marginEnd="@dimen/_9pxh"
-                    android:layout_marginStart="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_8pxv"
-                    android:layout_width="@dimen/_52pxh"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_mask_black_900"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_mask_black_900"/>
-            </FrameLayout>
+
             <FrameLayout android:gravity="start"
                 android:id="@+id/frameStackbamxlogotwo"
                 android:layout_height="@dimen/_70pxv" android:layout_width="match_parent">
@@ -58,6 +43,7 @@
                             android:layout_marginTop="@dimen/_16pxv"
                             android:layout_width="@dimen/_26pxh"
                             android:scaleType="fitXY"
+                            android:onClick="back"
                             android:src="@drawable/img_arrowleft_white_a700"
                             tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_white_a700"/>
                     </FrameLayout>
@@ -68,7 +54,7 @@
                         android:layout_marginTop="@dimen/_10pxv"
                         android:layout_width="@dimen/_62pxh"
                         android:scaleType="fitXY"
-                        imageRes="@{@drawable/img_bamxlogo2_5}"
+                        imageRes="@drawable/img_bamxlogo2_5"
                         tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_5"/>
                     <ImageView android:id="@+id/imageImageFiftyOne"
                         android:layout_gravity="top|end"
@@ -79,53 +65,153 @@
                         android:layout_marginTop="@dimen/_4pxv"
                         android:layout_width="@dimen/_56pxh"
                         android:scaleType="fitXY"
-                        imageRes="@{@drawable/img_image51}"
+                        android:onClick="carButton"
+                        imageRes="@drawable/img_image51"
                         tools:ignore="ContentDescription" tools:src="@drawable/img_image51"/>
                 </FrameLayout>
             </FrameLayout>
-            <TextView android:ellipsize="end"
-                android:gravity="center_horizontal"
+
+            <TextView
                 android:id="@+id/txtH5"
+                style="@style/txt_1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_40pxh"
                 android:layout_marginStart="@dimen/_40pxh"
                 android:layout_marginTop="@dimen/_23pxv"
-                android:layout_width="match_parent"
+                android:layout_marginEnd="@dimen/_40pxh"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
                 android:letterSpacing="0.01"
                 android:lineSpacingExtra="@dimen/_1pxh"
                 android:singleLine="true"
-                android:text="@{selecciNAlimentosVM.selecciNAlimentosModel.fruta}"
-                style="@style/txt_1" tools:text="@string/lbl_fruta_y_verdura2"/>
-            <LinearLayout android:gravity="start"
-                android:id="@+id/linearColumnzero"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_40pxh"
-                android:layout_marginStart="@dimen/_40pxh"
-                android:layout_marginTop="@dimen/_36pxv"
-                android:layout_width="match_parent" android:orientation="vertical">
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerListrectanglefourteen"
-                    android:layout_height="wrap_content"
+                android:text="@string/lbl_embutidos_y_lacteos"
+                android:textAllCaps="true"
+                tools:text="@string/lbl_embutidos_y_lacteos" />
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_450pxh"
+                android:contentDescription="@string/lbl_frutasYVerduras">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    itemSpace="@{@dimen/_22pxh}" tools:itemCount="2" tools:listitem="@layout/row_listrectanglefourteen"/>
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerListnaranja"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_17pxv"
-                    android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    itemSpace="@{@dimen/_22pxh}" tools:itemCount="2" tools:listitem="@layout/row_listnaranja"/>
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:layout_marginEnd="@dimen/_40pxh"
+                    android:layout_marginStart="@dimen/_40pxh"
+                    android:layout_marginTop="@dimen/_36pxv">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.fragment.app.FragmentContainerView
+                            android:id="@+id/fragment1"
+                            android:name="com.application.app.modules.seleccinalimentos.ui.articuloFragment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            tools:layout="@layout/fragment_articulo" />
+
+                        <androidx.fragment.app.FragmentContainerView
+                            android:id="@+id/fragment2"
+                            android:name="com.application.app.modules.seleccinalimentos.ui.articuloFragment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            tools:layout="@layout/fragment_articulo" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.fragment.app.FragmentContainerView
+                            android:id="@+id/fragment3"
+                            android:name="com.application.app.modules.seleccinalimentos.ui.articuloFragment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            tools:layout="@layout/fragment_articulo" />
+
+                        <androidx.fragment.app.FragmentContainerView
+                            android:id="@+id/fragment4"
+                            android:name="com.application.app.modules.seleccinalimentos.ui.articuloFragment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            tools:layout="@layout/fragment_articulo" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.fragment.app.FragmentContainerView
+                            android:id="@+id/fragment5"
+                            android:name="com.application.app.modules.seleccinalimentos.ui.articuloFragment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            tools:layout="@layout/fragment_articulo" />
+
+                        <androidx.fragment.app.FragmentContainerView
+                            android:id="@+id/fragment6"
+                            android:name="com.application.app.modules.seleccinalimentos.ui.articuloFragment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            tools:layout="@layout/fragment_articulo" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.fragment.app.FragmentContainerView
+                            android:id="@+id/fragment7"
+                            android:name="com.application.app.modules.seleccinalimentos.ui.articuloFragment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            tools:layout="@layout/fragment_articulo" />
+
+                        <androidx.fragment.app.FragmentContainerView
+                            android:id="@+id/fragment8"
+                            android:name="com.application.app.modules.seleccinalimentos.ui.articuloFragment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            tools:layout="@layout/fragment_articulo" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:ellipsize="end" android:gravity="center"
                 android:id="@+id/btnDonar"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_40pxh"
                 android:layout_marginStart="@dimen/_40pxh"
-                android:layout_marginTop="@dimen/_47pxv"
+                android:layout_marginTop="@dimen/_10pxv"
                 android:layout_width="match_parent"
                 android:letterSpacing="0.06"
                 android:lineSpacingExtra="@dimen/_1pxh"
@@ -136,20 +222,23 @@
                 android:singleLine="true"
                 android:text="@string/lbl_donar"
                 android:textAllCaps="true"
+                android:onClick="btnDonar"
                 style="@style/btnSolidRounded_2" tools:text="@string/lbl_donar"/>
         </LinearLayout>
         <FrameLayout android:gravity="center_horizontal"
             android:id="@+id/frameBottombar"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_1pxh" android:layout_width="match_parent">
+            android:layout_width="match_parent">
             <LinearLayout android:id="@+id/linear2FourupAO"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:orientation="horizontal" style="@style/groupStylebluegray_802">
+                android:orientation="horizontal" style="@style/groupStylebluegray_802"
+                android:baselineAligned="false">
                 <LinearLayout android:id="@+id/linear1Tab"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" android:layout_width="0dp"
-                    android:orientation="vertical" style="@style/groupStylebluegray_800">
+                    android:orientation="vertical" style="@style/groupStylebluegray_800"
+                    android:onClick="returnMenu">
                     <ImageView android:id="@+id/imageHome"
                         android:layout_gravity="center"
                         android:layout_height="@dimen/_21pxh"
@@ -170,13 +259,14 @@
                         android:letterSpacing="0.02"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="@{selecciNAlimentosVM.selecciNAlimentosModel.txtCaption}"
+                        android:text="@@string/lbl_men"
                         style="@style/txtRobotoregular12" tools:text="@string/lbl_men"/>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearColumnvolume"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" android:layout_width="0dp"
-                    android:orientation="vertical" style="@style/groupStylebluegray_800">
+                    android:orientation="vertical" style="@style/groupStylebluegray_800"
+                    android:onClick="info">
                     <LinearLayout android:id="@+id/linear3Tab"
                         android:layout_height="match_parent"
                         android:layout_marginBottom="@dimen/_1pxv"
@@ -203,7 +293,7 @@
                             android:letterSpacing="0.02"
                             android:lineSpacingExtra="@dimen/_1pxh"
                             android:singleLine="true"
-                            android:text="@{selecciNAlimentosVM.selecciNAlimentosModel.txtCaptionOne}"
+                            android:text="@string/lbl_information"
                             style="@style/txtRobotoregular12_1" tools:text="@string/lbl_information"/>
                     </LinearLayout>
                 </LinearLayout>

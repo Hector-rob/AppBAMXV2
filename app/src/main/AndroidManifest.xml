@@ -17,7 +17,15 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="stateHidden">
         <activity
-            android:name=".RecetasFiltradasActivity"
+            android:name=".modules.recetas.ui.RecetasFiltradasActivity"
+            android:exported="false" />
+        android:usesCleartextTraffic="true"
+        android:windowSoftInputMode="stateHidden">
+        <activity
+            android:name=".modules.mensajedonacin.ui.MensajeDinero"
+            android:exported="false" />
+        <activity
+            android:name=".DineroFormulario"
             android:exported="false" />
         <!--
         <activity
@@ -37,14 +45,23 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".modules.seleccinalimentos.ui.CanastaBasicaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".modules.seleccinalimentos.ui.AbarrotesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".modules.seleccinalimentos.ui.EmbutidosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".modules.seleccinalimentos.ui.FrutasYVerdurasActivity"
+            android:exported="false" />
+        <activity
             android:name=".FormularioComun"
             android:exported="false" />
         <activity
             android:name=".Stripe"
             android:exported="false" />
-        <activity
-            android:name=".modules.recetas.ui.RecetasActivity"
-            android:screenOrientation="portrait" />
 
         <activity
             android:name=".modules.recetas.ui.RecetasFiltradasActivity"
@@ -58,9 +75,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".modules.voluntariado.MainActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".modules.buscador.ui.BuscadorActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".modules.qhacemos.ui.QhacemosActivity"
@@ -98,15 +112,7 @@
         <activity
             android:name=".modules.formulariodonacin.ui.FormularioDonaciNActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".modules.favoritos.ui.FavoritosActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".modules.resumenalimentos.ui.ResumenAlimentosActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".modules.seleccinalimentos.ui.SelecciNAlimentosActivity"
-            android:screenOrientation="portrait" />
+
         <activity
             android:name=".modules.dinero.ui.DineroActivity"
             android:exported="true"

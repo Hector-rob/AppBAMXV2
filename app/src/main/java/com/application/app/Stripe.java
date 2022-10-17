@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +18,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.application.app.modules.mensajedonacin.ui.MensajeDinero;
+import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity;
+
+import com.google.protobuf.Any;
 import com.stripe.android.PaymentConfiguration;
 import com.stripe.android.paymentsheet.PaymentSheet;
 import com.stripe.android.paymentsheet.PaymentSheetResult;
@@ -38,14 +41,12 @@ public class Stripe extends AppCompatActivity {
     String EphericalKey;
     String ClientSecret;
     TextView money;
-    Boolean focus = true;
     Integer amt;
-
-
-
-
-
-
+    HashMap<String, Object> hashMap;
+    TextView name;
+    TextView apellidos;
+    TextView correo;
+    TextView numero;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,18 +57,23 @@ public class Stripe extends AppCompatActivity {
         money = findViewById(R.id.money);
         Intent intent = getIntent();
         amt = intent.getIntExtra("dinero",0);
-        money.setText("Cantidad a donar: " + amt.toString());
+        money.setText("Cantidad a donar: " + " "+ amt.toString() + " mxn");
+        hashMap = (HashMap<String, Object>)intent.getSerializableExtra("donation");
+        name = findViewById(R.id.nombreTxt);
+        apellidos = findViewById(R.id.apellidosTxt);
+        correo = findViewById(R.id.correoTxt);
+        numero = findViewById(R.id.numeroTxt);
+        name.setText("Nombre(s): " + " " + hashMap.get("name"));
+        apellidos.setText("Apellidos: " + hashMap.get("firstLN") +" " +hashMap.get("secondLN") );
+        correo.setText("Correo: " + " " + hashMap.get("mail"));
+        numero.setText("Número telefónico: " + " " + hashMap.get("number"));
 
-       money.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean hasFocus) {
-                if(!hasFocus && money.getText().toString() != null){
-                    focus = false;
-                    Log.wtf("JSON","Sin focus");
-                }
 
-            }
+        /*Log.wtf("JSON",amt.toString());
+        hashMap.forEach((key,value) ->{
+            Log.wtf("Hash",value.toString());
         });
+         */
 
 
         PaymentConfiguration.init(this, PUBLISH_KEY);
@@ -76,11 +82,11 @@ public class Stripe extends AppCompatActivity {
 
         });
 
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PaymentFlow();
-
             }
         });
 
@@ -123,7 +129,10 @@ public class Stripe extends AppCompatActivity {
 
     private void onPaymentResult(PaymentSheetResult paymentSheetResult) {
         if(paymentSheetResult instanceof PaymentSheetResult.Completed){
-            Toast.makeText(this,"payment success",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Pago Exitoso",Toast.LENGTH_SHORT).show();
+            Intent myIntent = new Intent(Stripe.this, MensajeDinero.class);
+            myIntent.putExtra("donation", hashMap); //Optional parameters
+            Stripe.this.startActivity(myIntent);
         }
     }
 
@@ -229,6 +238,7 @@ public class Stripe extends AppCompatActivity {
                                 customerID,
                                 EphericalKey
                         ))
+
         );
     }
 }

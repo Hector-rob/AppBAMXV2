@@ -8,68 +8,73 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical" style="@style/groupStylewhite_A700">
-        <LinearLayout android:gravity="center_horizontal"
-            android:id="@+id/linearColumnmask"
-            android:layout_height="0dp" android:layout_weight="1.0"
-            android:layout_width="match_parent" android:orientation="vertical">
 
-            <FrameLayout android:gravity="start"
-                android:id="@+id/frameSystembar"
-                android:layout_height="@dimen/_29pxv"
-                android:layout_width="match_parent" style="@style/groupStylegray_900_14">
-                <ImageView android:id="@+id/imageMask"
-                    android:layout_gravity="end"
-                    android:layout_height="@dimen/_12pxh"
-                    android:layout_marginBottom="@dimen/_8pxv"
-                    android:layout_marginEnd="@dimen/_9pxh"
-                    android:layout_marginStart="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_8pxv"
-                    android:layout_width="@dimen/_52pxh"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_mask_black_900"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_mask_black_900"/>
-            </FrameLayout>
-            <FrameLayout android:gravity="start"
+        <LinearLayout
+            android:id="@+id/linearColumnmask"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
                 android:id="@+id/frameStackbamxlogotwo"
-                android:layout_height="@dimen/_70pxv" android:layout_width="match_parent">
-                <ImageView android:id="@+id/imageBamxlogoTwo"
-                    android:layout_gravity="bottom|end"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_70pxv"
+                android:gravity="start">
+
+                <ImageView
+                    android:id="@+id/imageBamxlogoTwo"
+                    imageRes="@{@drawable/img_bamxlogo2_12}"
+                    android:layout_width="@dimen/_62pxh"
                     android:layout_height="@dimen/_64pxh"
+                    android:layout_gravity="bottom|end"
                     android:layout_marginStart="@dimen/_10pxh"
                     android:layout_marginTop="@dimen/_10pxv"
-                    android:layout_width="@dimen/_62pxh"
                     android:scaleType="fitXY"
-                    imageRes="@{@drawable/img_bamxlogo2_12}"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_12"/>
-                <FrameLayout android:id="@+id/frameStackbamxlogotwoOne"
-                    android:layout_gravity="start"
-                    android:layout_height="@dimen/_70pxv" android:layout_width="match_parent">
-                    <FrameLayout android:id="@+id/frameStackarrowleft"
-                        android:layout_gravity="top|start"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_bamxlogo2_12" />
+
+                <FrameLayout
+                    android:id="@+id/frameStackbamxlogotwoOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70pxv"
+                    android:layout_gravity="start">
+
+                    <FrameLayout
+                        android:id="@+id/frameStackarrowleft"
+                        style="@style/groupStylebluegray_801"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/_56pxv"
-                        android:layout_marginBottom="@dimen/_10pxv"
-                        android:layout_width="match_parent" style="@style/groupStylebluegray_801">
-                        <ImageView android:id="@+id/imageArrowleft"
-                            android:layout_gravity="start"
+                        android:layout_gravity="top|start"
+                        android:layout_marginBottom="@dimen/_10pxv">
+
+                        <ImageView
+                            android:id="@+id/imageArrowleft"
+                            android:layout_width="@dimen/_26pxh"
                             android:layout_height="@dimen/_22pxh"
-                            android:layout_marginBottom="@dimen/_16pxv"
-                            android:layout_marginEnd="@dimen/_24pxh"
+                            android:layout_gravity="start"
                             android:layout_marginStart="@dimen/_24pxh"
                             android:layout_marginTop="@dimen/_16pxv"
-                            android:layout_width="@dimen/_26pxh"
+                            android:layout_marginEnd="@dimen/_24pxh"
+                            android:layout_marginBottom="@dimen/_16pxv"
                             android:scaleType="fitXY"
                             android:src="@drawable/img_arrowleft_white_a700"
-                            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_white_a700"/>
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/img_arrowleft_white_a700" />
                     </FrameLayout>
-                    <ImageView android:id="@+id/imageBamxlogoTwoOne"
-                        android:layout_gravity="bottom|end"
+
+                    <ImageView
+                        android:id="@+id/imageBamxlogoTwoOne"
+                        imageRes="@{@drawable/img_bamxlogo2_13}"
+                        android:layout_width="@dimen/_62pxh"
                         android:layout_height="@dimen/_64pxh"
+                        android:layout_gravity="bottom|end"
                         android:layout_marginStart="@dimen/_10pxh"
                         android:layout_marginTop="@dimen/_10pxv"
-                        android:layout_width="@dimen/_62pxh"
                         android:scaleType="fitXY"
-                        imageRes="@{@drawable/img_bamxlogo2_13}"
-                        tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_13"/>
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_bamxlogo2_13" />
                 </FrameLayout>
             </FrameLayout>
 
@@ -144,7 +149,7 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="572dp">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -181,7 +186,8 @@
                             android:ems="10"
                             android:inputType="number"
                             android:textColor="#000000"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            tools:ignore="SpeakableTextPresentCheck" />
 
                         <ImageView
                             android:id="@+id/imageLabelTwo"
@@ -245,7 +251,8 @@
                             android:ems="10"
                             android:inputType="textPersonName"
                             android:textColor="#000000"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            tools:ignore="SpeakableTextPresentCheck" />
 
                         <ImageView
                             android:id="@+id/imageLabelFour"
@@ -313,6 +320,7 @@
                         android:singleLine="true"
                         android:text="@string/lbl_enviar"
                         android:textAllCaps="true"
+                        tools:ignore="TouchTargetSizeCheck"
                         tools:text="@string/lbl_enviar" />
 
                 </LinearLayout>
@@ -320,10 +328,9 @@
 
             <FrameLayout
                 android:id="@+id/frameBottombar"
+                android:gravity="bottom"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_1pxh"
-                android:gravity="bottom|center_horizontal">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:id="@+id/linear2FourupAO"
@@ -366,7 +373,7 @@
                             android:letterSpacing="0.02"
                             android:lineSpacingExtra="@dimen/_1pxh"
                             android:singleLine="true"
-
+                            android:text="@string/menu"
                             tools:text="@string/lbl_men" />
                     </LinearLayout>
 
@@ -376,6 +383,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="info"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -412,13 +420,12 @@
                                 android:letterSpacing="0.02"
                                 android:lineSpacingExtra="@dimen/_1pxh"
                                 android:singleLine="true"
-                                tools:text="@string/lbl_information" />
+                                android:text="@string/information"
+                                tools:text="@string/information" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </FrameLayout>
-
-
         </LinearLayout>
     </LinearLayout>
 </layout>

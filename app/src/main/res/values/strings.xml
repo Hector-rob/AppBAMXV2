@@ -9,6 +9,7 @@
     <string name="msg_apellido_patern2">Apellido paterno</string>
     <string name="msg_embutidos_y_l_c">Embutidos y
 lácteos</string>
+    <string name="cantDinero">Cantidad a donar: </string>
     <string name="msg_quiero_donar_lo">QUIERO DONAR LO EQUIVALENTE A:</string>
     <string name="lbl_receta_6">Receta 6</string>
     <string name="msg_rescatamos_135">Rescatamos 135,504,773 kg de alimento
@@ -26,7 +27,7 @@ talentos.</string>
     <string name="msg_apellido_matern">Apellido materno *</string>
     <string name="lbl_voluntariado">VOLUNTARIADO</string>
     <string name="lbl_recetas">Recetas</string>
-    <string name="lbl_information">Information</string>
+    <string name="lbl_information">Información</string>
     <string name="lbl_en_el_mundo">EN EL MUNDO</string>
     <string name="lbl_durazno">DURAZNO</string>
     <string name="lbl_recetas2">RECETAS</string>
@@ -113,6 +114,13 @@ verdura</string>
     <string name="lbl_estado">Estado de residencia *</string>
     <string name="item">Artículo seleccionado</string>
     <string name="ingrese">INGRESE SUS DATOS</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="lbl_canasta_basica">CANASTA BÁSICA</string>
+    <string name="lbl_frutas_verduras">Frutas y Verduras</string>
+    <string name="lbl_embutidos_y_lacteos">Embutidos y Lácteos</string>
+    <string name="lbl_plus">+</string>
+    <string name="lbl_minus">-</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu">Menú</string>
+    <string name="information">Información</string>
+
 </resources>

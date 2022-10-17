@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FormularioComun">
+    tools:context=".DineroFormulario">
 
     <LinearLayout
         android:id="@+id/linearDineroForm"
@@ -21,28 +21,6 @@
             android:layout_weight="1.0"
             android:gravity="center_horizontal"
             android:orientation="vertical">
-
-            <FrameLayout
-                android:id="@+id/frameSystembarDinero"
-                style="@style/groupStylegray_900_14"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_29pxv"
-                android:gravity="start">
-
-                <ImageView
-                    android:id="@+id/imageMaskDInero"
-                    android:layout_width="@dimen/_52pxh"
-                    android:layout_height="@dimen/_12pxh"
-                    android:layout_gravity="end"
-                    android:layout_marginStart="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_8pxv"
-                    android:layout_marginEnd="@dimen/_9pxh"
-                    android:layout_marginBottom="@dimen/_8pxv"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_mask_black_900"
-                    tools:ignore="ContentDescription"
-                    tools:src="@drawable/img_mask_black_900" />
-            </FrameLayout>
 
             <FrameLayout
                 android:id="@+id/frameStackbamxlogotwo2Dinero"
@@ -84,7 +62,6 @@
                             android:layout_marginEnd="@dimen/_24pxh"
                             android:layout_marginBottom="@dimen/_16pxv"
                             android:scaleType="fitXY"
-                            android:onClick="back"
                             android:src="@drawable/img_arrowleft_white_a700"
                             tools:ignore="ContentDescription"
                             tools:src="@drawable/img_arrowleft_white_a700" />
@@ -134,7 +111,7 @@
                 android:layout_marginEnd="@dimen/_22pxh">
 
                 <EditText
-                    android:id="@+id/nombreFormularioComunInput"
+                    android:id="@+id/nombreFormularioComunInputDinero"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="13"
@@ -199,7 +176,7 @@
                 android:layout_marginEnd="@dimen/_22pxh">
 
                 <EditText
-                    android:id="@+id/APFormularioComunInput"
+                    android:id="@+id/APFormularioComunInputDinero"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="13"
@@ -264,7 +241,7 @@
                 android:layout_marginEnd="@dimen/_22pxh">
 
                 <EditText
-                    android:id="@+id/AMFormularioComunInput"
+                    android:id="@+id/AMFormularioComunInputDinero"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="13"
@@ -329,7 +306,7 @@
                 android:layout_marginEnd="@dimen/_22pxh">
 
                 <EditText
-                    android:id="@+id/CorreoFormularioComunInput"
+                    android:id="@+id/CorreoFormularioComunInputDinero"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="13"
@@ -370,7 +347,7 @@
                         android:singleLine="true"
                         android:text="Correo electrónico *"
                         tools:text="Correo electrónico *"
-                        />
+                         />
 
                     <View
                         android:id="@+id/lineUpperSurfaceTwo4"
@@ -394,7 +371,7 @@
                 android:layout_marginEnd="@dimen/_22pxh">
 
                 <EditText
-                    android:id="@+id/NumeroFormularioComunInput"
+                    android:id="@+id/NumeroFormularioComunInputDinero"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="13"
@@ -449,7 +426,70 @@
                 </LinearLayout>
             </FrameLayout>
 
+            <FrameLayout
+                android:id="@+id/frameAInactiveEna26"
+                android:layout_width="@dimen/_363pxh"
+                android:layout_height="@dimen/_56pxv"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_22pxh"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:layout_marginEnd="@dimen/_22pxh">
 
+                <EditText
+                    android:id="@+id/DineroForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="13"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:inputType="number"
+                    android:textColor="#000000"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/imageLabelFour6"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_49pxv"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_label"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_label" />
+
+                <LinearLayout
+                    android:id="@+id/linearLabel26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center"
+                    android:layout_marginStart="@dimen/_13pxh"
+                    android:layout_marginEnd="@dimen/_13pxh"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtLabelFive6"
+                        style="@style/txtRobotoregular16_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.29"
+                        android:ellipsize="end"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="Cantidad a donar (MXN) *"
+                        tools:text="Cantidad a donar (MXN) *" />
+
+                    <View
+                        android:id="@+id/lineUpperSurfaceTwo6"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_1pxv"
+                        android:layout_marginStart="@dimen/_3pxh"
+                        android:layout_marginTop="@dimen/_7pxv"
+                        android:layout_marginBottom="@dimen/_6pxv"
+                        android:layout_weight="0.71"
+                        android:background="@color/black_900_1e" />
+                </LinearLayout>
+            </FrameLayout>
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -465,7 +505,7 @@
                 android:gravity="center"
                 android:letterSpacing="0.06"
                 android:lineSpacingExtra="@dimen/_1pxh"
-                android:onClick="subirDatos"
+                android:onClick="subirDatosaa"
                 android:paddingStart="@dimen/_30pxh"
                 android:paddingTop="@dimen/_14pxv"
                 android:paddingEnd="@dimen/_30pxh"
@@ -481,7 +521,6 @@
             android:id="@+id/frameBottombar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_1pxh"
             android:gravity="center_horizontal">
 
             <LinearLayout
@@ -533,8 +572,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:onClick="info">
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:id="@+id/linear3Tab"
