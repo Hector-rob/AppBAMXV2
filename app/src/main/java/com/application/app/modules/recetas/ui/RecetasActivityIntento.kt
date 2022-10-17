@@ -73,7 +73,6 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
       info = findViewById(R.id.linearColumnvolume)
       flecha = findViewById(R.id.imageArrowleft)
 
-
       //para guardar recetas
       sharedPrefs = getSharedPreferences(ARCHIVO_PREFS, Context.MODE_PRIVATE)
 
