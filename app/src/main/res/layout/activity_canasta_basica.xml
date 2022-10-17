@@ -42,8 +42,9 @@
                         android:layout_marginTop="@dimen/_10pxv"
                         android:layout_width="@dimen/_62pxh"
                         android:scaleType="fitXY"
-                        imageRes="@drawable/img_bamxlogo2_5"
-                        tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_5"/>
+                        tools:ignore="ContentDescription"
+                        imageRes="@drawable/img_bamxlogo2_13"
+                        tools:src="@drawable/img_bamxlogo2_13" />
                     <ImageView android:id="@+id/imageImageFiftyOne"
                         android:layout_gravity="top|end"
                         android:layout_height="@dimen/_52pxh"

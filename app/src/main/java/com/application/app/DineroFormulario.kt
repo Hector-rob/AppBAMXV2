@@ -78,6 +78,10 @@ class DineroFormulario : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun back(view: View?){
+        finish()
+    }
+
     fun info(view: View){
         val intent = Intent(this, QhacemosActivity::class.java)
         startActivity(intent)

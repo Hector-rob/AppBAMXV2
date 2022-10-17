@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.application.app.R
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 import com.google.firebase.firestore.*
 
 
@@ -208,6 +209,11 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
     fun buscar(view: View?){
         val intent = Intent(this, RecetasFiltradasActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun info(view: View){
+        val intent = Intent(this, QhacemosActivity::class.java)
         startActivity(intent)
     }
 
