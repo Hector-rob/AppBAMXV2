@@ -43,7 +43,8 @@ class DineroFormulario : AppCompatActivity() {
             dinero.trim().isNotEmpty() &&
             dinero.trim().isNotBlank()) {
 
-            if(!correo.contains("@") || !(correo.contains(".com"))){
+            if(!correo.contains("@") || !(correo.contains(".com") || correo.contains(".mx")
+                        || correo.contains(".org"))){
                 Toast.makeText(this, "Correo inválido", Toast.LENGTH_SHORT).show()
             }
             else if(numero.length != 10){
