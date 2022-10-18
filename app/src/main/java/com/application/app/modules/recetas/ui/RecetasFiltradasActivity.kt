@@ -91,6 +91,9 @@ class RecetasFiltradasActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
+        eventChangeListener()
+
+
         //para guardar recetas
         sharedPrefs = getSharedPreferences(ARCHIVO_PREFS, Context.MODE_PRIVATE)
 
@@ -100,20 +103,24 @@ class RecetasFiltradasActivity : AppCompatActivity(), View.OnClickListener {
         var titulito: String
         var ingredientitos:String
         var descripcioncita:String
+        var imagencita:String
+        var linkcito:String
 
 
         for (i in 0 until 2) {
             titulito = sharedPrefs.getString("title: $i", "No hay datos").toString()
             ingredientitos = sharedPrefs.getString("ingredients: $i", "No hay datos").toString()
             descripcioncita = sharedPrefs.getString("description: $i", "No hay datos").toString()
-            recetaArrayList.add(Receta(titulito, ingredientitos, descripcioncita))
+            imagencita = sharedPrefs.getString("image: $i", "No hay datos").toString()
+            linkcito = sharedPrefs.getString("link: $i", "No hay datos").toString()
+            recetaArrayList.add(Receta(titulito, ingredientitos, descripcioncita, imagencita, linkcito))
         }
 
 
 
         verRecetaFragment = FragmentVerReceta()
 
-        eventChangeListener()
+        //eventChangeListener()
 
     }
 
