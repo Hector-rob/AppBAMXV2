@@ -143,11 +143,6 @@ class CanastaBasicaActivity : AppCompatActivity() {
         finish()
     }
 
-    fun carButton(view: View){
-        //val intent = Intent(this, )
-        //startActivity(intent)
-    }
-
     fun returnMenu(view: View){
         val intent = Intent(this, MenPrincipalActivity::class.java)
         startActivity(intent)
@@ -156,6 +151,11 @@ class CanastaBasicaActivity : AppCompatActivity() {
     fun info(view: View){
         val intent = Intent(this, QhacemosActivity::class.java)
         startActivity(intent)
+    }
+
+    fun carButton(view: View){
+        //val intent = Intent(this, )
+        //startActivity(intent)
     }
 
 }

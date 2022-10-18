@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="stateHidden">
         <activity
+            android:name=".modules.seleccinalimentos.ui.FoodDonations"
+            android:exported="false" />
+        <activity
             android:name=".modules.mensajedonacin.ui.MensajeDinero"
             android:exported="false" />
         <activity
@@ -57,11 +60,9 @@
         <activity
             android:name=".Stripe"
             android:exported="false" />
-
         <activity
             android:name=".modules.recetas.ui.RecetasFiltradasActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".modules.recetas.ui.VerRecetasActivity"
             android:screenOrientation="portrait" />
@@ -107,7 +108,6 @@
         <activity
             android:name=".modules.formulariodonacin.ui.FormularioDonaciNActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".modules.dinero.ui.DineroActivity"
             android:exported="true"
