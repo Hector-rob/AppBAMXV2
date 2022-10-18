@@ -121,6 +121,8 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
        */
       //Fin de código comentado
 
+
+
       var titulito: String
       var ingredientitos:String
       var descripcioncita:String
