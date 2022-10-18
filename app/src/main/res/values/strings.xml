@@ -77,6 +77,7 @@ donar?</string>
     <string name="lbl_nombre_s2">Nombre(s)</string>
     <string name="lbl_nombre_s">Nombre(s) *</string>
     <string name="lbl_enviar">enviar</string>
+    <string name="lbl_correct">modificar</string>
     <string name="msg_el_banco_de_ali">El Banco de Alimentos de México se
 contactará contigo.</string>
     <string name="lbl_abarrotes">ABARROTES</string>
@@ -126,5 +127,6 @@ verdura</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="menu">Menú</string>
     <string name="information">Información</string>
+    <string name="correct">Modificar</string>
 
 </resources>
