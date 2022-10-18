@@ -97,7 +97,7 @@
                             android:letterSpacing="0.01"
                             android:lineSpacingExtra="@dimen/_1pxh"
                             android:singleLine="true"
-                            android:text="@{qhacemosVM.qhacemosModel.txtH5}"
+                            android:text="¿QUÉ HACEMOS?"
                             android:textColor="#FFFFFF"
                             android:textSize="35sp"
                             tools:text="@string/lbl_q_hacemos" />
@@ -129,8 +129,8 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="@{qhacemosVM.qhacemosModel.txtH5}"
-                        tools:text="@string/lbl_en_el_mundo" />
+                        android:text="EN EL MUNDO"
+                        tools:text="EN EL MUNDO" />
 
                     <TextView
                         android:id="@+id/txtDescription"
@@ -172,9 +172,9 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="@{qhacemosVM.qhacemosModel.txtH5}"
+                        android:text="EN MÉXICO"
                         android:textColor = "#439347"
-                        tools:text="@string/lbl_en_mexico" />
+                        tools:text="EN MÉXICO" />
 
                     <TextView
                         android:id="@+id/txtDescriptionOne"
@@ -216,9 +216,9 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"
-                        android:text="@{qhacemosVM.qhacemosModel.txtH5}"
+                        android:text="EN LA RED BAMX"
                         android:textColor="#D73946"
-                        tools:text="@string/lbl_en_la_red_bamx" />
+                        tools:text="EN LA RED BAMX" />
 
                     <TextView
                         android:id="@+id/txtWeight"
