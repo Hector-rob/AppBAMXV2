@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.application.app.R
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 import com.google.firebase.firestore.*
 
 class RecetasFiltradasActivity : AppCompatActivity(), View.OnClickListener {
@@ -177,6 +178,11 @@ class RecetasFiltradasActivity : AppCompatActivity(), View.OnClickListener {
         overridePendingTransition(0, 0);
         startActivity(getIntent());
         overridePendingTransition(0, 0);
+    }
+
+    fun info(view: View){
+        val intent = Intent(this, QhacemosActivity::class.java)
+        startActivity(intent)
     }
 
 

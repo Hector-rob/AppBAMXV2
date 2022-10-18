@@ -10,6 +10,7 @@ import com.application.app.databinding.ActivityMensajeDonaciNBinding
 import com.application.app.modules.donaciones.ui.DonacionesActivity
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.application.app.modules.mensajedonacin.`data`.viewmodel.MensajeDonaciNVM
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 import kotlin.String
 import kotlin.Unit
 
@@ -24,15 +25,16 @@ class MensajeDonaciNActivity :
 
   override fun setUpClicks(): Unit {
     binding.imageArrowleft.setOnClickListener {
-      val destIntent = DonacionesActivity.getIntent(this, null)
+      val destIntent = MenPrincipalActivity.getIntent(this, null)
       startActivity(destIntent)
-    }
-    binding.imageArrowleft.setOnClickListener {
-      finish()
     }
     binding.linear1Tab.setOnClickListener {
       val destIntent = MenPrincipalActivity.getIntent(this, null)
       startActivity(destIntent)
+    }
+    binding.linear3Tab.setOnClickListener{
+      val intent = Intent(this, QhacemosActivity::class.java)
+      startActivity(intent)
     }
   }
 

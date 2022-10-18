@@ -17,11 +17,6 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="stateHidden">
         <activity
-            android:name=".modules.recetas.ui.RecetasFiltradasActivity"
-            android:exported="false" />
-        android:usesCleartextTraffic="true"
-        android:windowSoftInputMode="stateHidden">
-        <activity
             android:name=".modules.mensajedonacin.ui.MensajeDinero"
             android:exported="false" />
         <activity

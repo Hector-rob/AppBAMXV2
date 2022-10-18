@@ -54,8 +54,8 @@
                         android:layout_marginTop="@dimen/_10pxv"
                         android:layout_width="@dimen/_62pxh"
                         android:scaleType="fitXY"
-                        imageRes="@drawable/img_bamxlogo2_5"
-                        tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_5"/>
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_bamxlogo2_13" />
                     <ImageView android:id="@+id/imageImageFiftyOne"
                         android:layout_gravity="top|end"
                         android:layout_height="@dimen/_52pxh"
@@ -322,14 +322,17 @@
                         android:layout_marginTop="@dimen/_1pxv"
                         android:layout_width="match_parent"
                         android:orientation="vertical" style="@style/groupStylebluegray_800">
-                        <ImageView android:id="@+id/imageVolume"
+
+                        <ImageView
+                            android:id="@+id/imageVolume"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_height="@dimen/_20pxh"
                             android:layout_marginTop="@dimen/_9pxv"
-                            android:layout_width="@dimen/_20pxh"
                             android:scaleType="fitXY"
                             android:src="@drawable/img_volume"
-                            tools:ignore="ContentDescription" tools:src="@drawable/img_volume"/>
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/img_volume" />
                         <TextView android:ellipsize="end"
                             android:gravity="center_horizontal"
                             android:id="@+id/txtCaptionOne"

@@ -22,27 +22,7 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <FrameLayout
-                android:id="@+id/frameSystembarDinero"
-                style="@style/groupStylegray_900_14"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_29pxv"
-                android:gravity="start">
 
-                <ImageView
-                    android:id="@+id/imageMaskDInero"
-                    android:layout_width="@dimen/_52pxh"
-                    android:layout_height="@dimen/_12pxh"
-                    android:layout_gravity="end"
-                    android:layout_marginStart="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_8pxv"
-                    android:layout_marginEnd="@dimen/_9pxh"
-                    android:layout_marginBottom="@dimen/_8pxv"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_mask_black_900"
-                    tools:ignore="ContentDescription"
-                    tools:src="@drawable/img_mask_black_900" />
-            </FrameLayout>
 
             <FrameLayout
                 android:id="@+id/frameStackbamxlogotwo2Dinero"
@@ -481,7 +461,6 @@
             android:id="@+id/frameBottombar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_1pxh"
             android:gravity="center_horizontal">
 
             <LinearLayout
@@ -547,7 +526,7 @@
 
                         <ImageView
                             android:id="@+id/imageVolume"
-                            android:layout_width="@dimen/_20pxh"
+                            android:layout_width="wrap_content"
                             android:layout_height="@dimen/_20pxh"
                             android:layout_gravity="center"
                             android:layout_marginTop="@dimen/_9pxv"

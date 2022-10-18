@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,9 +20,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.application.app.modules.menprincipal.ui.MenPrincipalActivity;
 import com.application.app.modules.mensajedonacin.ui.MensajeDinero;
 import com.application.app.modules.mensajedonacin.ui.MensajeDonaciNActivity;
 
+import com.application.app.modules.qhacemos.ui.QhacemosActivity;
 import com.google.protobuf.Any;
 import com.stripe.android.PaymentConfiguration;
 import com.stripe.android.paymentsheet.PaymentSheet;
@@ -47,6 +51,9 @@ public class Stripe extends AppCompatActivity {
     TextView apellidos;
     TextView correo;
     TextView numero;
+    ImageView backButton;
+    LinearLayout menu;
+    LinearLayout info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,14 +74,47 @@ public class Stripe extends AppCompatActivity {
         apellidos.setText("Apellidos: " + hashMap.get("firstLN") +" " +hashMap.get("secondLN") );
         correo.setText("Correo: " + " " + hashMap.get("mail"));
         numero.setText("Número telefónico: " + " " + hashMap.get("number"));
-
+        backButton = findViewById(R.id.imageArrowleft);
+        menu = findViewById(R.id.linear1Tab);
+        info = findViewById(R.id.linear3Tab);
 
         /*Log.wtf("JSON",amt.toString());
         hashMap.forEach((key,value) ->{
             Log.wtf("Hash",value.toString());
         });
+
+        public void returnMenu() {
+        Intent intent = new Intent(this, MenPrincipalActivity.class);
+        startActivity(intent);
+    }
+
+    public void infoFromStripe() {
+        Intent intent = new Intent(this, QhacemosActivity.class);
+        startActivity(intent);
+    }
+
          */
 
+        menu.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                returnMenu();
+            }
+        });
+
+        info.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                infoFromStripe();
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                finish();
+            }
+        });
 
         PaymentConfiguration.init(this, PUBLISH_KEY);
         paymentSheet = new PaymentSheet(this, paymentSheetResult -> {
@@ -241,4 +281,15 @@ public class Stripe extends AppCompatActivity {
 
         );
     }
+
+    public void returnMenu() {
+        Intent intent = new Intent(this, MenPrincipalActivity.class);
+        startActivity(intent);
+    }
+
+    public void infoFromStripe() {
+        Intent intent = new Intent(this, QhacemosActivity.class);
+        startActivity(intent);
+    }
+
 }

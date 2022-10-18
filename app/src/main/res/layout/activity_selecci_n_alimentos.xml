@@ -117,7 +117,7 @@
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    itemSpace="@{@dimen/_22pxh}" tools:itemCount="2" tools:listitem="@layout/row_listnaranja"/>
+                    itemSpace="@{@dimen/_22pxh}" tools:itemCount="2"/>
             </LinearLayout>
             <androidx.appcompat.widget.AppCompatButton
                 android:ellipsize="end" android:gravity="center"
