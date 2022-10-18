@@ -18,21 +18,20 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="502dp">
+                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:id="@+id/linearRecetasVer"
                     style="@style/groupStylewhite_A700"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:gravity="start"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/txtH"
-                        style="@style/txt_1"
-                        android:layout_width="202dp"
+                        style="@style/tituloRecetas"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_101pxh"
                         android:layout_marginTop="@dimen/_42pxv"
@@ -40,6 +39,7 @@
                         android:layout_marginBottom="@dimen/_21pxv"
                         android:ellipsize="end"
 
+                        android:gravity="center_horizontal"
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="false"
@@ -50,7 +50,7 @@
 
                     <TextView
                         android:id="@+id/txtDescription2"
-                        style="@style/txtRobotoromanregular15_1"
+                        style="@style/ingredientesRecetas"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_37pxh"
@@ -58,21 +58,23 @@
                         android:layout_marginEnd="@dimen/_37pxh"
                         android:gravity="center_horizontal"
                         android:letterSpacing="0.01"
-                        android:textStyle="italic"
                         android:lineSpacingExtra="@dimen/_1pxh"
+                        android:textStyle="italic"
                         tools:text="@string/msg_se_desperdician" />
 
                     <TextView
                         android:id="@+id/txtDescription3"
-                        style="@style/txtRobotoromanregular15_1"
+                        style="@style/descripcionRecetas"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center"
                         android:layout_marginStart="@dimen/_37pxh"
                         android:layout_marginTop="@dimen/_27pxv"
                         android:layout_marginEnd="@dimen/_37pxh"
-                        android:gravity="center_horizontal"
+                        android:gravity="center"
                         android:letterSpacing="0.01"
-                        android:lineSpacingExtra="@dimen/_1pxh" />
+                        android:lineSpacingExtra="3dp" />
+
                 </LinearLayout>
             </ScrollView>
 
