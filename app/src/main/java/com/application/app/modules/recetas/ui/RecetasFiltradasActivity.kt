@@ -200,6 +200,7 @@ class RecetasFiltradasActivity : AppCompatActivity(), View.OnClickListener {
         intent.putExtra("titulo", filteredList[position!!].title)
         intent.putExtra("ingredientes", filteredList[position!!].ingredients)
         intent.putExtra("descripcion", filteredList[position!!].description)
+        intent.putExtra("imagen", recetaArrayList[position].image)
 
         startActivity(intent)
 

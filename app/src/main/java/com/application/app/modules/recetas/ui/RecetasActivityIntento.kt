@@ -235,6 +235,7 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
         intent.putExtra("titulo", recetaArrayList[position].title)
         intent.putExtra("ingredientes", recetaArrayList[position].ingredients)
         intent.putExtra("descripcion", recetaArrayList[position].description)
+        intent.putExtra("imagen", recetaArrayList[position].image)
 
         startActivity(intent)
 
