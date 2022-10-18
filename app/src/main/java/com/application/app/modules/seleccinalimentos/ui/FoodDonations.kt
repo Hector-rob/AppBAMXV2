@@ -13,9 +13,11 @@ import com.application.app.FormularioComun
 import com.application.app.R
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.application.app.modules.qhacemos.ui.QhacemosActivity
-import java.util.ArrayList
+import kotlin.collections.ArrayList
 
 class FoodDonations : AppCompatActivity() {
+
+    private lateinit var keysNames : ArrayList<String>
 
     private var fragMng: FragmentManager = supportFragmentManager
     var fragTransaction : FragmentTransaction = fragMng.beginTransaction()
@@ -31,6 +33,7 @@ class FoodDonations : AppCompatActivity() {
     private fun createFragments(){
         val intent = intent
         val keys : ArrayList<String>? = intent.getStringArrayListExtra("keys")
+        keysNames = keys!!
         val products: HashMap<String, String> = intent.getSerializableExtra("Products") as HashMap<String, String>
 
         for((i, key) in keys!!.withIndex()){
@@ -322,8 +325,9 @@ class FoodDonations : AppCompatActivity() {
 
     fun btnDonar(view: View){
         val foodDonations = Donar()
-        val intent = Intent(this, FormularioComun::class.java)
+        val intent = Intent(this, ResumenFoodDonations::class.java)
         intent.putExtra("donation", foodDonations)
+        intent.putExtra("keys", keysNames)
         startActivity(intent)
     }
 
