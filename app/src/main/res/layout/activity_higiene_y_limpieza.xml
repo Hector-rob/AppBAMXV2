@@ -118,26 +118,26 @@
                         tools:listitem="@layout/spinner_item" />
 
                     <FrameLayout
-                        android:id="@+id/frameAInactiveEna1"
+                        android:id="@+id/frameAInactiveEna26"
                         android:layout_width="@dimen/_363pxh"
                         android:layout_height="@dimen/_56pxv"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginStart="@dimen/_22pxh"
-                        android:layout_marginTop="@dimen/_21pxv"
+                        android:layout_marginTop="@dimen/_10pxv"
                         android:layout_marginEnd="@dimen/_22pxh">
 
                         <EditText
                             android:id="@+id/higieneCantidadText"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:ems="10"
+                            android:ems="13"
+                            android:layout_marginTop="@dimen/_10pxv"
                             android:inputType="number"
                             android:textColor="#000000"
-                            android:textSize="16sp"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            android:textSize="13sp" />
 
                         <ImageView
-                            android:id="@+id/imageLabelTwo"
+                            android:id="@+id/imageLabelFour6"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_49pxv"
                             android:layout_gravity="bottom|start"
@@ -148,7 +148,7 @@
                             tools:src="@drawable/img_label" />
 
                         <LinearLayout
-                            android:id="@+id/linearLabel1"
+                            android:id="@+id/linearLabel26"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="top|center"
@@ -158,32 +158,32 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/txtLabelThree"
+                                android:id="@+id/txtLabelFive6"
                                 style="@style/txtRobotoregular16_1"
-                                android:layout_width="28dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="0.23"
+                                android:layout_weight="0.29"
                                 android:ellipsize="end"
                                 android:letterSpacing="0.01"
                                 android:lineSpacingExtra="@dimen/_1pxh"
                                 android:singleLine="true"
-                                android:text="Cantidad *"
-                                tools:text="@string/lbl_cantidad" />
+                                android:text="Cantidad de productos a donar *"
+                                tools:text="Cantidad de productos a donar *" />
 
                             <View
-                                android:id="@+id/lineUpperSurfaceOne"
+                                android:id="@+id/lineUpperSurfaceTwo6"
                                 android:layout_width="0dp"
                                 android:layout_height="@dimen/_1pxv"
                                 android:layout_marginStart="@dimen/_3pxh"
                                 android:layout_marginTop="@dimen/_7pxv"
                                 android:layout_marginBottom="@dimen/_6pxv"
-                                android:layout_weight="0.77"
+                                android:layout_weight="0.71"
                                 android:background="@color/black_900_1e" />
                         </LinearLayout>
                     </FrameLayout>
 
                     <FrameLayout
-                        android:id="@+id/frameAInactiveEna2"
+                        android:id="@+id/frameAInactiveEna1"
                         android:layout_width="@dimen/_363pxh"
                         android:layout_height="@dimen/_56pxv"
                         android:layout_gravity="center_horizontal"
@@ -195,11 +195,11 @@
                             android:id="@+id/higieneDescripciónText"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:ems="10"
+                            android:ems="13"
+                            android:layout_marginTop="@dimen/_10pxv"
                             android:inputType="textPersonName"
                             android:textColor="#000000"
-                            android:textSize="16sp"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            android:textSize="13sp" />
 
                         <ImageView
                             android:id="@+id/imageLabelFour"
@@ -223,17 +223,17 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/txtLabelFive"
+                                android:id="@+id/txtLabelFive1"
                                 style="@style/txtRobotoregular16_1"
-                                android:layout_width="31dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.29"
                                 android:ellipsize="end"
                                 android:letterSpacing="0.01"
                                 android:lineSpacingExtra="@dimen/_1pxh"
                                 android:singleLine="true"
-                                android:text="Descripcion *"
-                                tools:text="Descripción *" />
+                                android:text="Nombre de los productos *"
+                                tools:text="Nombre de los productos *" />
 
                             <View
                                 android:id="@+id/lineUpperSurfaceTwo"
@@ -246,6 +246,7 @@
                                 android:background="@color/black_900_1e" />
                         </LinearLayout>
                     </FrameLayout>
+
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnEnviar"

@@ -107,16 +107,8 @@
 
             <FrameLayout
                 android:layout_width="392dp"
-                android:layout_height="match_parent"
+                android:layout_height="61dp"
                 android:layout_gravity="center">
-
-                <ImageView
-                    android:id="@+id/xbutton"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center|end"
-                    android:onClick="cancelar"
-                    app:srcCompat="@drawable/x_button" />
 
                 <androidx.appcompat.widget.SearchView
                     android:id="@+id/searchView"
@@ -130,6 +122,15 @@
 
 
                 </androidx.appcompat.widget.SearchView>
+
+                <ImageView
+                    android:id="@+id/xbutton"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center|end"
+                    android:onClick="cancelar"
+                    app:srcCompat="@drawable/x_button" />
+
             </FrameLayout>
 
             <androidx.recyclerview.widget.RecyclerView
