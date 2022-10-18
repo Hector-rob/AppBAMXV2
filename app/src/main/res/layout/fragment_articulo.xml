@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout android:id="@+id/frameStackrectanglefourteen"
-        android:layout_height="wrap_content" android:layout_width="@dimen/_152pxh">
+    <FrameLayout
+        android:id="@+id/frameStackrectanglefourteen"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
 
         <LinearLayout android:id="@+id/linearColumnredapplepngc"
             android:layout_gravity="top|center"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_28pxh"
-            android:layout_marginVertical="@dimen/_28pxv"
-            android:layout_width="@dimen/_150pxv"
+            android:layout_marginHorizontal="@dimen/_5pxh"
+            android:layout_marginVertical="@dimen/_5pxv"
+            android:layout_width="@dimen/_130pxv"
             android:orientation="vertical">
             <ImageView android:id="@+id/imageArticulo"
                 android:layout_gravity="center"
@@ -21,6 +23,7 @@
             <TextView android:ellipsize="end"
                 android:gravity="center_horizontal"
                 android:id="@+id/txtArticulo"
+                android:textAllCaps="true"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_22pxh"
                 android:layout_marginStart="@dimen/_22pxh"
@@ -28,8 +31,6 @@
                 android:layout_marginBottom="@dimen/_10pxv"
                 android:layout_width="match_parent"
                 android:letterSpacing="0.01"
-                android:lineSpacingExtra="@dimen/_1pxh"
-                android:singleLine="true"
                 style="@style/txtRobotoromanregular10" tools:text="@string/lbl_manzana"/>
 
             <LinearLayout
@@ -43,7 +44,7 @@
                     style="@style/btnSolidRounded_1"
                     android:layout_width="@dimen/_20pxv"
                     android:layout_height="@dimen/_30pxv"
-                    android:layout_marginLeft="@dimen/_25pxh"
+                    android:layout_marginStart="@dimen/_15pxh"
                     android:layout_weight="0.03"
                     android:text="@string/lbl_minus"
                     android:textAlignment="center"
@@ -55,6 +56,7 @@
                     android:layout_height="20dp"
                     android:layout_weight="0.1"
                     android:layout_gravity="center"
+                    android:textAllCaps="true"
                     android:text="0"
                     android:textAlignment="center"/>
 
@@ -63,7 +65,7 @@
                     style="@style/btnSolidRounded_1"
                     android:layout_width="@dimen/_20pxv"
                     android:layout_height="@dimen/_30pxv"
-                    android:layout_marginRight="@dimen/_25pxv"
+                    android:layout_marginEnd="@dimen/_15pxv"
                     android:layout_weight="0.03"
                     android:text="@string/lbl_plus"
                     android:textAlignment="center"
@@ -74,6 +76,7 @@
             android:background="@drawable/rectangle_bg_black_900_07_radius_10"
             android:id="@+id/viewRectangleTwelve"
             android:layout_gravity="start"
-            android:layout_height="@dimen/_172pxh" android:layout_width="@dimen/_152pxh"/>
+            android:layout_height="@dimen/_150pxh"
+            android:layout_width="@dimen/_150pxh"/>
     </FrameLayout>
 </layout>
