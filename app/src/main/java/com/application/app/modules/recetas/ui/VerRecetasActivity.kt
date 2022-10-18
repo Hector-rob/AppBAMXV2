@@ -2,31 +2,14 @@ package com.application.app.modules.recetas.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.application.app.R
-import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
-import com.application.app.modules.recetas.data.model.RecetasRowModel
-import com.application.app.modules.recetas.data.viewmodel.RecetasVM
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 
-import com.android.volley.Request
-import com.android.volley.RequestQueue
-import com.android.volley.toolbox.JsonArrayRequest
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.toObject
 
 class VerRecetasActivity : AppCompatActivity(){
@@ -55,8 +38,10 @@ class VerRecetasActivity : AppCompatActivity(){
       val titulo = intent.getStringExtra("titulo").toString()
       val ingredientes = intent.getStringExtra("ingredientes").toString()
       val descripcion = intent.getStringExtra("descripcion").toString()
+      val imagen = intent.getStringExtra("imagen").toString()
+      val link = intent.getStringExtra("link").toString()
 
-      fragmentVerReceta = FragmentVerReceta.newInstance(titulo, ingredientes, descripcion)
+      fragmentVerReceta = FragmentVerReceta.newInstance(titulo, ingredientes, descripcion, imagen, link)
       val transaction = supportFragmentManager.beginTransaction()
       transaction.add(R.id.fragmentContainerView3, fragmentVerReceta)
       transaction.commit()

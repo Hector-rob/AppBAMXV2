@@ -80,12 +80,15 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
       //Editar sharedpref
       val editor: SharedPreferences.Editor = sharedPrefs.edit()
 
+
+
+      eventChangeListener()
+
+
+
       //borar sharedprefs
       //editor.clear()
       //editor.commit()
-
-      //agregar a sharedprefs
-      //editor.putString("Lat: " + (locationCount-1).toString(), latLng.latitude.toString())
 
 
       // ********** NOTA **********
@@ -93,15 +96,20 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
       // Después de eso, comentar esa sección de código
       // En caso de cagarla y seguir corriéndolo, borrar sharedprefs y volver a correr 1 una vez
 
-        //Comienzo de código comentado
+      //Comienzo de código comentado
+
       /*
       //receta 1
       val titulito1 = "Ensalada de nopales"
       val ingredientitos1 = "Nopales, jitomate, cebolla, cilantro"
       val descripcioncita1 = "Cortar los nopales, hervirlos con sal por 15 min. Añadir jitomate, cilantro, cebolla picada y sal al gusto. Revolver"
+      val imagen1="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2017/10/consejosparaprepararlamejorensaladadenopales.jpg"
+      val link1="https://www.youtube.com/watch?v=2ZfK3nKYzMw"
       editor.putString("title: " + (0).toString(), titulito1)
       editor.putString("ingredients: " + (0).toString(), ingredientitos1)
       editor.putString("description: " + (0).toString(), descripcioncita1)
+      editor.putString("image: " + (0).toString(), imagen1)
+      editor.putString("link: " + (0).toString(), link1)
       //editor.commit()
 
       //Receta2
@@ -114,39 +122,42 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
               "Reducir el calor y cocina a fuego lento. Remover constantemente la espuma que se acumula en la parte superior. Cocinar la carne por aproximadamente 1 hora.\n" +
               "Agregar las papas y siguir cocinando a fuego lento aproximadamente 10 minutos.\n" +
               "Agregar la col, el elote, la calabaza verde, las zanahorias. Y seguir cocinando a fuego lento por otros 5-10 minutos."
+      val imagen2="https://www.lamichoacanameatmarket.com/wp-content/uploads/2017/05/Receta-de-Caldo-de-Res-900x600.jpg"
+      val link2="https://www.youtube.com/watch?v=LDketd0gQx4"
       editor.putString("title: " + (1).toString(), titulito2)
       editor.putString("ingredients: " + (1).toString(), ingredientitos2)
       editor.putString("description: " + (1).toString(), descripcioncita2)
+      editor.putString("image: " + (1).toString(), imagen2)
+      editor.putString("link: " + (1).toString(), link2)
       editor.commit()
-       */
-      //Fin de código comentado
 
+       */
+
+      //Fin de código comentado
 
 
       var titulito: String
       var ingredientitos:String
       var descripcioncita:String
+      var imagencita:String
+      var linkcito:String
 
 
       for (i in 0 until 2) {
           titulito = sharedPrefs.getString("title: $i", "No hay datos").toString()
           ingredientitos = sharedPrefs.getString("ingredients: $i", "No hay datos").toString()
           descripcioncita = sharedPrefs.getString("description: $i", "No hay datos").toString()
-          recetaArrayList.add(Receta(titulito, ingredientitos, descripcioncita))
+          imagencita = sharedPrefs.getString("image: $i", "No hay datos").toString()
+          linkcito = sharedPrefs.getString("link: $i", "No hay datos").toString()
+          recetaArrayList.add(Receta(titulito, ingredientitos, descripcioncita, imagencita, linkcito))
       }
-
-
-      //Agregar a lista recetas
-      //recetaArrayList.add(Receta(titulito, ingredientitos, descripcioncita))
-      //editor.commit()
-
-      //obtener de sharedprefs
-      //lat = sharedPrefs.getString("Lat: $i", "0").toString()
 
 
       verRecetaFragment = FragmentVerReceta()
 
-      eventChangeListener()
+      //eventChangeListener()
+
+      recetaArrayList.sortBy { it.title }
 
   }
 
@@ -235,6 +246,8 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
         intent.putExtra("titulo", recetaArrayList[position].title)
         intent.putExtra("ingredientes", recetaArrayList[position].ingredients)
         intent.putExtra("descripcion", recetaArrayList[position].description)
+        intent.putExtra("imagen", recetaArrayList[position].image)
+        intent.putExtra("link", recetaArrayList[position].link)
 
         startActivity(intent)
 
