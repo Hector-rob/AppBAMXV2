@@ -74,17 +74,21 @@ class RecetasFiltradasActivity : AppCompatActivity(), View.OnClickListener {
         searchView.clearFocus()
         searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
 
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                filterList(query)
+            override fun onQueryTextSubmit(newText: String?): Boolean {
+                filterList(newText)
+
                 return false;
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 //filterList(newText)
+
                 return true;
             }
 
         })
+
+
 
         //para guardar recetas
         sharedPrefs = getSharedPreferences(ARCHIVO_PREFS, Context.MODE_PRIVATE)
@@ -168,6 +172,13 @@ class RecetasFiltradasActivity : AppCompatActivity(), View.OnClickListener {
         finish()
     }
 
+    fun cancelar(view: View?){
+        finish();
+        overridePendingTransition(0, 0);
+        startActivity(getIntent());
+        overridePendingTransition(0, 0);
+    }
+
 
     companion object {
         const val TAG: String = "RECETAS_ACTIVITY"
@@ -177,12 +188,12 @@ class RecetasFiltradasActivity : AppCompatActivity(), View.OnClickListener {
         val position = p0?.let { recyclerView.getChildLayoutPosition(it) }
         Log.wtf("Firestore", "id: $position")
         //Toast.makeText(this, "id: $position", Toast.LENGTH_SHORT).show()
-        Log.wtf("Firestore", "lista: ${filteredList[position!!]}")
+        //Log.wtf("Firestore", "lista: ${filteredList[position!!]}")
 
         val intent = Intent(this, VerRecetasActivity::class.java)
-        intent.putExtra("titulo", filteredList[position].title)
-        intent.putExtra("ingredientes", filteredList[position].ingredients)
-        intent.putExtra("descripcion", filteredList[position].description)
+        intent.putExtra("titulo", filteredList[position!!].title)
+        intent.putExtra("ingredientes", filteredList[position!!].ingredients)
+        intent.putExtra("descripcion", filteredList[position!!].description)
 
         startActivity(intent)
 
