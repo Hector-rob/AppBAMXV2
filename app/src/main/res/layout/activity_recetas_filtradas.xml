@@ -104,18 +104,33 @@
                 </FrameLayout>
             </FrameLayout>
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:background="@drawable/search_view_bg"
-                android:textColorHint="@android:color/black"
-                app:iconifiedByDefault="false"
-                app:queryHint="Buscar...">
+
+            <FrameLayout
+                android:layout_width="392dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/xbutton"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center|end"
+                    android:onClick="cancelar"
+                    app:srcCompat="@drawable/x_button" />
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="353dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/search_view_bg"
+                    android:textColorHint="@android:color/black"
+                    app:iconifiedByDefault="false"
+                    app:queryHint="Buscar...">
 
 
-            </androidx.appcompat.widget.SearchView>
+                </androidx.appcompat.widget.SearchView>
+            </FrameLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewRecetas"
