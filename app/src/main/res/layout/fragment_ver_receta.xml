@@ -56,6 +56,20 @@
                         app:srcCompat="@drawable/ic_launcher_foreground" />
 
                     <TextView
+                        android:id="@+id/textView2"
+                        style="@style/labelsRecetas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_37pxh"
+                        android:layout_marginTop="@dimen/_27pxv"
+                        android:layout_marginEnd="@dimen/_37pxh"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:textStyle="italic"
+                        android:text="@string/lbl_ingredientes2"/>
+
+                    <TextView
                         android:id="@+id/txtDescription2"
                         style="@style/ingredientesRecetas"
                         android:layout_width="match_parent"
@@ -66,8 +80,22 @@
                         android:gravity="center_horizontal"
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="@dimen/_1pxh"
-                        android:textStyle="italic"
+                        android:textStyle="bold"
                         tools:text="@string/msg_se_desperdician" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        style="@style/labelsRecetas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_37pxh"
+                        android:layout_marginTop="@dimen/_27pxv"
+                        android:layout_marginEnd="@dimen/_37pxh"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:textStyle="italic"
+                        android:text="@string/lbl_preparacion" />
 
                     <TextView
                         android:id="@+id/txtDescription3"
