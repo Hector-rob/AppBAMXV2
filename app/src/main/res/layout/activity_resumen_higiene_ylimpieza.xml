@@ -77,6 +77,68 @@
 
 
             <FrameLayout
+                android:id="@+id/frameAInactiveEna12"
+                android:layout_width="@dimen/_363pxh"
+                android:layout_height="@dimen/_56pxv"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_22pxh"
+                android:layout_marginTop="@dimen/_21pxv"
+                android:layout_marginEnd="@dimen/_22pxh">
+
+                <EditText
+                    android:id="@+id/tipoHigiene"
+                    style="@style/txtRobotoregular16_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginStart="@dimen/_10pxv"
+                    android:textColor="#000000"
+                    android:inputType="none"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:text="Categoría"
+                    tools:text="Categoría"
+                    />
+
+                <ImageView
+                    android:id="@+id/imageLabelFour22"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_49pxv"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_label"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_label" />
+
+                <LinearLayout
+                    android:id="@+id/linearLabel222"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center"
+                    android:layout_marginStart="@dimen/_13pxh"
+                    android:layout_marginEnd="@dimen/_13pxh"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:orientation="horizontal">
+
+
+                    <View
+                        android:id="@+id/lineUpperSurfaceTwo22"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_1pxv"
+                        android:layout_marginStart="@dimen/_3pxh"
+                        android:layout_marginTop="@dimen/_7pxv"
+                        android:layout_marginBottom="@dimen/_6pxv"
+                        android:layout_weight="0.71"
+                        android:background="@color/black_900_1e" />
+                </LinearLayout>
+            </FrameLayout>
+
+
+            <FrameLayout
                 android:id="@+id/frameAInactiveEna1"
                 android:layout_width="@dimen/_363pxh"
                 android:layout_height="@dimen/_56pxv"
@@ -86,7 +148,7 @@
                 android:layout_marginEnd="@dimen/_22pxh">
 
                 <EditText
-                    android:id="@+id/money"
+                    android:id="@+id/cantHigiene"
                     style="@style/txtRobotoregular16_1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -147,7 +209,7 @@
                 android:layout_marginEnd="@dimen/_22pxh">
 
                 <EditText
-                    android:id="@+id/nombreTxt"
+                    android:id="@+id/nombreHigiene"
                     style="@style/txtRobotoregular16_1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -155,13 +217,13 @@
                     android:layout_marginStart="@dimen/_10pxv"
                     android:textColor="#000000"
                     android:inputType="none"
+                    android:letterSpacing="0.01"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
-                    android:letterSpacing="0.01"
                     android:lineSpacingExtra="@dimen/_1pxh"
                     android:singleLine="true"
-                    android:text="Nombre(s)"
-                    tools:text="Nombre(s)"
+                    android:text="Nombre de los productos"
+                    tools:text="Nombre de los productos"
                     />
 
                 <ImageView
@@ -198,188 +260,7 @@
                 </LinearLayout>
             </FrameLayout>
 
-            <FrameLayout
-                android:id="@+id/frameAInactiveEna3"
-                android:layout_width="@dimen/_363pxh"
-                android:layout_height="@dimen/_56pxv"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="@dimen/_22pxh"
-                android:layout_marginTop="@dimen/_21pxv"
-                android:layout_marginEnd="@dimen/_22pxh">
 
-                <EditText
-                    android:id="@+id/apellidosTxt"
-                    style="@style/txtRobotoregular16_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_10pxv"
-                    android:layout_marginStart="@dimen/_10pxv"
-                    android:textColor="#000000"
-                    android:inputType="none"
-                    android:letterSpacing="0.01"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:lineSpacingExtra="@dimen/_1pxh"
-                    android:singleLine="true"
-                    android:text="Apellidos"
-                    tools:text="Apellidos"
-                    />
-
-                <ImageView
-                    android:id="@+id/imageLabelFour3"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_49pxv"
-                    android:layout_gravity="bottom|start"
-                    android:layout_marginTop="@dimen/_10pxv"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_label"
-                    tools:ignore="ContentDescription"
-                    tools:src="@drawable/img_label" />
-
-                <LinearLayout
-                    android:id="@+id/linearLabel23"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|center"
-                    android:layout_marginStart="@dimen/_13pxh"
-                    android:layout_marginEnd="@dimen/_13pxh"
-                    android:layout_marginBottom="@dimen/_10pxv"
-                    android:orientation="horizontal">
-
-
-                    <View
-                        android:id="@+id/lineUpperSurfaceTwo3"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_1pxv"
-                        android:layout_marginStart="@dimen/_3pxh"
-                        android:layout_marginTop="@dimen/_7pxv"
-                        android:layout_marginBottom="@dimen/_6pxv"
-                        android:layout_weight="0.71"
-                        android:background="@color/black_900_1e" />
-                </LinearLayout>
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/frameAInactiveEna4"
-                android:layout_width="@dimen/_363pxh"
-                android:layout_height="@dimen/_56pxv"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="@dimen/_22pxh"
-                android:layout_marginTop="@dimen/_21pxv"
-                android:layout_marginEnd="@dimen/_22pxh">
-
-                <EditText
-                    android:id="@+id/correoTxt"
-                    style="@style/txtRobotoregular16_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_10pxv"
-                    android:layout_marginStart="@dimen/_10pxv"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:textColor="#000000"
-                    android:inputType="none"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="@dimen/_1pxh"
-                    android:singleLine="true"
-                    android:text="Correo"
-                    tools:text="Correo"
-                    />
-
-                <ImageView
-                    android:id="@+id/imageLabelFour4"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_49pxv"
-                    android:layout_gravity="bottom|start"
-                    android:layout_marginTop="@dimen/_10pxv"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_label"
-                    tools:ignore="ContentDescription"
-                    tools:src="@drawable/img_label" />
-
-                <LinearLayout
-                    android:id="@+id/linearLabel24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|center"
-                    android:layout_marginStart="@dimen/_13pxh"
-                    android:layout_marginEnd="@dimen/_13pxh"
-                    android:layout_marginBottom="@dimen/_10pxv"
-                    android:orientation="horizontal">
-
-
-                    <View
-                        android:id="@+id/lineUpperSurfaceTwo4"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_1pxv"
-                        android:layout_marginStart="@dimen/_3pxh"
-                        android:layout_marginTop="@dimen/_7pxv"
-                        android:layout_marginBottom="@dimen/_6pxv"
-                        android:layout_weight="0.71"
-                        android:background="@color/black_900_1e" />
-                </LinearLayout>
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/frameAInactiveEna5"
-                android:layout_width="@dimen/_363pxh"
-                android:layout_height="@dimen/_56pxv"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="@dimen/_22pxh"
-                android:layout_marginTop="@dimen/_21pxv"
-                android:layout_marginEnd="@dimen/_22pxh">
-
-                <EditText
-                    android:id="@+id/numeroTxt"
-                    style="@style/txtRobotoregular16_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_10pxv"
-                    android:layout_marginStart="@dimen/_10pxv"
-                    android:textColor="#000000"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:inputType="none"
-                    android:letterSpacing="0.01"
-                    android:lineSpacingExtra="@dimen/_1pxh"
-                    android:singleLine="true"
-                    android:text="Número"
-                    tools:text="Número"
-                    />
-
-                <ImageView
-                    android:id="@+id/imageLabelFour5"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_49pxv"
-                    android:layout_gravity="bottom|start"
-                    android:layout_marginTop="@dimen/_10pxv"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_label"
-                    tools:ignore="ContentDescription"
-                    tools:src="@drawable/img_label" />
-
-                <LinearLayout
-                    android:id="@+id/linearLabel5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|center"
-                    android:layout_marginStart="@dimen/_13pxh"
-                    android:layout_marginEnd="@dimen/_13pxh"
-                    android:layout_marginBottom="@dimen/_10pxv"
-                    android:orientation="horizontal">
-
-
-                    <View
-                        android:id="@+id/lineUpperSurfaceTwo5"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_1pxv"
-                        android:layout_marginStart="@dimen/_3pxh"
-                        android:layout_marginTop="@dimen/_7pxv"
-                        android:layout_marginBottom="@dimen/_6pxv"
-                        android:layout_weight="0.71"
-                        android:background="@color/black_900_1e" />
-                </LinearLayout>
-            </FrameLayout>
 
             <LinearLayout
                 android:paddingTop="30dp"
