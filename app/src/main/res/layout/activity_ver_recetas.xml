@@ -7,7 +7,7 @@
 
     <LinearLayout android:gravity="start"
         android:id="@+id/linearColumnmask"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:orientation="vertical" style="@style/groupStylewhite_A700">
 
@@ -109,7 +109,7 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="508dp">
+                android:layout_height="580dp">
 
                 <LinearLayout
                     android:id="@+id/linearRecetasVer"
@@ -123,7 +123,7 @@
                         android:id="@+id/fragmentContainerView3"
                         android:name="com.application.app.modules.recetas.ui.FragmentVerReceta"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="match_parent" />
 
                 </LinearLayout>
             </ScrollView>
@@ -132,9 +132,8 @@
                 android:id="@+id/frameBottombar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_25pxv"
-                >
+                android:gravity="bottom">
 
                 <LinearLayout
                     android:id="@+id/linear2FourupAO"
