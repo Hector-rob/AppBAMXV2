@@ -39,8 +39,9 @@ class VerRecetasActivity : AppCompatActivity(){
       val ingredientes = intent.getStringExtra("ingredientes").toString()
       val descripcion = intent.getStringExtra("descripcion").toString()
       val imagen = intent.getStringExtra("imagen").toString()
+      val link = intent.getStringExtra("link").toString()
 
-      fragmentVerReceta = FragmentVerReceta.newInstance(titulo, ingredientes, descripcion, imagen)
+      fragmentVerReceta = FragmentVerReceta.newInstance(titulo, ingredientes, descripcion, imagen, link)
       val transaction = supportFragmentManager.beginTransaction()
       transaction.add(R.id.fragmentContainerView3, fragmentVerReceta)
       transaction.commit()

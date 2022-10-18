@@ -110,6 +110,23 @@
                         android:letterSpacing="0.01"
                         android:lineSpacingExtra="3dp" />
 
+                    <TextView
+                        android:id="@+id/link"
+                        style="@style/labelsRecetas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="all"
+                        android:layout_marginStart="@dimen/_37pxh"
+                        android:layout_marginTop="@dimen/_27pxv"
+                        android:layout_marginEnd="@dimen/_37pxh"
+                        android:gravity="center_horizontal"
+                        android:clickable="true"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:textStyle="bold"
+                        android:text="@string/link"
+                        android:focusable="true" />
+
                 </LinearLayout>
             </ScrollView>
 

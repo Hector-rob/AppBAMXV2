@@ -1,6 +1,7 @@
 package com.application.app.modules.recetas.ui
 
 import android.os.Bundle
+import android.text.style.ClickableSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ private const val TITULO = "title"
 private const val INGREDIENTES = "ingredients"
 private const val DESCRIPCION = "description"
 private const val IMAGEN = "image"
+private const val LINK = "link"
 
 /**
  * A simple [Fragment] subclass.
@@ -28,6 +30,7 @@ class FragmentVerReceta : Fragment() {
     private var ingredients: String? = null
     private var description: String? = null
     private var image: String? = null
+    private var link: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +39,7 @@ class FragmentVerReceta : Fragment() {
             ingredients = it.getString(INGREDIENTES)
             description = it.getString(DESCRIPCION)
             image = it.getString(IMAGEN)
+            link = it.getString(LINK)
         }
     }
 
@@ -62,19 +66,24 @@ class FragmentVerReceta : Fragment() {
             Glide.with(this).load(image).into(view.findViewById<ImageView>(R.id.imageView))
         }
 
+        view.findViewById<TextView>(R.id.link).apply {
+            text = link
+        }
+
 
         return view
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(title: String, ingredients: String, description: String, image: String) =
+        fun newInstance(title: String, ingredients: String, description: String, image: String, link: String) =
             FragmentVerReceta().apply {
                 arguments = Bundle().apply {
                     putString(TITULO, title)
                     putString(INGREDIENTES, ingredients)
                     putString(DESCRIPCION, description)
                     putString(IMAGEN, image)
+                    putString(LINK, link)
                 }
             }
     }
