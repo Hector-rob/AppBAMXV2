@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="stateHidden">
         <activity
+            android:name=".modules.higieneylimpieza.ui.ResumenHigieneYLimpieza"
+            android:exported="false" />
+        <activity
             android:name=".modules.seleccinalimentos.ui.ResumenFoodDonations"
             android:exported="false" />
         <activity

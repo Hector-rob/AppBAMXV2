@@ -111,30 +111,46 @@ class HigieneYLimpiezaActivity :
       startActivity(destIntent)
     }
     binding.btnEnviar.setOnClickListener {
+      subir()
 
 
       //Cambiar esto si se va mandar a formulario general
       //var categoria = findViewById<EditText>(R.id.higieneCategoriaText).text.toString()
-      var productos = findViewById<EditText>(R.id.higieneCantidadText).text.toString()
-      var descripcion = findViewById<EditText>(R.id.higieneDescripciónText).text.toString()
-      val donacion = hashMapOf(
-        "categoria" to categoriaT,
-        //"categoria" to categoria,
-        "productos" to productos,
-        "descripcion" to descripcion,
-      )
 
 
-      // Intent para mandar al formulario general
-      val intent = Intent(this, FormularioComun::class.java)
-      intent.putExtra( "donation", donacion)
-      startActivity(intent)
     }
   }
 
   fun info(view: View){
     val intent = Intent(this, QhacemosActivity::class.java)
     startActivity(intent)
+  }
+
+  fun subir(){
+
+    // Intent para mandar al formulario general
+    var cantidad = findViewById<EditText>(R.id.higieneCantidadText).text.toString()
+    var productos = findViewById<EditText>(R.id.higieneDescripciónText).text.toString()
+    val donacion = hashMapOf(
+      "categoria" to categoriaT,
+      //"categoria" to categoria,
+      "cantidad" to cantidad,
+      "productos" to productos
+    )
+    if(cantidad.trim().isNotEmpty() &&
+      cantidad.trim().isNotBlank() &&
+      productos.trim().isNotEmpty() &&
+      productos.trim().isNotBlank() &&
+      categoriaT.trim().isNotEmpty() &&
+      categoriaT.trim().isNotBlank()) {
+
+      val intent = Intent(this, ResumenHigieneYLimpieza::class.java)
+      intent.putExtra( "donation", donacion)
+      startActivity(intent)
+    }
+    else{
+      Toast.makeText(this, "Campo faltante", Toast.LENGTH_SHORT).show()
+    }
   }
 
 
