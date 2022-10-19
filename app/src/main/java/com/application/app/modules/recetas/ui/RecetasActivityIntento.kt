@@ -1,6 +1,5 @@
 package com.application.app.modules.recetas.ui
 
-
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -18,7 +17,6 @@ import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
 import com.application.app.modules.qhacemos.ui.QhacemosActivity
 import com.google.firebase.firestore.*
 
-
 class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
   lateinit var recyclerView: RecyclerView
@@ -28,29 +26,22 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
 
   lateinit var filteredList : ArrayList<Receta>
 
-
   /*
   lateinit var llm: LinearLayoutManager
 
   lateinit var titulos: ArrayList<String>
   lateinit var ingredientes: ArrayList<String>
-
    */
 
   lateinit var titulo : TextView
-
   lateinit var home: LinearLayout
   lateinit var info: LinearLayout
   lateinit var flecha: ImageView
-
   lateinit var verRecetaFragment: FragmentVerReceta
-
   lateinit var searchView: SearchView
 
   var ARCHIVO_PREFS = "preferencias.prefs"
     private lateinit var sharedPrefs: SharedPreferences
-
-
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -77,16 +68,12 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
       //para guardar recetas
       sharedPrefs = getSharedPreferences(ARCHIVO_PREFS, Context.MODE_PRIVATE)
 
-      //Editar sharedpref
+      //editar sharedpref
       val editor: SharedPreferences.Editor = sharedPrefs.edit()
-
-
 
       eventChangeListener()
 
-
-
-      //borar sharedprefs
+      //borrar sharedprefs
       //editor.clear()
       //editor.commit()
 
@@ -99,7 +86,7 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
       //Comienzo de código comentado
 
       /*
-      //receta 1
+      //Receta 1
       val titulito1 = "Ensalada de nopales"
       val ingredientitos1 = "Nopales, jitomate, cebolla, cilantro"
       val descripcioncita1 = "Cortar los nopales, hervirlos con sal por 15 min. Añadir jitomate, cilantro, cebolla picada y sal al gusto. Revolver"
@@ -130,11 +117,9 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
       editor.putString("image: " + (1).toString(), imagen2)
       editor.putString("link: " + (1).toString(), link2)
       editor.commit()
-
-       */
+      */
 
       //Fin de código comentado
-
 
       var titulito: String
       var ingredientitos:String
@@ -152,13 +137,11 @@ class RecetasActivityIntento : AppCompatActivity(), View.OnClickListener{
           recetaArrayList.add(Receta(titulito, ingredientitos, descripcioncita, imagencita, linkcito))
       }
 
-
       verRecetaFragment = FragmentVerReceta()
 
       //eventChangeListener()
 
       recetaArrayList.sortBy { it.title }
-
   }
 
     /*
