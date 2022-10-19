@@ -79,17 +79,24 @@
                                 android:scaleType="fitXY"
                                 android:src="@drawable/img_arrowleft_white_a700"
                                 tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_white_a700"/>
-                            <ImageView android:id="@+id/imageSearch"
+
+                            <ImageView
+                                android:id="@+id/imageSearch"
+                                android:layout_width="@dimen/_25pxh"
                                 android:layout_height="@dimen/_25pxh"
-                                android:onClick="buscar"
-                                android:layout_marginBottom="@dimen/_15pxv"
-                                android:layout_marginEnd="@dimen/_320pxh"
                                 android:layout_marginStart="@dimen/_13pxh"
                                 android:layout_marginTop="@dimen/_16pxv"
-                                android:layout_width="@dimen/_25pxh"
+                                android:layout_marginEnd="@dimen/_320pxh"
+                                android:layout_marginBottom="@dimen/_15pxv"
+
+                                android:layout_gravity="bottom|end"
+
+                                android:onClick="buscar"
                                 android:scaleType="fitXY"
                                 android:src="@drawable/img_search_white_a700"
-                                tools:ignore="ContentDescription" tools:src="@drawable/img_search_white_a700"/>
+                                tools:ignore="ContentDescription"
+                                tools:src="@drawable/img_search_white_a700" />
+
                         </LinearLayout>
                         <ImageView android:id="@+id/imageBamxlogoTwoOne"
                             android:layout_gravity="bottom|end"

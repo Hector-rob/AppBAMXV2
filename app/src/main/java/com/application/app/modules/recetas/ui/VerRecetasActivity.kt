@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.application.app.R
 import com.application.app.modules.menprincipal.ui.MenPrincipalActivity
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 
 import com.google.firebase.firestore.ktx.toObject
 
@@ -63,10 +64,10 @@ class VerRecetasActivity : AppCompatActivity(){
         finish()
     }
 
-    fun verMas(view: View?){
-
-
-    }
+  fun info(view: View){
+    val intent = Intent(this, QhacemosActivity::class.java)
+    startActivity(intent)
+  }
 
 
   companion object {
