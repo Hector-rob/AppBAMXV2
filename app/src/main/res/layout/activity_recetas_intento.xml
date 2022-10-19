@@ -17,99 +17,145 @@
             android:layout_weight="1.0"
             android:orientation="vertical" style="@style/groupStylewhite_A700">
 
-            <FrameLayout android:id="@+id/frameStack"
-                android:layout_height="@dimen/_140pxv" android:layout_width="match_parent">
-                <LinearLayout android:id="@+id/linearColumn"
-                    android:layout_gravity="bottom|start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_10pxh"
+
+            <FrameLayout
+                android:id="@+id/frameStackbamxlogotwo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_70pxv"
+                android:layout_gravity="top|start"
+                android:layout_marginBottom="@dimen/_10pxv">
+
+                <ImageView
+                    android:id="@+id/imageBamxlogoTwo"
+                    imageRes="@{@drawable/img_bamxlogo2_20}"
+                    android:layout_width="@dimen/_62pxh"
+                    android:layout_height="@dimen/_64pxh"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginStart="@dimen/_10pxh"
                     android:layout_marginTop="@dimen/_10pxv"
+                    android:scaleType="fitXY"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_bamxlogo2_20" />
+
+                <FrameLayout
+                    android:id="@+id/frameStackarrowleft"
                     android:layout_width="match_parent"
-                    android:orientation="vertical" style="@style/groupStylewhite_A700">
-
-                    <TextView
-                        android:id="@+id/txtH5"
-                        style="@style/txt_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/_101pxh"
-                        android:layout_marginTop="@dimen/_42pxv"
-                        android:layout_marginEnd="@dimen/_101pxh"
-                        android:layout_marginBottom="@dimen/_21pxv"
-                        android:ellipsize="end"
-                        android:letterSpacing="0.01"
-                        android:lineSpacingExtra="@dimen/_1pxh"
-                        android:singleLine="true"
-                        android:text="@{recetasVM.recetasModel.txtH5}"
-                        android:textAlignment="center"
-                        tools:text="@string/lbl_recetas2" />
-
-                </LinearLayout>
-                <FrameLayout android:id="@+id/frameStackbamxlogotwo"
-                    android:layout_gravity="top|start"
                     android:layout_height="@dimen/_70pxv"
-                    android:layout_marginBottom="@dimen/_10pxv" android:layout_width="match_parent">
-                    <ImageView android:id="@+id/imageBamxlogoTwo"
-                        android:layout_gravity="bottom|end"
+                    android:layout_gravity="start">
+
+                    <LinearLayout
+                        android:id="@+id/linearRowarrowleft"
+
+                        style="@style/groupStylebluegray_801"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|start"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageArrowleft"
+                            android:layout_width="@dimen/_26pxh"
+                            android:layout_height="@dimen/_22pxh"
+                            android:layout_marginStart="@dimen/_24pxh"
+                            android:layout_marginTop="@dimen/_16pxv"
+                            android:layout_marginBottom="@dimen/_16pxv"
+                            android:onClick="regresar"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_arrowleft_white_a700"
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/img_arrowleft_white_a700" />
+
+                        <ImageView
+                            android:id="@+id/imageSearch"
+                            android:layout_width="@dimen/_25pxh"
+                            android:layout_height="@dimen/_25pxh"
+                            android:layout_marginStart="@dimen/_13pxh"
+                            android:layout_marginTop="@dimen/_16pxv"
+                            android:layout_marginEnd="@dimen/_320pxh"
+                            android:layout_marginBottom="@dimen/_15pxv"
+                            android:onClick="buscar"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_search_white_a700"
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/img_search_white_a700" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageBamxlogoTwoOne"
+                        imageRes="@{@drawable/img_bamxlogo2_21}"
+                        android:layout_width="@dimen/_62pxh"
                         android:layout_height="@dimen/_64pxh"
+                        android:layout_gravity="bottom|end"
                         android:layout_marginStart="@dimen/_10pxh"
                         android:layout_marginTop="@dimen/_10pxv"
-                        android:layout_width="@dimen/_62pxh"
                         android:scaleType="fitXY"
-                        imageRes="@{@drawable/img_bamxlogo2_20}"
-                        tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_20"/>
-                    <FrameLayout android:id="@+id/frameStackarrowleft"
-                        android:layout_gravity="start"
-                        android:layout_height="@dimen/_70pxv" android:layout_width="match_parent">
-                        <LinearLayout
-                            android:id="@+id/linearRowarrowleft"
-
-                            android:layout_gravity="top|start"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/_10pxv"
-                            android:layout_width="match_parent"
-                            android:orientation="horizontal" style="@style/groupStylebluegray_801">
-                            <ImageView android:id="@+id/imageArrowleft"
-                                android:layout_height="@dimen/_22pxh"
-                                android:onClick="regresar"
-                                android:layout_marginBottom="@dimen/_16pxv"
-                                android:layout_marginStart="@dimen/_24pxh"
-                                android:layout_marginTop="@dimen/_16pxv"
-                                android:layout_width="@dimen/_26pxh"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/img_arrowleft_white_a700"
-                                tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_white_a700"/>
-                            <ImageView android:id="@+id/imageSearch"
-                                android:layout_height="@dimen/_25pxh"
-                                android:onClick="buscar"
-                                android:layout_marginBottom="@dimen/_15pxv"
-                                android:layout_marginEnd="@dimen/_320pxh"
-                                android:layout_marginStart="@dimen/_13pxh"
-                                android:layout_marginTop="@dimen/_16pxv"
-                                android:layout_width="@dimen/_25pxh"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/img_search_white_a700"
-                                tools:ignore="ContentDescription" tools:src="@drawable/img_search_white_a700"/>
-                        </LinearLayout>
-                        <ImageView android:id="@+id/imageBamxlogoTwoOne"
-                            android:layout_gravity="bottom|end"
-                            android:layout_height="@dimen/_64pxh"
-                            android:layout_marginStart="@dimen/_10pxh"
-                            android:layout_marginTop="@dimen/_10pxv"
-                            android:layout_width="@dimen/_62pxh"
-                            android:scaleType="fitXY"
-                            imageRes="@{@drawable/img_bamxlogo2_21}"
-                            tools:ignore="ContentDescription" tools:src="@drawable/img_bamxlogo2_21"/>
-                    </FrameLayout>
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_bamxlogo2_21" />
                 </FrameLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearColumn"
+                    style="@style/groupStylewhite_A700"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+
             </FrameLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewRecetas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
 
-            </androidx.recyclerview.widget.RecyclerView>
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="200dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewRecetas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/imageEllipseFive"
+                    imageRes="@{@drawable/img_ellipse5}"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="start"
+                    android:scaleType="fitXY"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_ellipse5" />
+
+                <TextView
+                    android:id="@+id/txtH8"
+                    style="@style/txtRobotoromanextrabold25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="37dp"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="RECETAS"
+                    android:textColor="#FFFFFF"
+                    android:textSize="35sp" />
+            </FrameLayout>
+
 
         </LinearLayout>
 
