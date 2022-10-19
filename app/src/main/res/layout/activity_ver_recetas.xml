@@ -85,7 +85,7 @@
                                 android:layout_height="@dimen/_25pxh"
                                 android:layout_marginBottom="@dimen/_15pxv"
                                 android:layout_marginEnd="@dimen/_320pxh"
-                                android:layout_marginStart="@dimen/_13pxh"
+                                android:layout_marginStart="@dimen/_310pxh"
                                 android:layout_marginTop="@dimen/_16pxv"
                                 android:layout_width="@dimen/_25pxh"
                                 android:scaleType="fitXY"

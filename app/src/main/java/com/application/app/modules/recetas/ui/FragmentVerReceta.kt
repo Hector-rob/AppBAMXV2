@@ -1,5 +1,6 @@
 package com.application.app.modules.recetas.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.style.ClickableSpan
 import androidx.fragment.app.Fragment
@@ -7,8 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.application.app.R
+import com.application.app.modules.qhacemos.ui.QhacemosActivity
 import com.bumptech.glide.Glide
 
 // TODO: Rename parameter arguments, choose names that match
@@ -71,8 +74,13 @@ class FragmentVerReceta : Fragment() {
         }
 
 
+
+
+
         return view
     }
+
+
 
     companion object {
         @JvmStatic
@@ -87,4 +95,5 @@ class FragmentVerReceta : Fragment() {
                 }
             }
     }
+
 }
