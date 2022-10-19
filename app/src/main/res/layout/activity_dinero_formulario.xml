@@ -610,7 +610,7 @@
                             android:letterSpacing="0.02"
                             android:lineSpacingExtra="@dimen/_1pxh"
                             android:singleLine="true"
-                            android:text="Information"
+                            android:text="Información"
                             tools:text="@string/lbl_information" />
                     </LinearLayout>
                 </LinearLayout>
